@@ -2,22 +2,19 @@ var express = require('express'),
     errorHandler = require('errorhandler'),
     app = express();
 
-var events = require('events');
-var eventEmitter = new events.EventEmitter();
-
 var HOSTNAME = 'localhost',
     PORT = 8080,
     PUBLIC_DIR = __dirname + '/public_html';
 
 var reqCounter = 0;
 
-app.use(function (req, res, cb) {
+app.use(function (req, res, next) {
 	// Здесь нужно написать журналирование в формате
 	// (журналирование - вывод в консоль)
 	// [время] [номер запроса по счету]
 	var date = new Date();
 	console.log("[" + date + "]" + " | " + "request number " + ++reqCounter)
-	cb()
+	next()
 });
 
 app
