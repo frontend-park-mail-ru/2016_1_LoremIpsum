@@ -4,41 +4,32 @@ var express = require('express'),
 	proxy = require('express-http-proxy');
 
 var HOSTNAME = 'localhost',
-    PORT = 3280,
+    PORT = 8080,
     PUBLIC_DIR = __dirname + '/public_html';
 
 
 var counter = 0;
 app.use(function (req, res, next) {
-	// Здесь нужно написать журналирование в формате
+	// Здесь нужно написать журналирование в фexормате
 	// (журналирование - вывод в консоль)
 	// [время] [номер запроса по счету]
 	var request_time =new Date();
 	console.log('Time: ',request_time.toString());
 	console.log("Requests count: " , ++counter);
 	next();
-
-app.use(function (req, res, done) {
-	// Здесь нужно написать журналирование в формате
-	// (журналирование - вывод в консоль)
-	// [время] [номер запроса по счету]
-	done();
-});
-
-
 });
  app
 	.use('/', express.static(PUBLIC_DIR))
 	 .use(errorHandler());
 
-app.listen(PORT, function () {
+app.listen(PORT,HOSTNAME,function () {
 	console.log("Simple static server showing %s listening at http://%s:%s", PUBLIC_DIR, HOSTNAME, PORT);
 });
 
 
-app.use('/proxy', proxy('http://vk.com', {
-	forwardPath: function(req, res) {
-		console.log(1234);
-		return require('url').parse(req.url).path;
-	}
-}));
+//app.use('/proxy', proxy('http://vk.com', {
+//	forwardPath: function(req, res) {
+//		console.log(1234);
+//		return require('url').parse(req.url).path;
+//	}
+//}));

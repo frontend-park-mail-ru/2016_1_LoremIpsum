@@ -1,1 +1,121 @@
 /* TODO */
+#page
+{
+
+    background: url("../background.png");
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%, 100%;
+}
+#main, #scoreboard, #login
+{
+    overflow: hidden;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+     left: 5%;
+     right: 5%;
+     top :5%;
+    bottom: 5%;
+}
+.header
+{
+    width: 70%;
+    color:white;
+    text-align: center;
+    height : 20%;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size:5.5vh ;
+    /*margin-top: 10%;
+    margin-bottom:10% ;*/
+}
+.main__elem
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgba(60, 63, 65, 0.23);
+    width: 70%;
+    color: rgba(230, 248, 255, 1);
+    border-color: #f1ffe6;
+    border: medium;
+    border-style: solid;
+    height : 20%;
+    text-align: center;
+    font-size:5vw;
+    border-radius:4vh;
+    vertical-align: middle;
+   /* padding-top: 4%;
+    padding-bottom: 4%;*/
+    margin-top: 1%;
+    overflow:hidden;
+    line-height: 16vh;
+    /*margin: auto;
+    /*margin-top: 10%;
+    margin-bottom:10% ;*/
+}
+.main__elem-text
+{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.scoreboard__elem
+{
+   /* margin-left: 15%;
+    margin-right: 15%;*/
+    background-color: rgba(60, 63, 65, 0.23);
+    /*width: 45%;*/
+    color: rgba(230, 248, 255, 1);
+    border-color: #f1ffe6;
+    border: medium;
+    border-style: solid;
+    height : 20%;
+    text-align: center;
+    font-size:5vh;
+    /*border-radius:4vh;*/
+    vertical-align: middle;
+    /* padding-top: 4%;
+     padding-bottom: 4%;*/
+    margin-top: 1%;
+    overflow:hidden;
+}
+table
+{
+    width: 100%;
+}
+.js-back
+{
+    float: left;
+}
+.login__form
+{
+    margin-left: 15%;
+    margin-right: 15%;
+
+    width: 70%;
+    height:70%;
+    border-color: #f1ffe6;
+    border: medium;
+    border-style: solid;
+}
+.login__form__input-field
+{
+    background-color: rgba(60, 63, 65, 0.23);
+    color: rgba(230, 248, 255, 1);
+    margin-left: 10%;
+    margin-right: 10%;;
+    width: 80%;
+    height:15%;
+    margin-top:2%;
+    font-size: 7vh;
+}
+.login__form__submit
+{
+    margin-left: 10%;
+    margin-right: 10%;;
+    width: 80%;
+    height:15%;
+    margin-top:5%;
+    font-size: 7vh;
+}

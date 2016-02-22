@@ -1,3 +1,21 @@
-<fest:template xmlns:fest="http://fest.mail.ru">
-    <div id="main"></div>
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+    <fest:each iterate="json" index="i">
+        <fest:value>i</fest:value>=<fest:value>json[i]</fest:value><!-- foo=bar -->
+    </fest:each>
+    <div id="main">
+
+        <div class="header">
+            <h1>EpicArkanoid</h1>
+        </div>
+        <div class="main__elem js-scoreboard">
+            Score board
+        </div>
+        <div class="main__elem js-start-game">
+            Start Game.
+        </div>
+        <div class="main__elem js-login">
+            Login
+        </div>
+    </div>
+
 </fest:template>
