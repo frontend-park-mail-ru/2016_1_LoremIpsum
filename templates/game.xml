@@ -1,3 +1,4 @@
+
 <fest:template xmlns:fest="http://fest.mail.ru">
     <fest:include context="json.list" src="./back_button.xml"/>
     <div id="game"></div>
