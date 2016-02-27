@@ -1,11 +1,11 @@
-<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <fest:include context="json.list" src="./back_button.xml"/>
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="best_players">
+    <fest:include  src="./back_button.xml"/>
     <div id="scoreboard">
         <div class="header">
             <h1>Scoreboard</h1>
         </div>
         <table>
-            <fest:for iterate="json" index="i" value="v">
+            <fest:for iterate="best_players" index="i" value="v">
                  <tr>
                  <td><div class="scoreboard__elem">
                     <fest:value>v.username</fest:value>

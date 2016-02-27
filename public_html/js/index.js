@@ -12,7 +12,7 @@ var $page = $('#page'),
 function showScoreboardScreen() {
     hideMainScreen(); // Убиваем экран "Главный"
     currentScreen = 'scoreboard';
-    $page.html(scoreboardTmpl(best_players)); // Рендерим шаблон
+    $page.html(tmpl(best_players)); // Рендерим шаблон
     // Инициализируем обработчики событий
     $page.find('.js-back').on('click', showMainScreen);
 }

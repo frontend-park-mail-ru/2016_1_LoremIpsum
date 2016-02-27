@@ -31,12 +31,18 @@
     /*margin-top: 10%;
     margin-bottom:10% ;*/
 }
-.main__elem
+#main__container
 {
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: rgba(60, 63, 65, 0.23);
+    position: absolute;
     width: 70%;
+    left:15%;
+    right: 15%;
+}
+.main__container__elem
+{
+
+    background-color: rgba(60, 63, 65, 0.23);
+    width: 100%;
     color: rgba(230, 248, 255, 1);
     border-color: #f1ffe6;
     border: medium;
@@ -51,6 +57,7 @@
     margin-top: 1%;
     overflow:hidden;
     line-height: 16vh;
+    font-style: normal;
     /*margin: auto;
     /*margin-top: 10%;
     margin-bottom:10% ;*/
@@ -119,3 +126,4 @@ table
     margin-top:5%;
     font-size: 7vh;
 }
+

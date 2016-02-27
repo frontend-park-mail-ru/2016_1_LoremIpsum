@@ -5,24 +5,33 @@ define([
     Backbone,
     tmpl
 ){
+    var best_players=[{'username':'Username','score':'Score'},
+        {'username':'Dan', 'score':1000},
+        {'username':'Ann', 'score':900},
+        {'username':'Andrew', 'score':800},
+        {'username':'Alex', 'score':700},
+        {'username':'George', 'score':600}
+    ];
 
-    var View = Backbone.View.extend({
+    var ScoreboardView = Backbone.View.extend({
 
         template: tmpl,
         initialize: function () {
-            // TODO
+            this.$el=$('#page');
         },
         render: function () {
-            // TODO
+            this.$el.html(tmpl(best_players));
+            return this;
+
         },
         show: function () {
-            // TODO
+            this.render()
         },
         hide: function () {
-            // TODO
+            this.$el.empty()
         }
 
     });
 
-    return new View();
+    return new ScoreboardView();
 });

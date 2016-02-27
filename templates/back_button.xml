@@ -1,5 +1,7 @@
 <fest:template xmlns:fest="http://fest.mail.ru">
+    <a href="#main">
     <div class="js-back">
         <img src="./back.png" width="70px" height="70px"></img>
     </div>
+    </a>>
 </fest:template>
