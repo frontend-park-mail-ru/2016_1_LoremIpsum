@@ -19,6 +19,7 @@ define([
     }
     var Router = Backbone.Router.extend({
         routes: {
+            'main':'mainAction',
             'scoreboard': 'scoreboardAction',
             'game': 'gameAction',
             'login': 'loginAction',
@@ -26,6 +27,10 @@ define([
         },
         defaultActions: function () {
             views.main.render()
+        },
+        mainAction: function()
+        {
+            views.main.render();
         },
         scoreboardAction: function () {
             views.scoreboard.render()

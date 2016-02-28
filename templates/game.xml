@@ -1,5 +1,9 @@
 
 <fest:template xmlns:fest="http://fest.mail.ru">
     <fest:include  src="./back_button.xml"/>
-    <div id="game"></div>
+
+    <div id="game">
+        <canvas id="game__canvas" >
+        </canvas>
+    </div>
 </fest:template>
