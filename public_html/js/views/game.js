@@ -3,12 +3,14 @@ define([
     'tmpl/game',
     'models/ball',
     'models/platform',
+    'models/blocks',
     'underscore'
 ], function(
     Backbone,
     tmpl,
     BallModel,
-    PlatformModel
+    PlatformModel,
+    BlocksModel
 ){
 
     var PLATFORM_OFFSET_FACTOR=2;
@@ -32,6 +34,7 @@ define([
             $(document).on('keyup',this.keyup_handler.bind(this));
             this.ball = new BallModel();
             this.platform = new PlatformModel();
+            this.blocks = new BlocksModel(6,20);
         },
         render: function () {
             this.$el.html(tmpl);
@@ -46,6 +49,17 @@ define([
                   PLATFORM_OFFSET_FACTOR*this.platform.height;
             console.log(this.platform.y);
             console.log(this.canvas.height);
+
+            this.blocks.width = (this.canvas.width/20)-2;
+            this.blocks.height = 5;
+
+            for (var i =0; i<this.blocks.rows; ++i){
+                this.blocks.obj[i] = [];
+                for (var j =0; j<this.blocks.cols; ++j){
+                    this.blocks.obj[i][j] = 1;
+                }
+            }
+
 
             this.draw();
 
@@ -126,6 +140,17 @@ define([
                 }
             }
 
+
+            var rowHeight = this.blocks.height + this.blocks.padding;
+            var row = Math.floor(this.ball.y/(rowHeight));
+            var col = Math.floor(this.ball.x/(this.blocks.width + this.blocks.padding));
+            if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col > 0 && this.blocks.obj[row][col] === 1){
+                this.blocks.obj[row][col] = 0;
+                this.ball.vy = -this.ball.vy;
+            }
+
+
+
         },
         draw_ball:function ()
         {
@@ -140,8 +165,22 @@ define([
             this.contex.fillStyle = this.platform.color;
             this.contex.beginPath();
             this.contex.fillRect(this.platform.x, this.platform.y,
-                        this.platform.width,this.platform.height);
+                this.platform.width,this.platform.height);
             this.contex.closePath();
+        },
+        draw_blocks:function()
+        {
+            this.contex.fillStyle = this.blocks.color;
+            for (var i =0; i<this.blocks.rows; ++i){
+                for (var j =0; j<this.blocks.cols; ++j){
+                    if (this.blocks.obj[i][j] === 1){
+                        this.contex.beginPath();
+                        this.contex.fillRect(j * (this.blocks.width + this.blocks.padding),i * (this.blocks.height+this.blocks.padding), this.blocks.width, this.blocks.height)
+                        this.contex.strokeRect(j * (this.blocks.width + this.blocks.padding),i * (this.blocks.height+this.blocks.padding), this.blocks.width, this.blocks.height)
+                        this.contex.closePath();
+                    }
+                }
+            }
         },
         draw:function()
         {
@@ -151,6 +190,7 @@ define([
             this.draw_ball();
             this.move_platform();
             this.draw_platform();
+            this.draw_blocks();
             this.animationID=window.requestAnimationFrame(this.draw.bind(this));
         },
         reset_ball:function()
