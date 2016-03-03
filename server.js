@@ -6,12 +6,17 @@ var HOSTNAME = 'localhost',
     PORT = 8080,
     PUBLIC_DIR = __dirname + '/public_html';
 
-app.use(function (req) {
+var request_counter = 0;
+app.use(function (req, res, next) {
 	// Здесь нужно написать журналирование в формате
 	// (журналирование - вывод в консоль)
 	// [время] [номер запроса по счету]
-});
+	var request_time = new Date();
+	console.log('Time: ', request_time.toString());
+	console.log("Requests count: ", ++request_counter);
+	next();
 
+});
 app
 	.use('/', express.static(PUBLIC_DIR))
 	.use(errorHandler());
