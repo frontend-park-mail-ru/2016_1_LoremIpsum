@@ -27,9 +27,4 @@ app.listen(PORT,HOSTNAME,function () {
 });
 
 
-//app.use('/proxy', proxy('http://vk.com', {
-//	forwardPath: function(req, res) {
-//		console.log(1234);
-//		return require('url').parse(req.url).path;
-//	}
-//}));
+

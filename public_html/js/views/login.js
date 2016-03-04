@@ -11,18 +11,18 @@ define([
 
         template: tmpl,
         initialize: function () {
-            this.$el=$('#page');
+            this.render();
         },
         render: function () {
-            this.$el.html(tmpl());
+            this.$el.html(this.template());
             return this;
 
         },
         show: function () {
-            this.render()
+            $('#page').html(this.$el);
         },
         hide: function () {
-            this.$el.empty()
+            $('#page').empty();
         }
 
     });

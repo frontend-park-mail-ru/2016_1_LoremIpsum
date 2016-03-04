@@ -5,14 +5,16 @@ define([
 ){
 
     var BallModel = Backbone.Model.extend({
-        constructor: function()
+        initialize: function()
         {
 
+          this.x=0;
+          this.y=0
           this.vx=3;
           this.vy=-2;
           this.radius=4;
           this.color='red';
-          Backbone.Model.apply(this, arguments);
+          //Backbone.Model.apply(this, arguments);
 
         },
         //Верх,низ, левая и правая части шара

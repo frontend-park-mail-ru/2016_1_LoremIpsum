@@ -5,15 +5,15 @@ define([
 ){
 
     var PlatformModel = Backbone.Model.extend({
-        constructor: function()
+        initialize: function()
         {
             this.color = "white";
             this.width =  50;
             this.height = 5;
             this.vx = 6;
             this.direction = 0;
-
-            Backbone.Model.apply(this, arguments);
+            this.x=0;
+            this.y=0;
 
         },
         go_left:function()

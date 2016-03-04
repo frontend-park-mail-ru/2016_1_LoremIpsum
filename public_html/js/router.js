@@ -26,20 +26,20 @@ define([
             '*default': 'defaultActions'
         },
         defaultActions: function () {
-            views.main.render()
+            views.main.show()
         },
         mainAction: function()
         {
-            views.main.render();
+            views.main.show();
         },
         scoreboardAction: function () {
-            views.scoreboard.render()
+            views.scoreboard.show()
         },
         gameAction: function () {
-            views.game.render()
+            views.game.show()
         },
         loginAction: function () {
-            views.login.render()
+            views.login.show();
         }
     });
 

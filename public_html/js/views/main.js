@@ -9,20 +9,27 @@ define([
 ){
     var MainView = Backbone.View.extend({
 
+        //el:'#page',
+        events:
+        {
+            'click a':'hide'
+        },
         template: tmpl(),
         initialize: function () {
-            this.$el=$('#page');
+            //this.el='#page';
+            this.render();
         },
         render: function () {
             this.$el.html(tmpl());
+
             return this;
 
         },
         show: function () {
-            this.render()
+            $('#page').html(this.$el);
         },
         hide: function () {
-            this.$el.empty()
+            $('#page').empty();
         }
 
     });

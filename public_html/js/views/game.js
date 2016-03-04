@@ -21,28 +21,28 @@ define([
     var ARROW_DOWN=40;
     var GameView = Backbone.View.extend({
 
-        template: tmpl(),
+        template: tmpl,
         events:{
             'click .js-back':'hide',
             'keypress':'keydown_handler'
         },
         initialize: function () {
-            this.$el=$('#page');
-            //Underscore.bindAll(this, 'on_keypress');
-           // $(document).bind('keypress', this.on_keypress);
-            $(document).on('keydown',this.keydown_handler.bind(this));
-            $(document).on('keyup',this.keyup_handler.bind(this));
+
             this.ball = new BallModel();
             this.platform = new PlatformModel();
             this.blocks = new BlocksModel(6,20);
+            this.render();
         },
         render: function () {
-            this.$el.html(tmpl);
-           //
+
+            this.$el.html(this.template());
+            console.log(this.template());
+            console.log(this.$el);
+            $('#page').html(this.$el);
             this.canvas = document.getElementById('game__canvas');
             this.contex = this.canvas.getContext('2d');
             //console.log(this.contex);
-            this.reset_ball()
+            this.reset_ball();
 
             this.platform.x= this.canvas.width/2 - this.platform.width/2;
             this.platform.y= this.canvas.height -
@@ -50,33 +50,30 @@ define([
             console.log(this.platform.y);
             console.log(this.canvas.height);
 
+
             this.blocks.width = (this.canvas.width/20)-2;
             this.blocks.height = 5;
 
-            for (var i =0; i<this.blocks.rows; ++i){
-                this.blocks.obj[i] = [];
-                for (var j =0; j<this.blocks.cols; ++j){
-                    this.blocks.obj[i][j] = 1;
-                }
-            }
-
-
-            this.draw();
-
         },
         show: function () {
-            this.render();
+            $('#page').html(this.$el);
+            $(document).on('keydown',this.keydown_handler.bind(this));
+            $(document).on('keyup',this.keyup_handler.bind(this));
+            this.reset_ball();
+            this.reset_blocks();
+            this.draw();
             //console.log(this.ball )
 
         },
         hide: function () {
             window.cancelAnimationFrame(this.animationID);
-            $(document).off('keyup');
-            $(document).off('keydown');
-            this.$el.empty();
+            $(document).off('keyup',this.keydown_handler.bind(this));
+            $(document).off('keydown',this.keyup_handler.bind(this));
+            $('#page').empty();
         },
         keydown_handler:function(event)
         {
+
             //alert('Event!' + event.keyCode);
             if(event.keyCode == ARROW_LEFT)
             {
@@ -86,10 +83,7 @@ define([
             {
                 this.platform.go_right();
             }
-            else if(event.keyCode == ARROW_DOWN)
-            {
-                this.platform.stop();
-            }
+
         },
         keyup_handler:function(event)
         {
@@ -144,7 +138,7 @@ define([
             var rowHeight = this.blocks.height + this.blocks.padding;
             var row = Math.floor(this.ball.y/(rowHeight));
             var col = Math.floor(this.ball.x/(this.blocks.width + this.blocks.padding));
-            if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col > 0 && this.blocks.obj[row][col] === 1){
+            if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col >= 0 && this.blocks.obj[row][col] === 1){
                 this.blocks.obj[row][col] = 0;
                 this.ball.vy = -this.ball.vy;
             }
@@ -199,8 +193,18 @@ define([
             this.ball.y=this.canvas.height/2;
             this.ball.vx =BALL_DEFAULT_VX;
             this.ball.vy =BALL_DEFAULT_VY;
+        },
+        reset_blocks:function()
+        {
+            for (var i =0; i<this.blocks.rows; ++i)
+            {
+                this.blocks.obj[i] = [];
+                for (var j =0; j<this.blocks.cols; ++j)
+                {
+                    this.blocks.obj[i][j] = 1;
+                }
+            }
         }
-
 
 
 

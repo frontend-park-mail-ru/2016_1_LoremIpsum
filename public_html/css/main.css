@@ -4,10 +4,11 @@ html { overflow: hidden; }
 {
 
     background: url("../background.png");
-    position: relative;
     width: 100vw;
     height: 100vh;
     background-size: 100%, 100%;
+    overflow:hidden;
+    position:fixed;
 }
 #main, #scoreboard, #login,#game
 {
@@ -135,8 +136,6 @@ table
     border-width: 2px;
     padding-left: 0;
     padding-right: 0;
-    /*margin-left: auto;
-    margin-right: auto*/;
     width:98%;
     left:1%;
     right:1%;
