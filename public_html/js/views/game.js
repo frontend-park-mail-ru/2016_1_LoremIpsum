@@ -19,12 +19,12 @@ define([
     var BALL_DEFAULT_VX = 3;
     var ARROW_RIGHT=39;
     var ARROW_DOWN=40;
+
     var GameView = Backbone.View.extend({
 
         template: tmpl,
         events:{
             'click .js-back':'hide',
-            'keypress':'keydown_handler'
         },
         initialize: function () {
 
@@ -41,15 +41,9 @@ define([
             $('#page').html(this.$el);
             this.canvas = document.getElementById('game__canvas');
             this.contex = this.canvas.getContext('2d');
-            //console.log(this.contex);
-            this.reset_ball();
-
             this.platform.x= this.canvas.width/2 - this.platform.width/2;
             this.platform.y= this.canvas.height -
                   PLATFORM_OFFSET_FACTOR*this.platform.height;
-            console.log(this.platform.y);
-            console.log(this.canvas.height);
-
 
             this.blocks.width = (this.canvas.width/20)-2;
             this.blocks.height = 5;
@@ -62,7 +56,6 @@ define([
             this.reset_ball();
             this.reset_blocks();
             this.draw();
-            //console.log(this.ball )
 
         },
         hide: function () {
@@ -73,8 +66,6 @@ define([
         },
         keydown_handler:function(event)
         {
-
-            //alert('Event!' + event.keyCode);
             if(event.keyCode == ARROW_LEFT)
             {
                 this.platform.go_left();
@@ -127,10 +118,7 @@ define([
                 }
                 else
                 {
-                    //alert('You lose');
                     this.reset_ball();
-                    //this.hide();
-                    //Backbone.history.navigate('main',true);
                 }
             }
 
@@ -142,7 +130,6 @@ define([
                 this.blocks.obj[row][col] = 0;
                 this.ball.vy = -this.ball.vy;
             }
-
 
 
         },
@@ -205,9 +192,6 @@ define([
                 }
             }
         }
-
-
-
 
     });
 

@@ -9,12 +9,7 @@ define([
     ScoreModel,
     ScoreCollection
 ){
-    /*var best_players=new ScoreCollection([{'username':'Username','score':'Score'},
-        {username:'Dan', score:1000},
-        {username:'Ann', score:2900},
-        {username:'Andrew', score:1800},
-        {username:'Alex', score:7300},
-        {username:'George', score:600}]);*/
+
 
     var ScoreboardView = Backbone.View.extend({
 
