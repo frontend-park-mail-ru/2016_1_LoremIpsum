@@ -1,13 +1,13 @@
 define([
     'backbone',
     'tmpl/login',
-    'jquery',
-    'utils/data_validator'
+    'utils/data_validator',
+    'models/session'
 ], function(
     Backbone,
     tmpl,
-    $,
-    validate
+    validate,
+    session
 ){
 
 
@@ -28,13 +28,17 @@ define([
         },
         error_templates:
         {
-            'Invalid':function(field_name)
+            'INVALID':function(field_name)
             {
                 return 'Invalid ' + field_name;
             },
-            'Required':function(field_name)
+            'REQUIRED':function(field_name)
             {
                 return  field_name + ' is required';
+            },
+            'SERVER_ERROR':function()
+            {
+                return "Invalid email or password";
             }
         },
 
@@ -48,10 +52,12 @@ define([
         },
         show: function () {
             $('#page').html(this.$el);
+            this.delegateEvents();
             this.form = document.forms['login'];
             //$("#login__form").on('submit',this.submit_handler.bind(this));
         },
         hide: function () {
+            this.undelegateEvents();
             $('#page').empty();
             //$("#login__form").off('click',this.submit_handler.bind(this));
         },
@@ -60,7 +66,12 @@ define([
             event.preventDefault();
             if(!this.error_message(validate(this.form,VALIDATED_FIELDS)))
             {
-                //отправка формы
+                var login_fail = session.login(this.form.elements['email'].value,
+                               this.form.elements['password'].value);
+                self = this;
+                $(window).ajaxError(function(){
+                    self.error_message({'type':'SERVER_ERROR'});
+                });
             }
 
         },

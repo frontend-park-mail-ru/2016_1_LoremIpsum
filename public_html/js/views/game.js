@@ -36,8 +36,6 @@ define([
         render: function () {
 
             this.$el.html(this.template());
-            console.log(this.template());
-            console.log(this.$el);
             $('#page').html(this.$el);
             this.canvas = document.getElementById('game__canvas');
             this.contex = this.canvas.getContext('2d');
@@ -53,16 +51,23 @@ define([
             $('#page').html(this.$el);
             $(document).on('keydown',this.keydown_handler.bind(this));
             $(document).on('keyup',this.keyup_handler.bind(this));
+            this.delegateEvents();
             this.reset_ball();
             this.reset_blocks();
-            this.draw();
+            //this.draw();
+            this.game_is_running=true;
+            this.animationID=window.requestAnimationFrame(this.draw.bind(this));
 
         },
         hide: function () {
+
             window.cancelAnimationFrame(this.animationID);
             $(document).off('keyup',this.keydown_handler.bind(this));
             $(document).off('keydown',this.keyup_handler.bind(this));
+            this.game_is_running=false;
+            this.undelegateEvents();
             $('#page').empty();
+
         },
         keydown_handler:function(event)
         {
@@ -165,14 +170,15 @@ define([
         },
         draw:function()
         {
-
-            this.contex.clearRect(0,0,this.canvas.width,this.canvas.height);
-            this.move_ball();
-            this.draw_ball();
-            this.move_platform();
-            this.draw_platform();
-            this.draw_blocks();
-            this.animationID=window.requestAnimationFrame(this.draw.bind(this));
+            if(this.game_is_running) {
+                this.contex.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.move_ball();
+                this.draw_ball();
+                this.move_platform();
+                this.draw_platform();
+                this.draw_blocks();
+                window.requestAnimationFrame(this.draw.bind(this));
+            }
         },
         reset_ball:function()
         {

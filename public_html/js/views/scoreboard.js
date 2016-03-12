@@ -34,10 +34,12 @@ define([
 
         },
         show: function () {
-            $('#page').html(this.$el)
+            $('#page').html(this.$el);
+            this.delegateEvents();
         },
         hide: function () {
-            $('#page').empty()
+            $('#page').empty();
+            this.undelegateEvents();
         }
 
     });

@@ -3,13 +3,15 @@ define([
     'views/main',
     'views/scoreboard',
     'views/login',
-    'views/game'
+    'views/game',
+    'models/session'
 ], function(
     Backbone,
     MainView,
     ScoreboardView,
     LoginView,
-    GameView
+    GameView,
+    session
 ){
 
     var views ={main:MainView,

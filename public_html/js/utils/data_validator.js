@@ -11,7 +11,7 @@ define([
     var REGEX_NOT_FOUND=-1;
     var REGEX_DICT =
     {
-      'email':/(\d | \w)+@(\d |\w)+\.(\w)*/,
+      'email':/(\d|\w)+\@(\d|\w)+\..*/,
       'password':/[0-9a-zA-Z_!@#$%^&*()]+/,
       'username':/[0-9a-zA-Z_!@#$%^&*()]+/
     };
@@ -19,20 +19,20 @@ define([
     {
         if (!data.length  && options['required'])
         {
-            return "Required";
+            return "REQUIRED";
         }
 
         if(data.search(REGEX_DICT[options['type']]) === REGEX_NOT_FOUND)
         {
-            return "Invalid";
+            return "INVALID";
         }
         if(options['min_length'] && data.length < options['min_length'])
         {
-            return "To short";
+            return "TO SHORT";
         }
         if(options['max_length'] && data.length  > options['max_length'])
         {
-            return "To long";
+            return "TO LONG";
         }
 
 

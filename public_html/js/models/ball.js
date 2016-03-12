@@ -9,7 +9,7 @@ define([
         {
 
           this.x=0;
-          this.y=0
+          this.y=0;
           this.vx=3;
           this.vy=-2;
           this.radius=4;

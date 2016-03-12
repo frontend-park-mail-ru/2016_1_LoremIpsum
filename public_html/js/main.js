@@ -24,5 +24,6 @@ define([
     Backbone,
     router
 ){
+
     Backbone.history.start();
 });
