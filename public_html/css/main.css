@@ -1,14 +1,17 @@
 /* TODO */
 html { overflow: hidden; }
+a {
+    text-decoration:none;
+}
 #page
 {
-
     background: url("../background.png");
+    position: fixed;
+    top:0;
+    left:0;
     width: 100vw;
     height: 100vh;
     background-size: 100%, 100%;
-    overflow:hidden;
-    position:fixed;
 }
 #main, #scoreboard, #login,#game
 {
@@ -16,9 +19,9 @@ html { overflow: hidden; }
     position: absolute;
     width: 90%;
     height: 90%;
-     left: 5%;
-     right: 5%;
-     top :5%;
+    left: 5%;
+    right: 5%;
+    top :5%;
     bottom: 5%;
 }
 .header
@@ -33,6 +36,7 @@ html { overflow: hidden; }
     /*margin-top: 10%;
     margin-bottom:10% ;*/
 }
+
 #main__container
 {
     position: absolute;
@@ -54,8 +58,9 @@ html { overflow: hidden; }
     font-size:5vw;
     border-radius:4vh;
     vertical-align: middle;
-   /* padding-top: 4%;
-    padding-bottom: 4%;*/
+
+    /* padding-top: 4%;
+     padding-bottom: 4%;*/
     margin-top: 1%;
     overflow:hidden;
     line-height: 16vh;
@@ -66,13 +71,14 @@ html { overflow: hidden; }
 }
 .main__elem-text
 {
+
     margin-top: 10%;
     margin-bottom: 10%;
 }
 .scoreboard__elem
 {
-   /* margin-left: 15%;
-    margin-right: 15%;*/
+    /* margin-left: 15%;
+     margin-right: 15%;*/
     background-color: rgba(60, 63, 65, 0.23);
     /*width: 45%;*/
     color: rgba(230, 248, 255, 1);
@@ -104,9 +110,6 @@ table
 
     width: 70%;
     height:70%;
-    border-color: #f1ffe6;
-    border: medium;
-    border-style: solid;
 }
 .login__form__input-field
 {
@@ -118,6 +121,8 @@ table
     height:15%;
     margin-top:2%;
     font-size: 7vh;
+    border-radius:10px;
+
 }
 .login__form__submit
 {
@@ -136,9 +141,52 @@ table
     border-width: 2px;
     padding-left: 0;
     padding-right: 0;
+    /*margin-left: auto;
+    margin-right: auto*/;
     width:98%;
     left:1%;
     right:1%;
     position:absolute;
     display: block; /*width: 95vw;*/
+}
+
+#form__error-block
+{
+    margin-top:10px;
+    min-width: 500px;
+    min-height: 100px;
+    width:20vw;
+    height:16vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    visibility: hidden;
+    font-size: 2.6em;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 8px;
+    text-align: center;
+
+}
+.login__form__submit
+{
+    background-color: rgba(80,200,120, 0.4);
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:10px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#FFFFFF;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+.login__form__submit:hover
+{
+    background-color:rgba(92,191,42, 0.4);
+}
+.login__form__submit:active
+{
+    position:relative;
+    top:1px;
 }

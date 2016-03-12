@@ -16,7 +16,7 @@ define([
                 scoreboard:ScoreboardView,
                 game:GameView,
                 login:LoginView
-    }
+    };
     var Router = Backbone.Router.extend({
         routes: {
             'main':'mainAction',
