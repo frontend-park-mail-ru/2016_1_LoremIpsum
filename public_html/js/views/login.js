@@ -15,9 +15,9 @@ define([
 
     var PASSWORD_VALIDATE_OPTIONS={'required':true,
                                      'type':'password'};
-    var EMAIL_VALIDATE_OPTIONS={'required':true,
-                                   'type':'email'};
-    var VALIDATED_FIELDS ={'email':EMAIL_VALIDATE_OPTIONS,
+    var USERNAME_VALIDATE_OPTIONS={'required':true,
+                                   'type':'username'};
+    var VALIDATED_FIELDS ={'username':USERNAME_VALIDATE_OPTIONS,
                            'password':PASSWORD_VALIDATE_OPTIONS};
     var DELAY =10;
 
@@ -68,14 +68,16 @@ define([
             if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS),
                                'error_templates':this.error_templates}))
             {
-                session.login(this.form.elements['email'].value,
+                session.login(this.form.elements['username'].value,
                                this.form.elements['password'].value);
-                var self = this;
                 window.setTimeout(function(){
                     var login_fail= session.request_error;
-                    error_message({'validation_result':login_fail,
-                        'error_templates':self.error_templates});
-                },DELAY);// Задержка нужна, так как ajax работает асинхронно
+                    if(!error_message({'validation_result':login_fail,
+                        'error_templates':this.error_templates})){
+                        this.hide();
+                        Backbone.history.navigate('main',true);
+                    }
+                }.bind(this),DELAY);// Задержка нужна, так как ajax работает асинхронно
             }
 
         }

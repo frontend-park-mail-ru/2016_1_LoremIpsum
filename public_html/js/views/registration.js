@@ -78,15 +78,19 @@ define([
             if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS, MUST_MATCH),
                     'error_templates':this.error_templates}))
             {
-                session.login(this.form.elements['email'].value,
+                session.register(this.form.elements['username'].value,
                              this.form.elements['password'].value,
-                             this.form.elements['username'].value);
-                var self = this;
+                             this.form.elements['email'].value);
+
+
                 window.setTimeout(function(){
                     var login_fail= session.request_error;
-                    error_message({'validation_result':login_fail,
-                        'error_templates':self.error_templates});
-                },DELAY);// Задержка нужна, так как ajax работает асинхронно
+                    if(!error_message({'validation_result':login_fail,
+                            'error_templates':this.error_templates})){
+                        this.hide();
+                        Backbone.history.navigate('main',true);
+                    }
+                }.bind(this),DELAY);// Задержка нужна, так как ajax работает асинхронно
             }
 
         }
