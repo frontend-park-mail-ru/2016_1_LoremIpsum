@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'tmpl/login',
+    'tmpl/registration',
     'utils/data_validator',
     'utils/error_message',
     'models/session'
@@ -14,15 +14,17 @@ define([
 
 
     var PASSWORD_VALIDATE_OPTIONS={'required':true,
-                                     'type':'password'};
+        'type':'password', 'min_length':5};
     var EMAIL_VALIDATE_OPTIONS={'required':true,
-                                   'type':'email'};
+        'type':'email' };
+    var USERNAME_OPTIONS = {'required':true,'type':'username', 'max_length':20};
     var VALIDATED_FIELDS ={'email':EMAIL_VALIDATE_OPTIONS,
-                           'password':PASSWORD_VALIDATE_OPTIONS};
+        'password':PASSWORD_VALIDATE_OPTIONS, 'username':USERNAME_OPTIONS};
+    var MUST_MATCH ={'password':'password2'};
     var DELAY =10;
 
 
-    var LoginView = Backbone.View.extend({
+    var RegistrationView = Backbone.View.extend({
         template: tmpl,
         events:
         {
@@ -38,9 +40,18 @@ define([
             {
                 return  field_name + ' is required';
             },
-            'SERVER_ERROR':function()
+            'MUST_MATCH':function()
             {
-                return "Invalid email or password";
+                return "Password don't match"
+            },
+            'SERVER_ERROR':function() {
+                return "Some error on server";
+            },
+            'TO LONG':function(data){
+                return data['field'] +" max length is " + data['max_length'];
+            },
+            'TO SHORT': function(data){
+                return data['field'] +" min length is " + data['min_length'];
             }
         },
 
@@ -55,8 +66,7 @@ define([
         show: function () {
             $('#page').html(this.$el);
             this.delegateEvents();
-            this.form = document.forms['login'];
-            //$("#login__form").on('submit',this.submit_handler.bind(this));
+            this.form = document.forms['register'];
         },
         hide: function () {
             this.undelegateEvents();
@@ -65,11 +75,12 @@ define([
         submit_handler: function(event)
         {
             event.preventDefault();
-            if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS),
-                               'error_templates':this.error_templates}))
+            if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS, MUST_MATCH),
+                    'error_templates':this.error_templates}))
             {
                 session.login(this.form.elements['email'].value,
-                               this.form.elements['password'].value);
+                             this.form.elements['password'].value,
+                             this.form.elements['username'].value);
                 var self = this;
                 window.setTimeout(function(){
                     var login_fail= session.request_error;
@@ -83,5 +94,5 @@ define([
 
     });
 
-    return new LoginView();
+    return new RegistrationView();
 });

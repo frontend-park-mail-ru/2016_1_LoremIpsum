@@ -3,20 +3,30 @@
  */
 define([
     'backbone',
-    'models/validation_error'
+    'models/validation_error',
+    'underscore'
 ], function(
     Backbone,
-    ValidationError
+    ValidationError,
+    _
 ){
+
 
     var SessionModel = Backbone.Model.extend({
 
+
         defaults:
         {
-          'user' : null
+          'user' : null,
+          'request_error':null
         },
+        initialize:function()
+        {
+            _.bindAll(this,'login_error');
+        }
+        ,
         login: function(email, password) {
-            var result;
+
             $.ajax({
                 method: 'POST',
                 url: '/session',
@@ -24,15 +34,10 @@ define([
                     'email': email,
                     'password': password
                 },
-                success: function (data) {
-                    this.user = new User (data[key],email);
-                },
-                error: function () {
-                    result= new ValidationError('SERVER_ERROR','');
-                }
-
+                success: this.login_success,
+                error:this.login_error
             });
-            return result;
+
         },
         logout: function() {
             $.ajax({
@@ -40,9 +45,6 @@ define([
                 url: '/session',
                 success: function() {
                     this.user = null;
-                },
-                error: function () {
-                    //return 'SERVER_ERROR';
                 }
             });
         },
@@ -50,16 +52,12 @@ define([
             $.ajax({
                 method: 'POST',
                 url: '/user',
-                success: function () {
-                    this.user = new User (data[key],email);
-                },
+                success: this.login_success,
+                error:this.login_error,
                 data: {
                     'login': login,
                     'password': password,
                     'email': email
-                },
-                error: function () {
-
                 }
             });
         },
@@ -68,12 +66,21 @@ define([
                 method: 'GET',
                 url: '/session',
                 success: function () {
-                    return true;
+                    this.request_error = null;
                 },
                 error: function () {
-                    return false;
+                    this.request_error = new ValidationError();
                 }
             });
+        },
+        login_success:function()
+        {
+            this.request_error = null;
+            this.user = new User (data['id'],email);
+        },
+        login_error:function()
+        {
+            this.request_error= new ValidationError('SERVER_ERROR',null);
         }
 
     });

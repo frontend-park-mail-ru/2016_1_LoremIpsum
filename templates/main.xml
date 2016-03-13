@@ -1,7 +1,4 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <fest:each iterate="json" index="i">
-        <fest:value>i</fest:value>=<fest:value>json[i]</fest:value><!-- foo=bar -->
-    </fest:each>
     <div id="main">
 
         <div class="header">
@@ -22,6 +19,11 @@
             <div class="main__container__elem js-login">
                 Login
             </div>
+            </a>
+            <a href="#registration">
+                <div class="main__container__elem js-login">
+                    Registration
+                </div>
             </a>
         </div>
     </div>

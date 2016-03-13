@@ -15,24 +15,28 @@ define([
       'password':/[0-9a-zA-Z_!@#$%^&*()]+/,
       'username':/[0-9a-zA-Z_!@#$%^&*()]+/
     };
-    var field_validate = function(data,options)
+    var field_validate = function(data,options,field)
     {
         if (!data.length  && options['required'])
         {
-            return "REQUIRED";
+            return new ValidationError("REQUIRED",field);
         }
 
         if(data.search(REGEX_DICT[options['type']]) === REGEX_NOT_FOUND)
         {
-            return "INVALID";
+            return new ValidationError("INVALID",field);
+
         }
         if(options['min_length'] && data.length < options['min_length'])
         {
-            return "TO SHORT";
+            return new ValidationError("TO SHORT",{'field':field,
+                                       'min_length':options['min_length']});
+
         }
         if(options['max_length'] && data.length  > options['max_length'])
         {
-            return "TO LONG";
+            return new ValidationError("TO LONG",{'field':field,
+                'max_length':options['max_length']});
         }
 
 
@@ -43,10 +47,10 @@ define([
         for (field in field_options)
         {
             validate_result = field_validate(form.elements[field].value,
-                                                    field_options[field]);
+                                                    field_options[field],field);
             if(validate_result)
             {
-                return new ValidationError(validate_result,field);
+                return validate_result;
 
             }
 
@@ -57,7 +61,7 @@ define([
                 form.elements[key].value)
             {
                 return new ValidationError
-                            ('must_match',{key:must_match[key]});
+                            ('MUST_MATCH',{key:must_match[key]});
             }
 
 
