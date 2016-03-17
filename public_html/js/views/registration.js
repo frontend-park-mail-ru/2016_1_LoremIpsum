@@ -3,16 +3,16 @@ define([
     'tmpl/registration',
     'utils/data_validator',
     'utils/error_message',
-    'models/session'
+    'models/session',
+    'views/base'
 ], function(
     Backbone,
     tmpl,
     validate,
     error_message,
-    session
+    session,
+    BaseView
 ){
-
-
     var PASSWORD_VALIDATE_OPTIONS={'required':true,
         'type':'password', 'min_length':5};
     var EMAIL_VALIDATE_OPTIONS={'required':true,
@@ -24,65 +24,55 @@ define([
     var DELAY =10;
 
 
-    var RegistrationView = Backbone.View.extend({
+    var RegistrationView = BaseView.extend({
+        el:'#registration',
         template: tmpl,
-        events:
-        {
+        events: {
             'submit':'submit_handler'
         },
-        error_templates:
-        {
-            'INVALID':function(field_name)
-            {
-                return 'Invalid ' + field_name;
+        error_templates: {//шаблоны соощений об ошибках
+            'INVALID':function(data) {
+                return 'Invalid ' + data['field_name'];
             },
-            'REQUIRED':function(field_name)
-            {
-                return  field_name + ' is required';
+            'REQUIRED':function(data) {
+                return  data['field_name'] + ' is required';
             },
-            'MUST_MATCH':function()
-            {
+            'MUST_MATCH':function() {
                 return "Password don't match"
             },
             'SERVER_ERROR':function() {
                 return "Some error on server";
             },
-            'TO LONG':function(data){
+            'TOO LONG':function(data){
                 return data['field'] +" max length is " + data['max_length'];
             },
-            'TO SHORT': function(data){
+            'TOO SHORT': function(data){
                 return data['field'] +" min length is " + data['min_length'];
             }
         },
-
         initialize: function () {
-            this.render();
-
+            BaseView.prototype.initialize.call(this);
         },
         render: function () {
-            this.$el.html(this.template());
-            return this;
+            BaseView.prototype.render.call(this);
         },
         show: function () {
-            $('#page').html(this.$el);
-            this.delegateEvents();
-            this.form = document.forms['register'];
+            BaseView.prototype.show.call(this);
+            if(!this.form)
+                this.form = this.$('.registration__form')[0];
+            console.log(this.form);
         },
         hide: function () {
-            this.undelegateEvents();
-            $('#page').empty();
+            BaseView.prototype.hide.call(this);
         },
-        submit_handler: function(event)
-        {
+        submit_handler: function(event) {
             event.preventDefault();
             if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS, MUST_MATCH),
-                    'error_templates':this.error_templates}))
+                                                           'error_templates':this.error_templates}))
             {
                 session.register(this.form.elements['username'].value,
-                             this.form.elements['password'].value,
-                             this.form.elements['email'].value);
-
-
+                                 this.form.elements['password'].value,
+                                 this.form.elements['email'].value);
                 window.setTimeout(function(){
                     var login_fail= session.request_error;
                     if(!error_message({'validation_result':login_fail,
@@ -92,11 +82,7 @@ define([
                     }
                 }.bind(this),DELAY);// Задержка нужна, так как ajax работает асинхронно
             }
-
         }
-
-
     });
-
     return new RegistrationView();
 });

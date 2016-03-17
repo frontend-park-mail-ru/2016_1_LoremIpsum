@@ -1,51 +1,38 @@
 define([
     'backbone',
     '../tmpl/main',
-    'models/session'
+    'models/session',
+    'views/base'
 ], function(
     Backbone,
     tmpl,
-    session
+    session,
+    BaseView
 ){
     var DELAY = 10;
-    var MainView = Backbone.View.extend({
-
-        events:
-        {
-            'click a':'hide',
-            'click .js-logout':'logout'
+    var MainView = BaseView.extend({
+        el:'#main',
+        events: {
+            'click a':'hide'
         },
         template: tmpl,
         initialize: function () {
-            this.render();
+            BaseView.prototype.initialize.call(this);
         },
-        render: function (is_auth) {
+        render: function () {
             session.is_authinficated();
             window.setTimeout(function(){
                 this.$el.html(this.template({'isAuth':!session.request_error}) );
-
+                console.log(this.$el.html());
             }.bind(this),DELAY);// Задержка нужна, так как ajax работает асинхронно
             return this;
         },
         show: function () {
-
-            this.render();
-            this.delegateEvents();
-            $('#page').html(this.$el);
+            BaseView.prototype.show.call(this);
         },
         hide: function () {
-            this.undelegateEvents();
-            $('#page').empty();
-        },
-        logout: function(event){
-            event.preventDefault();
-            session.logout();
-            window.setTimeout(function(){
-                this.show();
-            }.bind(this),DELAY);
+            BaseView.prototype.hide.call(this);
         }
-
     });
-
     return new MainView();
 });

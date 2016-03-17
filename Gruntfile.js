@@ -1,8 +1,6 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-
-
         shell: {
             options: {
                 stdout: true,
@@ -10,15 +8,9 @@ module.exports = function (grunt) {
             },
             server: {
                 command: 'java -jar server.jar 8080'
+                //command: 'node server.js'
             }
         },
-
-	//	watch: {
-	//		// запуск watcher'a, который следит за изенениями файлов  templates/*.xml
-	//		// и если они изменяются, то запускает таск сборки шаблонов (grunt fest)
-	//	},
-
-
 		fest: {
             templates: {
                 files: [{
@@ -50,7 +42,8 @@ module.exports = function (grunt) {
             server: {
                 files: [
                     'public_html/js/**/*.js',
-                    'public_html/css/**/*.css'
+                    'public_html/css/**/*.css',
+                    'public_html/index.html'
                 ],
                 options: {
                     livereload: true
@@ -65,9 +58,7 @@ module.exports = function (grunt) {
         },
         qunit: {
             all: ['./public_html/tests/index.html']
-
         }
-
     });
 
 	// подключть все необходимые модули

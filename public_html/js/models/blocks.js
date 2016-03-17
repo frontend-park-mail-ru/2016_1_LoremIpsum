@@ -10,7 +10,7 @@ define([
             this.rows = rows;
             this.cols = cols;
             this.padding = 2;
-            this.obj = [];
+            this.block_matrix = [];
             this.color='orange';
             this.width = 0;
             this.height = 0;

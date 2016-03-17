@@ -7,19 +7,15 @@ define([
     Backbone
 ){
 
-    var DEFAULTS =
-    {
+    var DEFAULTS = {
         'timeout': 3000,
         'error_block_selector':'#form__error-block',
-
     };
 
     var  error_message = function(options)
     {
-        if( options['validation_result'])
-        {
-            for (key in DEFAULTS)
-            {
+        if( options['validation_result']) {
+            for (key in DEFAULTS) {
                 if(options[key] === undefined) {
                     options[key]=DEFAULTS[key];
                 }
@@ -29,14 +25,13 @@ define([
             $(options['error_block_selector'] ).fadeIn()
                 .css('visibility', 'visible')
                 .text(options['error_templates'][error_type](data));
+
             window.setTimeout(function(){
                 $(options['error_block_selector']).fadeOut();
             }, options['timeout']);
             return true;
         }
-
     };
-
     return error_message;
 });
 

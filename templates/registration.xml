@@ -1,6 +1,6 @@
 <fest:template xmlns:fest="http://fest.mail.ru">
 
-    <div id="registration">
+    <!--<div id="registration">-->
         <fest:include  src="./back_button.xml"/>
         <div class="header">
             <h2>SignUp</h2>
@@ -21,5 +21,5 @@
             </div>
         </form>
 
-    </div>
+    <!--</div>-->
 </fest:template>

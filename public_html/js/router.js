@@ -16,41 +16,53 @@ define([
     session
 ){
 
+    var DELAY = 10;
     var views ={main:MainView,
                 scoreboard:ScoreboardView,
                 game:GameView,
                 login:LoginView,
                 registration:RegistrationView
     };
+    var current_view = views.main;
     var Router = Backbone.Router.extend({
         routes: {
             'main':'mainAction',
             'scoreboard': 'scoreboardAction',
             'game': 'gameAction',
             'login': 'loginAction',
+            'logout': 'logoutAction',
             'registration': 'registrationAction',
             '*default': 'defaultActions'
         },
-        defaultActions: function () {
-            views.main.show()
+        baseAction:function(view) {
+            current_view.hide();
+            current_view=view;
+            current_view.show();
         },
-        mainAction: function()
-        {
-            views.main.show();
+        mainAction: function() {
+            this.baseAction(views.main);
         },
         scoreboardAction: function () {
-            views.scoreboard.show()
+            this.baseAction(views.scoreboard);
         },
         gameAction: function () {
-            views.game.show()
+            this.baseAction(views.game);
         },
         loginAction: function () {
-            views.login.show();
+            this.baseAction(views.login);
         },
         registrationAction: function() {
-            views.registration.show();
+            this.baseAction(views.registration);
+        },
+        logoutAction: function(){
+            session.logout();
+            window.setTimeout(function(){
+                Backbone.history.navigate('main',true);
+            },DELAY);
+        },
+        defaultActions: function () {
+            this.mainAction();
         }
     });
-
     return new Router();
 });

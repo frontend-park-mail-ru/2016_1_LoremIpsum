@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <div id="main">
+    <!--<div id="main">-->
 
         <div class="header">
             <h1>EpicArkanoid</h1>
@@ -39,8 +39,8 @@
                         Registration
                     </div>
                 </a>
-            </fest:if>g
+            </fest:if>
         </div>
-    </div>
+    <!--</div>-->
 
 </fest:template>

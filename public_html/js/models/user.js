@@ -15,8 +15,6 @@ define([
              this.email =_email;
              this.username=_username;
          }
-
-
     });
 
     return UserModel;

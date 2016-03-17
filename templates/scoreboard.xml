@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="best_players">
-    <div id="scoreboard">
+    <!--<div id="scoreboard">-->
         <fest:include  src="./back_button.xml"/>
         <div class="header">
             <h1>Scoreboard</h1>
@@ -17,5 +17,5 @@
                  </tr>
         </fest:for>
         </table>
-    </div>
+    <!--</div>-->
 </fest:template>

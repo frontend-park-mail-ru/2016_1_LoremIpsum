@@ -2,16 +2,18 @@ define([
     'backbone',
     'tmpl/scoreboard',
     'models/score',
-    'collections/scores'
+    'collections/scores',
+    'views/base'
 ], function(
     Backbone,
     tmpl,
     ScoreModel,
-    ScoreCollection
+    ScoreCollection,
+    BaseView
 ){
 
 
-    var ScoreboardView = Backbone.View.extend({
+    var ScoreboardView = BaseView.extend({
 
         best_players :new ScoreCollection([{'username':'Username','score':'Score'},
             {username:'Dan', score:1000},
@@ -21,12 +23,13 @@ define([
             {username:'George', score:600},
             {username:'Qwerty', score:2600},
             {username:'Master', score:Infinity},]),
+        el:'#scoreboard',
         template: tmpl,
         events: {
             'click .js-back': 'hide'
         },
         initialize: function () {
-            this.render();
+            BaseView.prototype.initialize.call(this);
         },
         render: function () {
             this.$el.html(this.template(this.best_players.toJSON()));
@@ -34,14 +37,11 @@ define([
 
         },
         show: function () {
-            $('#page').html(this.$el);
-            this.delegateEvents();
+            BaseView.prototype.show.call(this);
         },
         hide: function () {
-            $('#page').empty();
-            this.undelegateEvents();
+            BaseView.prototype.hide.call(this);
         }
-
     });
 
     return new ScoreboardView();

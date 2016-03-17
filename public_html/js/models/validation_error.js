@@ -8,15 +8,10 @@ define([
 ){
 
     var Model = Backbone.Model.extend({
-        /*defaults:
-        {
-            'type':'', //Тип ошибки валидации
-            'data':null //Связанная информация
-        },*/
         initialize: function(_type,_data)
         {
-            this.type = _type;
-            this.data = _data;
+            this.type = _type;//Тип ошибки валидации
+            this.data = _data;//Связанная информация
         }
 
     });

@@ -4,17 +4,17 @@
 define([
     'backbone',
     'models/validation_error',
+    'models/user',
     'underscore'
 ], function(
     Backbone,
     ValidationError,
+    UserModel,
     _
 ){
 
 
     var SessionModel = Backbone.Model.extend({
-
-
         defaults:
         {
           'user' : null,
@@ -23,10 +23,9 @@ define([
         initialize:function()
         {
             _.bindAll(this,'login_error', 'login_success');
-        }
-        ,
+        },
         login: function(login, password) {
-        this.request_error=null;
+            this.request_error=null;
             $.ajax({
                 method: 'PUT',
                 url: 'api/v1/session',
@@ -77,14 +76,11 @@ define([
                 }.bind(this)
             });
         },
-        login_success:function(data)
-        {
+        login_success:function(data) {
             this.request_error = null;
-            this.user = new User (data['id']);
-
+            this.user = new UserModel (data['id']);
         },
-        login_error:function()
-        {
+        login_error:function() {
             this.request_error= new ValidationError('SERVER_ERROR',null);
         }
 

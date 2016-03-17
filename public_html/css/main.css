@@ -19,6 +19,7 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
+    visibility: hidden;
     /*left: 5%;
     right: 5%;
     top :5%;
@@ -126,6 +127,7 @@ a {
     margin-top:2%;
     font-size: 7vh;
     border-radius:20px;
+    text-align: center;
 }
 .registration__form__input-field
 {
@@ -160,7 +162,7 @@ a {
 #form__error-block
 {
     margin-top:2%;
-    width: 500px;
+    /*min-width: 500px*/;
     min-height: 100px;
     width:30vw;
     height:16vh;
@@ -169,7 +171,7 @@ a {
     margin-right: auto;
     color: #000000;
     visibility: hidden;
-    font-size: 2.6em;
+    font-size: 5vh;
     background-color: rgba(255,255,255, 0.6);
     border-radius: 8px;
     text-align: center;
@@ -179,12 +181,12 @@ a {
 .form-submit
 {
     margin-left: 10%;
-    margin-right: 10%;;
+     margin-right: 10%;;
     width: 80%;
     background-color: rgba(80,200,120, 0.4);
     -moz-border-radius:28px;
     -webkit-border-radius:28px;
-    border-radius:10px;
+    border-radius:20px;
     border:1px solid #18ab29;
     display:inline-block;
     cursor:pointer;
