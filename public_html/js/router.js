@@ -55,10 +55,9 @@ define([
             this.baseAction(views.registration);
         },
         logoutAction: function(){
-            session.logout();
-            window.setTimeout(function(){
+            session.logout(function(){
                 Backbone.history.navigate('main',true);
-            },DELAY);
+            });
         },
         defaultActions: function () {
             this.mainAction();

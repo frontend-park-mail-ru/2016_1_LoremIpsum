@@ -4,14 +4,16 @@ define([
     'utils/data_validator',
     'utils/error_message',
     'models/session',
-    'views/base'
+    'views/base',
+    'underscore'
 ], function(
     Backbone,
     tmpl,
     validate,
     error_message,
     session,
-    BaseView
+    BaseView,
+    _
 ){
     var PASSWORD_VALIDATE_OPTIONS={'required':true};
     var USERNAME_VALIDATE_OPTIONS={'required':true};
@@ -39,16 +41,27 @@ define([
         },
         initialize: function () {
             BaseView.prototype.initialize.call(this);
+            _.bindAll(this,'login_fail','login_success');
         },
         render: function () {
             BaseView.prototype.render.call(this);
         },
         show: function () {
-            BaseView.prototype.show .call(this);
+            BaseView.prototype.show.call(this);
             this.form = document.forms['login'];
         },
         hide: function () {
             BaseView.prototype.hide.call(this);
+        },
+        login_success:function(){
+            this.hide();
+            Backbone.history.navigate('main', true);
+        },
+        login_fail:function(){
+            error_message({
+                'validation_result': session.request_error,
+                'error_templates': this.error_templates
+            })
         },
         submit_handler: function(event)
         {
@@ -56,17 +69,8 @@ define([
             if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS),
                                'error_templates':this.error_templates})) {
                 session.login(this.form.elements['username'].value,
-                    this.form.elements['password'].value);
-                window.setTimeout(function () {
-                    var login_fail = session.request_error;
-                    if (!error_message({
-                            'validation_result': login_fail,
-                            'error_templates': this.error_templates
-                        })) {
-                        this.hide();
-                        Backbone.history.navigate('main', true);
-                    }
-                }.bind(this), DELAY);// Задержка нужна, так как ajax работает асинхронно
+                              this.form.elements['password'].value,
+                              this.login_success,this.login_fail);
             }
         }
     });

@@ -24,7 +24,7 @@ define([
         {
             _.bindAll(this,'login_error', 'login_success');
         },
-        login: function(login, password) {
+        login: function(login, password, success_cb, error_cb) {
             this.request_error=null;
             $.ajax({
                 method: 'PUT',
@@ -33,29 +33,47 @@ define([
                     'login': login,
                     'password': password
                 },
-                success: this.login_success,
-                error:this.login_error
+                success: function(data){
+                    this.request_error = null;
+                    this.user = new UserModel(data['id'],'',login);
+                    success_cb();
+                }.bind(this),
+                error:function(){
+                    this.login_error();
+                    error_cb();
+                }.bind(this)
             });
 
         },
-        logout: function() {
+        logout: function(success,error) {
             this.request_error=null;
             $.ajax({
                 method: 'DELETE',
                 url: 'api/v1/session',
                 success: function() {
                     this.user = null;
+                    success();
+                }.bind(this),
+                error: function(){
+                    error();
                 }.bind(this)
             });
         },
-        register: function(login, password, email) {
+        register: function(login, password, email, success,error) {
             this.request_error=null;
             $.ajax({
                 method: 'PUT',
                 url: 'api/v1/user',
                 dataType: "json",
-                success: this.login_success,
-                error:this.login_error,
+                success: function(data){
+                    this.request_error = null;
+                    this.user = new UserModel(data['id'],email,login);
+                    success();
+                }.bind(this),
+                error:function() {
+                    this.login_error();
+                    error();
+                },
                 data: {
                     'login': login,
                     'password': password,
@@ -63,16 +81,18 @@ define([
                 }
             });
         },
-        is_authinficated:function(){
+        is_authinficated:function(success,error){
             this.request_error=null;
             $.ajax({
                 method: 'GET',
                 url: 'api/v1/session',
                 success: function () {
                     this.request_error = null;
+                    success();
                 }.bind(this),
                 error: function () {
                     this.request_error = new ValidationError();
+                    error();
                 }.bind(this)
             });
         },

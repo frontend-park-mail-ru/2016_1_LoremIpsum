@@ -4,14 +4,16 @@ define([
     'utils/data_validator',
     'utils/error_message',
     'models/session',
-    'views/base'
+    'views/base',
+    'underscore'
 ], function(
     Backbone,
     tmpl,
     validate,
     error_message,
     session,
-    BaseView
+    BaseView,
+    _
 ){
     var PASSWORD_VALIDATE_OPTIONS={'required':true,
         'type':'password', 'min_length':5};
@@ -52,6 +54,7 @@ define([
         },
         initialize: function () {
             BaseView.prototype.initialize.call(this);
+            _.bindAll(this,'registration_success','registration_error');
         },
         render: function () {
             BaseView.prototype.render.call(this);
@@ -65,6 +68,16 @@ define([
         hide: function () {
             BaseView.prototype.hide.call(this);
         },
+        registration_success:function(){
+            this.hide();
+            Backbone.history.navigate('main', true);
+        },
+        registration_error:function(){
+            error_message({
+                'validation_result': session.request_error,
+                'error_templates': this.error_templates
+            });
+        },
         submit_handler: function(event) {
             event.preventDefault();
             if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS, MUST_MATCH),
@@ -72,15 +85,9 @@ define([
             {
                 session.register(this.form.elements['username'].value,
                                  this.form.elements['password'].value,
-                                 this.form.elements['email'].value);
-                window.setTimeout(function(){
-                    var login_fail= session.request_error;
-                    if(!error_message({'validation_result':login_fail,
-                            'error_templates':this.error_templates})){
-                        this.hide();
-                        Backbone.history.navigate('main',true);
-                    }
-                }.bind(this),DELAY);// Задержка нужна, так как ajax работает асинхронно
+                                 this.form.elements['email'].value,
+                                 this.registration_success,
+                                 this.registration_error);
             }
         }
     });
