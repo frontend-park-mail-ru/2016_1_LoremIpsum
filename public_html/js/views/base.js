@@ -15,9 +15,11 @@ define([
             return this;
         },
         show: function () {
+            this.trigger('show');
             this.render();
             this.$el.css('visibility','visible');
             this.delegateEvents();
+
         },
         hide: function () {
             this.$el.css('visibility','hidden');

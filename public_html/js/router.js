@@ -5,6 +5,7 @@ define([
     'views/login',
     'views/game',
     'views/registration',
+    'views/viewmanager',
     'models/session'
 ], function(
     Backbone,
@@ -13,17 +14,17 @@ define([
     LoginView,
     GameView,
     RegistrationView,
+    ViewManager,
     session
 ){
 
-    var DELAY = 10;
     var views ={main:MainView,
                 scoreboard:ScoreboardView,
                 game:GameView,
                 login:LoginView,
                 registration:RegistrationView
     };
-    var current_view = views.main;
+    var manager = new ViewManager(views);
     var Router = Backbone.Router.extend({
         routes: {
             'main':'mainAction',
@@ -34,25 +35,20 @@ define([
             'registration': 'registrationAction',
             '*default': 'defaultActions'
         },
-        baseAction:function(view) {
-            current_view.hide();
-            current_view=view;
-            current_view.show();
-        },
         mainAction: function() {
-            this.baseAction(views.main);
+            manager.show('main');
         },
         scoreboardAction: function () {
-            this.baseAction(views.scoreboard);
+            manager.show('scoreboard');
         },
         gameAction: function () {
-            this.baseAction(views.game);
+            manager.show('game');;
         },
         loginAction: function () {
-            this.baseAction(views.login);
+            manager.show('login');
         },
         registrationAction: function() {
-            this.baseAction(views.registration);
+            manager.show('registration');
         },
         logoutAction: function(){
             session.logout(function(){
