@@ -1,4 +1,5 @@
 var express = require('express'),
+    request = require('request'),
     errorHandler = require('errorhandler'),
     app = express(),
 	proxy = require('express-http-proxy');
