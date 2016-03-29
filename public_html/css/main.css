@@ -97,7 +97,7 @@ a {
     /*margin-top: 1%;*/
     overflow:hidden;
 }
-#scoreboard__table
+.scoreboard__table
 {
     width: 80%;
     left: 10%;

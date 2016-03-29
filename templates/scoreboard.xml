@@ -1,15 +1,13 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="best_players">
-    <!--<div id="scoreboard">-->
         <fest:include  src="./back_button.xml"/>
         <div class="header">
             <h1>Scoreboard</h1>
         </div>
-        <table id="scoreboard__table">
+        <table class="scoreboard__table">
             <fest:for iterate="best_players" index="i" value="v">
-                 <tr >
+                 <tr>
                  <td><div class="scoreboard__elem">
                     <fest:value>v.username</fest:value>
-                    <!-- abc -->
                  </div></td>
                  <td> <div class="scoreboard__elem">
                      <fest:value>v.score</fest:value>
@@ -17,5 +15,4 @@
                  </tr>
         </fest:for>
         </table>
-    <!--</div>-->
 </fest:template>
