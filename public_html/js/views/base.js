@@ -8,6 +8,7 @@ define([
 ){
 
     var BaseView = Backbone.View.extend({
+
         initialize: function () {
         },
         render: function (data) {
@@ -15,7 +16,7 @@ define([
             return this;
         },
         show: function () {
-            this.trigger('show');
+            this.trigger('show', {},{'view_name':this.name});
             this.render();
             this.$el.css('visibility','visible');
             this.delegateEvents();

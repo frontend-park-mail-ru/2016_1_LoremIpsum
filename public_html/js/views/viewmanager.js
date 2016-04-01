@@ -24,8 +24,9 @@ define([
 
             }
         },
-        hide: function () {
-            for(key in this.views){
+        hide: function (event, view_name) {
+            //Скрываем все вью, кроме того откуда пришло событие
+            for(key in _.omit(this.views,view_name) ){
                 this.views[key].hide();
             }
         }

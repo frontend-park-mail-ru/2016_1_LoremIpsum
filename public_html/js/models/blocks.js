@@ -13,6 +13,7 @@ define([
             this.block_matrix = [];
             this.color='orange';
             this.width = 0;
+
             this.height = 0;
 
         },

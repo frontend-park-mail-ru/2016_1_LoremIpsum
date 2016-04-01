@@ -24,6 +24,7 @@ define([
             {username:'Qwerty', score:2600},
             {username:'Master', score:Infinity},]),
         el:'#scoreboard',
+        name:'scoreboard',
         template: tmpl,
         events: {
             'click .js-back': 'hide'

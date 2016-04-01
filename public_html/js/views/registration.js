@@ -56,6 +56,7 @@ define([
             BaseView.prototype.initialize.call(this);
             _.bindAll(this,'registration_success','registration_error');
         },
+        name:'registration',
         render: function () {
             BaseView.prototype.render.call(this);
         },

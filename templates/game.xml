@@ -1,10 +1,5 @@
-
 <fest:template xmlns:fest="http://fest.mail.ru">
-
-
-    <!--<div id="game">-->
         <fest:include  src="./back_button.xml"/>
         <canvas id="game__canvas" >
         </canvas>
-    <!--</div>-->
 </fest:template>

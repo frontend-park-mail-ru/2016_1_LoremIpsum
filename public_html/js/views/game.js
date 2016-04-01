@@ -29,6 +29,7 @@ define([
         events:{
             'click .js-back':'hide',
         },
+        name:'game',
         initialize: function () {
             BaseView.prototype.initialize.call(this);
             this.ball = new BallModel();

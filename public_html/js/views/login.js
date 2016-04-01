@@ -28,6 +28,7 @@ define([
         events: {
             'submit':'submit_handler'
         },
+        name:'login',
         error_templates: {
             'INVALID':function(field_name) {
                 return 'Invalid ' + field_name;
@@ -48,7 +49,7 @@ define([
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            this.form = document.forms['login'];
+             this.form = document.forms['login'];
         },
         hide: function () {
             BaseView.prototype.hide.call(this);

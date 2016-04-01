@@ -8,7 +8,7 @@ define([
     Backbone,
     ValidationError
 ){
-    var REGEX_NOT_FOUND=-1;
+    var REGEX_NOT_FOUND= -1;
     var REGEX_DICT =
     {
       'email':/(\d|\w)+\@(\d|\w)+\..*/,
