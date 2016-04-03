@@ -19,12 +19,12 @@ define([
         'type':'password', 'min_length':5};
     var EMAIL_VALIDATE_OPTIONS={'required':true,
         'type':'email' };
-    var USERNAME_OPTIONS = {'required':true,'type':'username', 'max_length':20};
+    var NICKNAME_OPTIONS = {'required':true,'type':'nickname', 'max_length':20};
     var VALIDATED_FIELDS ={'email':EMAIL_VALIDATE_OPTIONS,
-        'password':PASSWORD_VALIDATE_OPTIONS, 'username':USERNAME_OPTIONS};
-    var MUST_MATCH ={'password':'password2'};
-    var DELAY =10;
+                           'nickname':NICKNAME_OPTIONS,
+                           'password':PASSWORD_VALIDATE_OPTIONS };
 
+    var MUST_MATCH ={'password':'password2'};
 
     var RegistrationView = BaseView.extend({
         el:'#registration',
@@ -81,10 +81,10 @@ define([
         },
         submit_handler: function(event) {
             event.preventDefault();
-            if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS, MUST_MATCH),
+            if(!error_message({'validation_result':validate(this.form.elements,VALIDATED_FIELDS, MUST_MATCH),
                                                            'error_templates':this.error_templates}))
             {
-                session.register(this.form.elements['username'].value,
+                session.register(this.form.elements['nickname'].value,
                                  this.form.elements['password'].value,
                                  this.form.elements['email'].value,
                                  this.registration_success,

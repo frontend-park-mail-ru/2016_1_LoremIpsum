@@ -19,7 +19,8 @@ require.config({
 });
 
 var tests = [
-    'models/score.test'
+    'models/score.test',
+    'utils/data_validator.test'
 ];
 
 require(tests, function () {

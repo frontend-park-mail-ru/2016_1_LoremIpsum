@@ -7,7 +7,7 @@ define([
     var Model = Backbone.Model.extend({
         defaults:
         {
-            'username':'',
+            'nickname':'',
             'score':0
         }
     });

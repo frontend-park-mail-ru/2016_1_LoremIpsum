@@ -15,14 +15,14 @@ define([
 
     var ScoreboardView = BaseView.extend({
 
-        best_players :new ScoreCollection([{'username':'Username','score':'Score'},
-            {username:'Dan', score:1000},
-            {username:'Ann', score:2900},
-            {username:'Andrew', score:1800},
-            {username:'Alex', score:7300},
-            {username:'George', score:600},
-            {username:'Qwerty', score:2600},
-            {username:'Master', score:Infinity},]),
+        best_players :new ScoreCollection([{'nickname':'nickname','score':'Score'},
+            {nickname:'Dan', score:1000},
+            {nickname:'Ann', score:2900},
+            {nickname:'Andrew', score:1800},
+            {nickname:'Alex', score:7300},
+            {nickname:'George', score:600},
+            {nickname:'Qwerty', score:2600},
+            {nickname:'Master', score:Infinity},]),
         el:'#scoreboard',
         name:'scoreboard',
         template: tmpl,

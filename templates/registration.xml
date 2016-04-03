@@ -9,8 +9,8 @@
 
             <input class="registration__form__input-field" name="email" type="text" size="25"
                    maxlength="30" value="" placeholder="Email" />
-            <input class="registration__form__input-field" name="username" type="text" size="25"
-                   maxlength="30" value="" placeholder="Username" />
+            <input class="registration__form__input-field" name="nickname" type="text" size="25"
+                   maxlength="30" value="" placeholder="Nickname" />
             <input class="registration__form__input-field"  name="password" type="password"
                    size="25" maxlength="30" value="" placeholder="Password" />
             <input class="registration__form__input-field"  name="password2" type="password"
