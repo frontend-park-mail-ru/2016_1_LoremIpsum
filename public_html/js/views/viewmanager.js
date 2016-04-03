@@ -16,8 +16,17 @@ define([
                     this.hide.bind(this));
             }
         },
+        add_view:function(view,name){
+            this.views[name]= view;
+        },
+        delete_view:function(name){
+            delete this.views[name];
+        },
+        contain_view:function(name){
+            return this.views.hasOwnProperty(name);
+        },
         show: function (view_name) {
-            if(this.views[view_name]){
+            if(this.contain_view(view_name)){
                 this.views[view_name].show();
             }
             else{

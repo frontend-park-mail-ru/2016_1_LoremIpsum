@@ -21,7 +21,8 @@ require.config({
 var tests = [
     'models/score.test',
     'utils/data_validator.test',
-    'collections/scores.test'
+    'collections/scores.test',
+    'views/viewmanager.test'
 ];
 
 require(tests, function () {
