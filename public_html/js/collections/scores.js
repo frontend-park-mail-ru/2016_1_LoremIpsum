@@ -8,6 +8,9 @@ define([
 
     var ScoreCollection = Backbone.Collection.extend({
         model:ScoreModel,
+        url:function(){
+            return 'api/v1/score';
+        },
         comparator:function(score)
         {
             return (-score.get('score'));

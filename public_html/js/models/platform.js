@@ -10,7 +10,7 @@ define([
             this.color = "white";
             this.width =  50;
             this.height = 5;
-            this.vx = 6;
+            this.vx = 5;
             this.direction = 0;
             this.x=0;
             this.y=0;

@@ -17,14 +17,13 @@ define([
     var SessionModel = Backbone.Model.extend({
         defaults:
         {
-          'id':0,
+          //'id':0,
           //'user' : new UserModel('','',''),
           'request_error':null
         },
         initialize:function()
         {
             this.user = new UserModel();
-            //_.bindAll(this,'login_error', 'login_success');
         },
         url:function(){
             return 'api/v1/session'
@@ -32,6 +31,7 @@ define([
         login: function(_login, _password, success_cb, error_cb) {
             this.request_error=null;
             this.save({},{
+                 method:'PUT',
                  attrs:{'login':_login,'password':_password},
                  success:function(model,response){
                      this.request_error = null;
@@ -49,21 +49,25 @@ define([
             this.request_error=null;
             this.destroy({
                  success:function(){
+                     this.id = null;
                      this.user['id'] =null;
-                     success_cb();
+                     if(success_cb)
+                        success_cb();
                  }.bind(this),
                  error:function(){
-                     error_cb();
+                     if(error_cb)
+                        error_cb();
                  }
             });
         },
         register: function(_login, _password, _email, success_cb,error_cb) {
             this.request_error=null;
-            this.user.save({},{
+            this.save({},{
                 attrs:{'login':_login,'password':_password, 'email':_email},
+                url:'api/v1/user',
                 success:function(model,response){
                     this.request_error = null;
-                    this.user.id = response['id'];
+                    this.login(_login,_password);
                     success_cb();
                 }.bind(this),
                 error:function(){

@@ -10,8 +10,9 @@ define([
 
           this.x=0;
           this.y=0;
-          this.vx=3;
-          this.vy=-2;
+          this.vx=5;
+          this.vy=-3;
+          this.ay=0.99;
           this.radius=4;
           this.color='red';
           //Backbone.Model.apply(this, arguments);

@@ -4,6 +4,8 @@ define([
     'models/ball',
     'models/platform',
     'models/blocks',
+    'models/session',
+    'models/score',
     'views/base',
     'underscore'
 
@@ -13,15 +15,18 @@ define([
     BallModel,
     PlatformModel,
     BlocksModel,
+    session,
+    ScoreModel,
     BaseView,
     _
 ){
 
     var PLATFORM_OFFSET_FACTOR=2;
-    var BALL_DEFAULT_VY =-2;
-    var BALL_DEFAULT_VX = 3;
+    var BALL_DEFAULT_VY =-3;
+    var BALL_DEFAULT_VX = 5;
     var ARROW_LEFT=37;
     var ARROW_RIGHT=39;
+    var BLOCK_SCORE =100;
 
     var GameView = BaseView.extend({
         el: '#game',
@@ -35,6 +40,7 @@ define([
             this.ball = new BallModel();
             this.platform = new PlatformModel();
             this.blocks = new BlocksModel(6,20);
+            this.score = 0;
             _.bindAll(this,'draw','keyup_handler','keydown_handler');
         },
         render: function () {
@@ -55,6 +61,7 @@ define([
             $(document).on('keyup',this.keyup_handler);
             this.reset_ball();
             this.reset_blocks();
+            this.score =0;
             this.game_is_running=true;
             this.animationID=window.requestAnimationFrame(this.draw);
         },
@@ -107,7 +114,7 @@ define([
                     this.ball.vx = 10*(this.ball.x - (this.platform.x + this.platform.width/2))/this.platform.width;
                 }
                 else {
-                    this.reset_ball();
+                    this.game_is_running=false;
                 }
             }
 
@@ -117,6 +124,7 @@ define([
             var col = Math.floor(this.ball.x/(this.blocks.width + this.blocks.padding));
             if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col >= 0 && this.blocks.block_matrix[row][col] === 1){
                 this.blocks.block_matrix[row][col] = 0;
+                this.score += BLOCK_SCORE;
                 this.ball.vy = -this.ball.vy;
             }
         },
@@ -137,7 +145,7 @@ define([
             this.contex.closePath();
         },
         draw_blocks:function() {
-            this.contex.fillStyle = this.blocks.color;
+            this.contex.fillStyle = 'rgba(0,255,150,0.7)';
             for (var i =0; i<this.blocks.rows; ++i){
                 for (var j =0; j<this.blocks.cols; ++j){
                     if (this.blocks.block_matrix[i][j] === 1){
@@ -151,15 +159,63 @@ define([
                 }
             }
         },
+        draw_background:function(){
+            var colors =['rgba(255,255,255,0.03)',
+                         'rgba(0,0,255,0.03)',
+                         'rgba(0,255,0,0.0.01)',
+            ];
+            for(var i=0; i<20;i++){
+                var x0 = _.random(0,this.canvas.width);
+                var y0 = _.random(0,this.canvas.height);
+
+                this.contex.strokeStyle = colors[_.random(0,colors.length)];
+                this.contex.beginPath();
+                this.contex.moveTo(x0,y0);
+                var param = this.canvas.width/2;
+                this.contex.fillStyle= colors[_.random(0,colors.length)];
+                this.contex.bezierCurveTo(2*param,param,0,param,param,param);
+                this.contex.fill();
+            }
+        },
+        draw_score:function(){
+
+            this.contex.fillStyle='white';
+            this.contex.fillText('Your score', 3*this.canvas.width/4,3/4*this.canvas.height);
+            this.contex.fillText(this.score, 3*this.canvas.width/4,3/4*this.canvas.height+15);
+        },
+        game_over:function(){
+            this.contex.globalAlpha=1;
+            this.contex.clearRect(0,0,this.canvas.width,this.canvas.height);
+            this.contex.fillStyle='rgba(0,20,0,0.5)';
+            this.contex.fillRect(0,0,this.canvas.width,this.canvas.height);
+            this.contex.fillStyle='white';
+            this.contex.font = '2.5vw Arial';
+            this.contex.textAlign='center';
+            this.contex.fillText("Game over!", this.canvas.width/2,1/2*this.canvas.height);
+            this.contex.fillText('Your score '+this.score, this.canvas.width/2,1/2*this.canvas.height+30);
+
+            new ScoreModel().save({},{attrs:{
+               id:session.user.id,
+               score:this.score
+            }});
+
+
+        },
         draw:function() {
             if(this.game_is_running) {
-                this.contex.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.contex.fillStyle='rgba(0,0,0,0.2)';
+                this.contex.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                this.draw_background();
+                this.draw_score();
                 this.move_ball();
                 this.draw_ball();
                 this.move_platform();
                 this.draw_platform();
                 this.draw_blocks();
                 window.requestAnimationFrame(this.draw);
+            }
+            else{
+                this.game_over();
             }
         },
         reset_ball:function() {
