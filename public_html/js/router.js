@@ -42,7 +42,11 @@ define([
             manager.show('scoreboard');
         },
         gameAction: function () {
-            manager.show('game');;
+            session.is_authinficated(function(){
+                manager.show('game');
+            }, function(){
+                Backbone.history.navigate();
+            });
         },
         loginAction: function () {
             manager.show('login');

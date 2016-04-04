@@ -7,7 +7,7 @@ define([
     var PlatformModel = Backbone.Model.extend({
         initialize: function()
         {
-            this.color = "white";
+            this.color = "rgba(0,100,100,0.2)";
             this.width =  50;
             this.height = 5;
             this.vx = 5;
@@ -40,9 +40,6 @@ define([
         {
            return (this.x+this.width);
         }
-
-
-
     });
 
     return PlatformModel;

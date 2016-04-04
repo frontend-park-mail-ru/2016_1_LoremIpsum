@@ -14,7 +14,7 @@ define([
           this.vy=-3;
           this.ay=0.99;
           this.radius=4;
-          this.color='red';
+          this.color='rgba(255,255,255,0.7)';
           //Backbone.Model.apply(this, arguments);
 
         },
@@ -35,8 +35,6 @@ define([
         {
             return (this.x + this.radius);
         }
-
-
     });
 
     return BallModel;
