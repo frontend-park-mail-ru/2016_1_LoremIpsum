@@ -31,8 +31,6 @@ define([
                     this.$el.html(this.template(this.best_players.toJSON()));
                 }.bind(this),
             })
-            //this.$el.html(this.template(this.best_players.toJSON()));
-            //return this;
 
         },
         show: function () {

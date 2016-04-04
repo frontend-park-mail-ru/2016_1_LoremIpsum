@@ -57,22 +57,13 @@ define([
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            session.fetch({
-               success:function(){
-                   $(document).on('keydown',this.keydown_handler);
-                   $(document).on('keyup',this.keyup_handler);
-                   this.reset_ball();
-                   this.reset_blocks();
-                   this.score =0;
-                   this.game_is_running=true;
-                   this.animationID=window.requestAnimationFrame(this.draw);
-               }.bind(this),
-               error:function(){
-                   Backbone.history.navigate('login',true);
-               }
-
-            });
-
+            $(document).on('keydown',this.keydown_handler);
+            $(document).on('keyup',this.keyup_handler);
+            this.reset_ball();
+            this.reset_blocks();
+            this.score =0;
+            this.game_is_running=true;
+            this.animationID=window.requestAnimationFrame(this.draw);
         },
         hide: function () {
             window.cancelAnimationFrame(this.animationID);
@@ -126,8 +117,6 @@ define([
                     this.game_is_running=false;
                 }
             }
-
-
             var rowHeight = this.blocks.height + this.blocks.padding;
             var row = Math.floor(this.ball.y/(rowHeight));
             var col = Math.floor(this.ball.x/(this.blocks.width + this.blocks.padding));
@@ -154,7 +143,7 @@ define([
             this.contex.closePath();
         },
         draw_blocks:function() {
-            this.contex.fillStyle = 'rgba(0,255,150,0.7)';
+            this.contex.fillStyle = this.blocks.color;
             for (var i =0; i<this.blocks.rows; ++i){
                 for (var j =0; j<this.blocks.cols; ++j){
                     if (this.blocks.block_matrix[i][j] === 1){

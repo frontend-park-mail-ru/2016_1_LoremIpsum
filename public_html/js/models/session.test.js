@@ -5,8 +5,6 @@ define(function (require) {
 
         var session = require('./session'),
             Backbone = require('backbone');
-            //session = new SessionModel();
-
         sinon.spy(Backbone, 'sync');
 
         session.fetch();
