@@ -57,13 +57,22 @@ define([
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            $(document).on('keydown',this.keydown_handler);
-            $(document).on('keyup',this.keyup_handler);
-            this.reset_ball();
-            this.reset_blocks();
-            this.score =0;
-            this.game_is_running=true;
-            this.animationID=window.requestAnimationFrame(this.draw);
+            session.fetch({
+               success:function(){
+                   $(document).on('keydown',this.keydown_handler);
+                   $(document).on('keyup',this.keyup_handler);
+                   this.reset_ball();
+                   this.reset_blocks();
+                   this.score =0;
+                   this.game_is_running=true;
+                   this.animationID=window.requestAnimationFrame(this.draw);
+               }.bind(this),
+               error:function(){
+                   Backbone.history.navigate('login',true);
+               }
+
+            });
+
         },
         hide: function () {
             window.cancelAnimationFrame(this.animationID);
@@ -160,9 +169,9 @@ define([
             }
         },
         draw_background:function(){
-            var colors =['rgba(255,255,255,0.03)',
-                         'rgba(0,0,255,0.03)',
-                         'rgba(0,255,0,0.0.01)',
+            var colors =['rgba(255,255,255,0.01)',
+                         'rgba(0,0,255,0.01)',
+                         'rgba(0,255,0,0.01)',
             ];
             for(var i=0; i<20;i++){
                 var x0 = _.random(0,this.canvas.width);
@@ -203,7 +212,7 @@ define([
         },
         draw:function() {
             if(this.game_is_running) {
-                this.contex.fillStyle='rgba(0,0,0,0.2)';
+                this.contex.fillStyle='rgba(0,0,0,0.15)';
                 this.contex.fillRect(0, 0, this.canvas.width, this.canvas.height);
                 this.draw_background();
                 this.draw_score();

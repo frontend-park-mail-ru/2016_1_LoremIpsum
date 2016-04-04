@@ -17,8 +17,6 @@ define([
     var SessionModel = Backbone.Model.extend({
         defaults:
         {
-          //'id':0,
-          //'user' : new UserModel('','',''),
           'request_error':null
         },
         initialize:function()
@@ -78,9 +76,10 @@ define([
         },
         is_authinficated:function(success_cb,error_cb){
             this.fetch({
-                 success:function(){
+                 success:function(model,response){
+                     this.user['id']=response['id'];
                      success_cb();
-                 },
+                 }.bind(this),
                  error:function(){
                      error_cb();
                  }
