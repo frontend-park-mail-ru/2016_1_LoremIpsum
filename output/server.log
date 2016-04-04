@@ -1,0 +1,1224 @@
+[04-02 00:35:33,984] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:35:33,984] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:35:33,985] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:35:37,505] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:35:37,507] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:35:37,509] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:35:37,509] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:35:37,510] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:35:55,090] [DEBUG] org.jboss.logging              [] : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+[04-02 00:35:55,103] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+[04-02 00:35:55,108] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+[04-02 00:35:55,111] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[04-02 00:35:55,244] [INFO ] org.hibernate.Version          [] : HHH000412: Hibernate Core {5.0.3.Final}
+[04-02 00:35:55,249] [INFO ] org.hibernate.cfg.Environment  [] : HHH000206: hibernate.properties not found
+[04-02 00:35:55,255] [INFO ] org.hibernate.cfg.Environment  [] : HHH000021: Bytecode provider name : javassist
+[04-02 00:35:55,305] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+[04-02 00:35:55,305] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+[04-02 00:35:55,306] [DEBUG] internal.IntegratorServiceImpl [] : Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[04-02 00:35:55,339] [DEBUG] ate.service.spi.ServiceBinding [] : Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+[04-02 00:35:55,340] [DEBUG] rg.hibernate.cfg.Configuration [] : Building session factory using provided StandardServiceRegistry
+[04-02 00:35:55,355] [DEBUG] nternal.RegionFactoryInitiator [] : Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+[04-02 00:35:55,362] [INFO ] ate.annotations.common.Version [] : HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+[04-02 00:35:55,383] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration boolean -> org.hibernate.type.BooleanType@3b938003
+[04-02 00:35:55,383] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration boolean -> org.hibernate.type.BooleanType@3b938003
+[04-02 00:35:55,383] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@3b938003
+[04-02 00:35:55,385] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@143640d5
+[04-02 00:35:55,387] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration true_false -> org.hibernate.type.TrueFalseType@3b2cf7ab
+[04-02 00:35:55,387] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration yes_no -> org.hibernate.type.YesNoType@5ad851c9
+[04-02 00:35:55,389] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration byte -> org.hibernate.type.ByteType@2b6856dd
+[04-02 00:35:55,389] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration byte -> org.hibernate.type.ByteType@2b6856dd
+[04-02 00:35:55,389] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2b6856dd
+[04-02 00:35:55,391] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration character -> org.hibernate.type.CharacterType@6ab7a896
+[04-02 00:35:55,391] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration char -> org.hibernate.type.CharacterType@6ab7a896
+[04-02 00:35:55,391] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6ab7a896
+[04-02 00:35:55,392] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration short -> org.hibernate.type.ShortType@19d37183
+[04-02 00:35:55,393] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration short -> org.hibernate.type.ShortType@19d37183
+[04-02 00:35:55,393] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@19d37183
+[04-02 00:35:55,394] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration integer -> org.hibernate.type.IntegerType@a4102b8
+[04-02 00:35:55,395] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration int -> org.hibernate.type.IntegerType@a4102b8
+[04-02 00:35:55,395] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@a4102b8
+[04-02 00:35:55,397] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration long -> org.hibernate.type.LongType@1460a8c0
+[04-02 00:35:55,397] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration long -> org.hibernate.type.LongType@1460a8c0
+[04-02 00:35:55,398] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Long -> org.hibernate.type.LongType@1460a8c0
+[04-02 00:35:55,400] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration float -> org.hibernate.type.FloatType@add0edd
+[04-02 00:35:55,400] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration float -> org.hibernate.type.FloatType@add0edd
+[04-02 00:35:55,400] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@add0edd
+[04-02 00:35:55,402] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration double -> org.hibernate.type.DoubleType@10db82ae
+[04-02 00:35:55,403] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration double -> org.hibernate.type.DoubleType@10db82ae
+[04-02 00:35:55,403] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@10db82ae
+[04-02 00:35:55,406] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@22635ba0
+[04-02 00:35:55,406] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@22635ba0
+[04-02 00:35:55,407] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7995092a
+[04-02 00:35:55,407] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7995092a
+[04-02 00:35:55,409] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration string -> org.hibernate.type.StringType@4c15e7fd
+[04-02 00:35:55,409] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.String -> org.hibernate.type.StringType@4c15e7fd
+[04-02 00:35:55,410] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@1d082e88
+[04-02 00:35:55,412] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@75f32542
+[04-02 00:35:55,413] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration url -> org.hibernate.type.UrlType@2805c96b
+[04-02 00:35:55,414] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.net.URL -> org.hibernate.type.UrlType@2805c96b
+[04-02 00:35:55,418] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration date -> org.hibernate.type.DateType@233fe9b6
+[04-02 00:35:55,419] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.Date -> org.hibernate.type.DateType@233fe9b6
+[04-02 00:35:55,422] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration time -> org.hibernate.type.TimeType@3d121db3
+[04-02 00:35:55,422] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3d121db3
+[04-02 00:35:55,424] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration timestamp -> org.hibernate.type.TimestampType@7b227d8d
+[04-02 00:35:55,424] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@7b227d8d
+[04-02 00:35:55,425] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@7b227d8d
+[04-02 00:35:55,427] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@65d6b83b
+[04-02 00:35:55,429] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration calendar -> org.hibernate.type.CalendarType@27ae2fd0
+[04-02 00:35:55,429] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@27ae2fd0
+[04-02 00:35:55,429] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@27ae2fd0
+[04-02 00:35:55,430] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@4278a03f
+[04-02 00:35:55,432] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration locale -> org.hibernate.type.LocaleType@77167fb7
+[04-02 00:35:55,432] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@77167fb7
+[04-02 00:35:55,434] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration currency -> org.hibernate.type.CurrencyType@229d10bd
+[04-02 00:35:55,434] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@229d10bd
+[04-02 00:35:55,436] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration timezone -> org.hibernate.type.TimeZoneType@56a6d5a6
+[04-02 00:35:55,436] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@56a6d5a6
+[04-02 00:35:55,437] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration class -> org.hibernate.type.ClassType@4df50bcc
+[04-02 00:35:55,438] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@4df50bcc
+[04-02 00:35:55,441] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1a04f701
+[04-02 00:35:55,441] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1a04f701
+[04-02 00:35:55,442] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@2bbf180e
+[04-02 00:35:55,445] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration binary -> org.hibernate.type.BinaryType@769e7ee8
+[04-02 00:35:55,445] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration byte[] -> org.hibernate.type.BinaryType@769e7ee8
+[04-02 00:35:55,447] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration [B -> org.hibernate.type.BinaryType@769e7ee8
+[04-02 00:35:55,449] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@159f197
+[04-02 00:35:55,449] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@159f197
+[04-02 00:35:55,449] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@159f197
+[04-02 00:35:55,450] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration image -> org.hibernate.type.ImageType@7c469c48
+[04-02 00:35:55,451] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration characters -> org.hibernate.type.CharArrayType@6ac13091
+[04-02 00:35:55,451] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration char[] -> org.hibernate.type.CharArrayType@6ac13091
+[04-02 00:35:55,451] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration [C -> org.hibernate.type.CharArrayType@6ac13091
+[04-02 00:35:55,452] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4313f5bc
+[04-02 00:35:55,453] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4313f5bc
+[04-02 00:35:55,453] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4313f5bc
+[04-02 00:35:55,453] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration text -> org.hibernate.type.TextType@670002
+[04-02 00:35:55,455] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration ntext -> org.hibernate.type.NTextType@96def03
+[04-02 00:35:55,469] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration blob -> org.hibernate.type.BlobType@3eb7fc54
+[04-02 00:35:55,469] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@3eb7fc54
+[04-02 00:35:55,470] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@460d0a57
+[04-02 00:35:55,475] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration clob -> org.hibernate.type.ClobType@2473d930
+[04-02 00:35:55,476] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@2473d930
+[04-02 00:35:55,479] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration nclob -> org.hibernate.type.NClobType@63021689
+[04-02 00:35:55,480] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@63021689
+[04-02 00:35:55,481] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@1622f1b
+[04-02 00:35:55,482] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@70e8f8e
+[04-02 00:35:55,484] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration serializable -> org.hibernate.type.SerializableType@6e4784bc
+[04-02 00:35:55,488] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration object -> org.hibernate.type.ObjectType@6a400542
+[04-02 00:35:55,488] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@6a400542
+[04-02 00:35:55,489] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@63355449
+[04-02 00:35:55,489] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@9353778
+[04-02 00:35:55,489] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@6a28ffa4
+[04-02 00:35:55,489] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@48ae9b55
+[04-02 00:35:55,490] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1700915
+[04-02 00:35:55,490] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@21de60b4
+[04-02 00:35:55,490] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@c267ef4
+[04-02 00:35:55,491] [DEBUG] bernate.type.BasicTypeRegistry [] : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@30ee2816
+[04-02 00:35:55,934] [DEBUG] ernal.JdbcEnvironmentInitiator [] : Database ->
+       name : MySQL
+    version : 5.6.28-0ubuntu0.15.10.1
+      major : 5
+      minor : 6
+[04-02 00:35:55,935] [DEBUG] ernal.JdbcEnvironmentInitiator [] : Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )
+      major : 5
+      minor : 1
+[04-02 00:35:55,936] [DEBUG] ernal.JdbcEnvironmentInitiator [] : JDBC version : 4.0
+[04-02 00:35:55,952] [INFO ] org.hibernate.dialect.Dialect  [] : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-02 00:35:55,971] [DEBUG] ernal.StandardRefCursorSupport [] : Unexpected error trying to gauge level of JDBC REF_CURSOR support : null
+[04-02 00:35:56,011] [DEBUG] nv.spi.IdentifierHelperBuilder [] : JDBC driver metadata reported database stores quoted identifiers in more than one case
+[04-02 00:35:56,015] [DEBUG] nv.spi.IdentifierHelperBuilder [] : IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+[04-02 00:35:56,057] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+[04-02 00:35:56,058] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+[04-02 00:35:56,059] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+[04-02 00:35:56,059] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+[04-02 00:35:56,060] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+[04-02 00:35:56,062] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+[04-02 00:35:56,062] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+[04-02 00:35:56,063] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[04-02 00:35:56,064] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+[04-02 00:35:56,065] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+[04-02 00:35:56,066] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+[04-02 00:35:56,067] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+[04-02 00:35:56,067] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[04-02 00:35:56,069] [DEBUG] aultIdentifierGeneratorFactory [] : Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+[04-02 00:35:56,114] [DEBUG] oot.model.relational.Namespace [] : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+[04-02 00:35:56,150] [DEBUG] hibernate.cfg.AnnotationBinder [] : Binding entity from annotated class: database.datasets.UserDataSet
+[04-02 00:35:56,173] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[04-02 00:35:56,179] [DEBUG] e.cfg.annotations.EntityBinder [] : Import with entity name UserDataSet
+[04-02 00:35:56,183] [DEBUG] e.cfg.annotations.EntityBinder [] : Bind entity database.datasets.UserDataSet on table users
+[04-02 00:35:56,225] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=id, insertable=true, updatable=true, unique=true}
+[04-02 00:35:56,229] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property id with lazy=false
+[04-02 00:35:56,231] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:id]
+[04-02 00:35:56,232] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for id
+[04-02 00:35:56,235] [DEBUG] cfg.annotations.PropertyBinder [] : Building property id
+[04-02 00:35:56,239] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=creationTime, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,239] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property creationTime with lazy=false
+[04-02 00:35:56,239] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:creationTime]
+[04-02 00:35:56,240] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for creationTime
+[04-02 00:35:56,240] [DEBUG] cfg.annotations.PropertyBinder [] : Building property creationTime
+[04-02 00:35:56,244] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+[04-02 00:35:56,246] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=currentSatus, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,251] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=email, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,251] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property email with lazy=false
+[04-02 00:35:56,251] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:email]
+[04-02 00:35:56,251] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for email
+[04-02 00:35:56,251] [DEBUG] cfg.annotations.PropertyBinder [] : Building property email
+[04-02 00:35:56,252] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+[04-02 00:35:56,252] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=gameResults, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,254] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=null, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,266] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=element, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,267] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=gameResults_KEY, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,268] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='gameResults_KEY', referencedColumn='null', mappedBy='null'}
+[04-02 00:35:56,269] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+[04-02 00:35:56,269] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+[04-02 00:35:56,270] [DEBUG] g.annotations.CollectionBinder [] : Collection role: database.datasets.UserDataSet.gameResults
+[04-02 00:35:56,273] [DEBUG] cfg.annotations.PropertyBinder [] : Building property gameResults
+[04-02 00:35:56,274] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=login, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,274] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property login with lazy=false
+[04-02 00:35:56,274] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:login]
+[04-02 00:35:56,274] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for login
+[04-02 00:35:56,274] [DEBUG] cfg.annotations.PropertyBinder [] : Building property login
+[04-02 00:35:56,275] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=modificationTime, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,275] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property modificationTime with lazy=false
+[04-02 00:35:56,275] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:modificationTime]
+[04-02 00:35:56,275] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for modificationTime
+[04-02 00:35:56,275] [DEBUG] cfg.annotations.PropertyBinder [] : Building property modificationTime
+[04-02 00:35:56,276] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=password, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,276] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property password with lazy=false
+[04-02 00:35:56,276] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserDataSet:password]
+[04-02 00:35:56,276] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for password
+[04-02 00:35:56,276] [DEBUG] cfg.annotations.PropertyBinder [] : Building property password
+[04-02 00:35:56,278] [DEBUG] hibernate.cfg.AnnotationBinder [] : Binding entity from annotated class: database.datasets.UserStatusDataSet
+[04-02 00:35:56,278] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[04-02 00:35:56,279] [DEBUG] e.cfg.annotations.EntityBinder [] : Import with entity name UserStatusDataSet
+[04-02 00:35:56,279] [DEBUG] e.cfg.annotations.EntityBinder [] : Bind entity database.datasets.UserStatusDataSet on table status
+[04-02 00:35:56,288] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(status), mappingColumn=id, insertable=true, updatable=true, unique=true}
+[04-02 00:35:56,288] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property id with lazy=false
+[04-02 00:35:56,288] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserStatusDataSet:id]
+[04-02 00:35:56,288] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for id
+[04-02 00:35:56,288] [DEBUG] cfg.annotations.PropertyBinder [] : Building property id
+[04-02 00:35:56,289] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(status), mappingColumn=isActive, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,303] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property isActive with lazy=false
+[04-02 00:35:56,304] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserStatusDataSet:isActive]
+[04-02 00:35:56,304] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for isActive
+[04-02 00:35:56,304] [DEBUG] cfg.annotations.PropertyBinder [] : Building property isActive
+[04-02 00:35:56,304] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(status), mappingColumn=sessionId, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,304] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property sessionId with lazy=false
+[04-02 00:35:56,304] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.UserStatusDataSet:sessionId]
+[04-02 00:35:56,305] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for sessionId
+[04-02 00:35:56,305] [DEBUG] cfg.annotations.PropertyBinder [] : Building property sessionId
+[04-02 00:35:56,305] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='user', referencedColumn='', mappedBy=''}
+[04-02 00:35:56,305] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(status), mappingColumn=user, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,308] [DEBUG] cfg.annotations.PropertyBinder [] : Building property user
+[04-02 00:35:56,309] [DEBUG] hibernate.cfg.AnnotationBinder [] : Binding entity from annotated class: database.datasets.GameResultDataSet
+[04-02 00:35:56,309] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[04-02 00:35:56,309] [DEBUG] e.cfg.annotations.EntityBinder [] : Import with entity name GameResultDataSet
+[04-02 00:35:56,309] [DEBUG] e.cfg.annotations.EntityBinder [] : Bind entity database.datasets.GameResultDataSet on table gameResults
+[04-02 00:35:56,313] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(gameResults), mappingColumn=id, insertable=true, updatable=true, unique=true}
+[04-02 00:35:56,313] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property id with lazy=false
+[04-02 00:35:56,313] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.GameResultDataSet:id]
+[04-02 00:35:56,314] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for id
+[04-02 00:35:56,314] [DEBUG] cfg.annotations.PropertyBinder [] : Building property id
+[04-02 00:35:56,314] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(gameResults), mappingColumn=score, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,314] [DEBUG] cfg.annotations.PropertyBinder [] : MetadataSourceProcessor property score with lazy=false
+[04-02 00:35:56,314] [DEBUG] ate.cfg.AbstractPropertyHolder [] : Attempting to locate auto-apply AttributeConverter for property [database.datasets.GameResultDataSet:score]
+[04-02 00:35:56,315] [DEBUG] .annotations.SimpleValueBinder [] : building SimpleValue for score
+[04-02 00:35:56,315] [DEBUG] cfg.annotations.PropertyBinder [] : Building property score
+[04-02 00:35:56,315] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3JoinColumn{logicalColumnName='userId', referencedColumn='', mappedBy=''}
+[04-02 00:35:56,315] [DEBUG] org.hibernate.cfg.Ejb3Column   [] : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(gameResults), mappingColumn=user, insertable=true, updatable=true, unique=false}
+[04-02 00:35:56,316] [DEBUG] cfg.annotations.PropertyBinder [] : Building property user
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for id
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for creationTime
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for email
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for login
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for modificationTime
+[04-02 00:35:56,317] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for password
+[04-02 00:35:56,318] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for id
+[04-02 00:35:56,318] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for isActive
+[04-02 00:35:56,318] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for sessionId
+[04-02 00:35:56,318] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for id
+[04-02 00:35:56,318] [DEBUG] .annotations.SimpleValueBinder [] : Starting fillSimpleValue for score
+[04-02 00:35:56,327] [DEBUG] cfg.annotations.PropertyBinder [] : Building property currentSatus
+[04-02 00:35:56,328] [DEBUG] rnate.cfg.CollectionSecondPass [] : Second pass for collection: database.datasets.UserDataSet.gameResults
+[04-02 00:35:56,329] [DEBUG] g.annotations.CollectionBinder [] : Binding a OneToMany: database.datasets.UserDataSet.gameResults through a foreign key
+[04-02 00:35:56,330] [DEBUG] g.annotations.CollectionBinder [] : Mapping collection: database.datasets.UserDataSet.gameResults -> gameResults
+[04-02 00:35:56,331] [DEBUG] te.cfg.annotations.TableBinder [] : Retrieving property database.datasets.GameResultDataSet.user
+[04-02 00:35:56,333] [DEBUG] rnate.cfg.CollectionSecondPass [] : Mapped collection key: userId, one-to-many: database.datasets.GameResultDataSet
+[04-02 00:35:56,333] [DEBUG] .InFlightMetadataCollectorImpl [] : Processing association property references
+[04-02 00:35:56,334] [DEBUG] .InFlightMetadataCollectorImpl [] : Resolving reference to class: database.datasets.UserDataSet
+[04-02 00:35:56,338] [DEBUG] .InFlightMetadataCollectorImpl [] : Resolving reference to class: database.datasets.UserDataSet
+[04-02 00:35:56,339] [DEBUG] .InFlightMetadataCollectorImpl [] : Processing association property references
+[04-02 00:35:56,339] [DEBUG] .InFlightMetadataCollectorImpl [] : Resolving reference to class: database.datasets.UserDataSet
+[04-02 00:35:56,339] [DEBUG] .InFlightMetadataCollectorImpl [] : Resolving reference to class: database.datasets.UserDataSet
+[04-02 00:35:56,367] [DEBUG] te.internal.SessionFactoryImpl [] : Building session factory
+[04-02 00:35:56,368] [DEBUG] org.hibernate.cfg.Settings     [] : SessionFactory name : null
+[04-02 00:35:56,368] [DEBUG] org.hibernate.cfg.Settings     [] : Automatic flush during beforeCompletion(): disabled
+[04-02 00:35:56,368] [DEBUG] org.hibernate.cfg.Settings     [] : Automatic session close at end of transaction: disabled
+[04-02 00:35:56,368] [DEBUG] org.hibernate.cfg.Settings     [] : Statistics: disabled
+[04-02 00:35:56,368] [DEBUG] org.hibernate.cfg.Settings     [] : Deleted entity synthetic identifier rollback: disabled
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Default entity-mode: pojo
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Allow initialization of lazy state outside session : disabled
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Using BatchFetchStyle : LEGACY
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Default batch fetch size: -1
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Maximum outer join fetch depth: 2
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Default null ordering: NONE
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Order SQL updates by primary key: disabled
+[04-02 00:35:56,369] [DEBUG] org.hibernate.cfg.Settings     [] : Order SQL inserts for batching: disabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : multi-tenancy strategy : NONE
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : JTA Track by Thread: enabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Query language substitutions: {}
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : JPA query language strict compliance: disabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Named query checking : enabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Second-level cache: enabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Second-level query cache: disabled
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Second-level query cache factory: org.hibernate.cache.internal.StandardQueryCacheFactory@55c53a33
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Second-level cache region prefix: null
+[04-02 00:35:56,370] [DEBUG] org.hibernate.cfg.Settings     [] : Optimize second-level cache for minimal puts: disabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Structured second-level cache entries: disabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Second-level cache direct-reference entries: disabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Automatic eviction of collection cache: disabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : JDBC batch size: 15
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : JDBC batch updates for versioned data: enabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Scrollable result sets: enabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Wrap result sets: disabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : JDBC3 getGeneratedKeys(): enabled
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : JDBC result set fetch size: null
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Connection release mode: ON_CLOSE
+[04-02 00:35:56,371] [DEBUG] org.hibernate.cfg.Settings     [] : Generate SQL with comments: disabled
+[04-02 00:35:56,440] [DEBUG] te.internal.SessionFactoryImpl [] : Session factory constructed with filter configurations : {}
+[04-02 00:35:56,441] [DEBUG] te.internal.SessionFactoryImpl [] : Instantiating session factory with properties: {hibernate.connection.password=test, java.runtime.name=OpenJDK Runtime Environment, java.vm.version=25.66-b17, sun.boot.library.path=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64, hibernate.connection.username=test, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@50de186c, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=OpenJDK 64-Bit Server VM, file.encoding.pkg=sun.io, sun.os.patch.level=unknown, user.country=RU, sun.java.launcher=SUN_STANDARD, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/home/danil/TP_2/frontend/2016_1_LoremIpsum, java.runtime.version=1.8.0_66-internal-b17, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, os.arch=amd64, java.endorsed.dirs=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed, java.io.tmpdir=/tmp, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, os.name=Linux, sun.jnu.encoding=UTF-8, hibernate.connection.datasource=org.apache.tomcat.jdbc.pool.DataSource@3f57bcad{ConnectionPool[defaultAutoCommit=null; defaultReadOnly=null; defaultTransactionIsolation=-1; defaultCatalog=null; driverClassName=com.mysql.jdbc.Driver; maxActive=100; maxIdle=100; minIdle=10; initialSize=10; maxWait=30000; testOnBorrow=false; testOnReturn=false; timeBetweenEvictionRunsMillis=5000; numTestsPerEvictionRun=0; minEvictableIdleTimeMillis=60000; testWhileIdle=false; testOnConnect=false; password=********; url=jdbc:mysql://localhost:3306/dbJava; username=test; validationQuery=null; validationQueryTimeout=-1; validatorClassName=null; validationInterval=30000; accessToUnderlyingConnectionAllowed=true; removeAbandoned=false; removeAbandonedTimeout=60; logAbandoned=false; connectionProperties=null; initSQL=null; jdbcInterceptors=null; jmxEnabled=true; fairQueue=true; useEquals=true; abandonWhenPercentageFull=0; maxAge=0; useLock=false; dataSource=null; dataSourceJNDI=null; suspectTimeout=0; alternateUsernameAllowed=false; commitOnReturn=false; rollbackOnReturn=false; useDisposableConnectionFacade=true; logValidationErrors=false; propagateInterruptState=false; ignoreExceptionOnPreLoad=false; }, java.library.path=/opt/WebStorm-143.1559.5/bin::/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, java.class.version=52.0, java.specification.name=Java Platform API Specification, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=4.2.0-30-generic, user.home=/home/danil, user.timezone=Europe/Moscow, java.awt.printerjob=sun.print.PSPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, user.name=danil, java.class.path=server.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.version=1.8, sun.arch.data.model=64, sun.java.command=server.jar 8080, java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre, hibernate.connection.url=jdbc:mysql://localhost:3306/dbJava, hibernate.dialect=org.hibernate.dialect.MySQLDialect, user.language=ru, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_66-internal, java.ext.dirs=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes, java.vendor=Oracle Corporation, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.hbm2ddl.auto=create, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=gnome, sun.cpu.isalist=}
+[04-02 00:35:56,455] [DEBUG] nate.secure.spi.JaccIntegrator [] : Skipping JACC integration as it was not enabled
+[04-02 00:35:56,488] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.UserStatusDataSet] is safe
+[04-02 00:35:56,488] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.UserStatusDataSet
+[04-02 00:35:56,515] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.UserStatusDataSet] is safe
+[04-02 00:35:56,515] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.UserStatusDataSet
+[04-02 00:35:56,646] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.UserDataSet] is safe
+[04-02 00:35:56,646] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.UserDataSet
+[04-02 00:35:56,649] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.UserDataSet] is safe
+[04-02 00:35:56,649] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.UserDataSet
+[04-02 00:35:56,658] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.GameResultDataSet] is safe
+[04-02 00:35:56,658] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.GameResultDataSet
+[04-02 00:35:56,658] [DEBUG] internal.ClassLoaderAccessImpl [] : Not known whether passed class name [database.datasets.GameResultDataSet] is safe
+[04-02 00:35:56,658] [DEBUG] internal.ClassLoaderAccessImpl [] : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : database.datasets.GameResultDataSet
+[04-02 00:35:56,673] [DEBUG] on.AbstractCollectionPersister [] : Static SQL for collection: database.datasets.UserDataSet.gameResults
+[04-02 00:35:56,673] [DEBUG] on.AbstractCollectionPersister [] :  Row insert: update gameResults set userId=? where id=?
+[04-02 00:35:56,673] [DEBUG] on.AbstractCollectionPersister [] :  Row update: update gameResults set  where id=?
+[04-02 00:35:56,673] [DEBUG] on.AbstractCollectionPersister [] :  Row delete: update gameResults set userId=null where userId=? and id=?
+[04-02 00:35:56,673] [DEBUG] on.AbstractCollectionPersister [] :  One-shot delete: update gameResults set userId=null where userId=?
+[04-02 00:35:56,679] [DEBUG] entity.AbstractEntityPersister [] : Static SQL for entity: database.datasets.UserStatusDataSet
+[04-02 00:35:56,679] [DEBUG] entity.AbstractEntityPersister [] :  Version select: select id from status where id =?
+[04-02 00:35:56,679] [DEBUG] entity.AbstractEntityPersister [] :  Snapshot select: select userstatus_.id, userstatus_.isActive as isActive2_1_, userstatus_.sessionId as sessionI3_1_, userstatus_.user as user4_1_ from status userstatus_ where userstatus_.id=?
+[04-02 00:35:56,679] [DEBUG] entity.AbstractEntityPersister [] :  Insert 0: insert into status (isActive, sessionId, user, id) values (?, ?, ?, ?)
+[04-02 00:35:56,679] [DEBUG] entity.AbstractEntityPersister [] :  Update 0: update status set isActive=?, sessionId=?, user=? where id=?
+[04-02 00:35:56,680] [DEBUG] entity.AbstractEntityPersister [] :  Delete 0: delete from status where id=?
+[04-02 00:35:56,680] [DEBUG] entity.AbstractEntityPersister [] :  Identity insert: insert into status (isActive, sessionId, user) values (?, ?, ?)
+[04-02 00:35:56,700] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@a43ce46]
+[04-02 00:35:56,701] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,702] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,702] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,705] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@60975100]
+[04-02 00:35:56,707] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.creationTime
+[04-02 00:35:56,707] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.email
+[04-02 00:35:56,707] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults
+[04-02 00:35:56,708] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4cf8b2dc]
+[04-02 00:35:56,710] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4566d049]
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults.score
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults.user
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : user.gameResults.user
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.login
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.modificationTime
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.password
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.currentSatus
+[04-02 00:35:56,713] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : user.currentSatus
+[04-02 00:35:56,714] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,808] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,821] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+             - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:2>, path=database.datasets.UserStatusDataSet.user.gameResults)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserStatusDataSet.user.gameResults.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=database.datasets.UserDataSet)
+                - SQL table alias mapping - userdatase1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(gameResults)) : <gen:1> -> <gen:2>
+                   - CollectionQuerySpaceImpl(uid=<gen:2>, collection=database.datasets.UserDataSet.gameResults)
+                      - SQL table alias mapping - gameresult2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {userId3_0_2_}
+                      - entity-element alias suffix - 3_
+                      - 3_entity-element suffixed key columns - id1_0_3_
+                      - JOIN (JoinDefinedByMetadata(elements)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=database.datasets.GameResultDataSet)
+                            - SQL table alias mapping - gameresult2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_0_3_}
+
+[04-02 00:35:56,824] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [NONE]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_, userdatase1_.id as id1_2_1_, userdatase1_.creationTime as creation2_2_1_, userdatase1_.email as email3_2_1_, userdatase1_.login as login4_2_1_, userdatase1_.modificationTime as modifica5_2_1_, userdatase1_.password as password6_2_1_, gameresult2_.userId as userId3_0_2_, gameresult2_.id as id1_0_2_, gameresult2_.id as id1_0_3_, gameresult2_.score as score2_0_3_, gameresult2_.userId as userId3_0_3_ from status userstatus0_ left outer join users userdatase1_ on userstatus0_.user=userdatase1_.id left outer join gameResults gameresult2_ on userdatase1_.id=gameresult2_.userId where userstatus0_.id=?
+[04-02 00:35:56,825] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@47a5b70d]
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,825] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1a45193b]
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.creationTime
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.email
+[04-02 00:35:56,825] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults
+[04-02 00:35:56,826] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5286c33a]
+[04-02 00:35:56,826] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6e6d5d29]
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults.score
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.gameResults.user
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : user.gameResults.user
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.login
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.modificationTime
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.password
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user.currentSatus
+[04-02 00:35:56,826] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : user.currentSatus
+[04-02 00:35:56,827] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,827] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,829] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+             - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:2>, path=database.datasets.UserStatusDataSet.user.gameResults)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserStatusDataSet.user.gameResults.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=database.datasets.UserDataSet)
+                - SQL table alias mapping - userdatase1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(gameResults)) : <gen:1> -> <gen:2>
+                   - CollectionQuerySpaceImpl(uid=<gen:2>, collection=database.datasets.UserDataSet.gameResults)
+                      - SQL table alias mapping - gameresult2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {userId3_0_2_}
+                      - entity-element alias suffix - 3_
+                      - 3_entity-element suffixed key columns - id1_0_3_
+                      - JOIN (JoinDefinedByMetadata(elements)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=database.datasets.GameResultDataSet)
+                            - SQL table alias mapping - gameresult2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_0_3_}
+
+[04-02 00:35:56,829] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [READ]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_, userdatase1_.id as id1_2_1_, userdatase1_.creationTime as creation2_2_1_, userdatase1_.email as email3_2_1_, userdatase1_.login as login4_2_1_, userdatase1_.modificationTime as modifica5_2_1_, userdatase1_.password as password6_2_1_, gameresult2_.userId as userId3_0_2_, gameresult2_.id as id1_0_2_, gameresult2_.id as id1_0_3_, gameresult2_.score as score2_0_3_, gameresult2_.userId as userId3_0_3_ from status userstatus0_ left outer join users userdatase1_ on userstatus0_.user=userdatase1_.id left outer join gameResults gameresult2_ on userdatase1_.id=gameresult2_.userId where userstatus0_.id=?
+[04-02 00:35:56,834] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@85e6769]
+[04-02 00:35:56,834] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,834] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,834] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,834] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@48a12036]
+[04-02 00:35:56,835] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,835] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,836] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,836] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [UPGRADE]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,836] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@bf1ec20]
+[04-02 00:35:56,836] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,836] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,836] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,836] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@b70da4c]
+[04-02 00:35:56,837] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,837] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,838] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,838] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [UPGRADE_NOWAIT]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,839] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a11eb84]
+[04-02 00:35:56,839] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,839] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,842] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,843] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@435fb7b5]
+[04-02 00:35:56,843] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,843] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,844] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,844] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [UPGRADE_SKIPLOCKED]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,844] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4e70a728]
+[04-02 00:35:56,844] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,844] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,844] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,844] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@696f0212]
+[04-02 00:35:56,845] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,845] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,846] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,846] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [FORCE]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,846] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5733f295]
+[04-02 00:35:56,846] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,846] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,846] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,846] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@56c698e3]
+[04-02 00:35:56,847] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,847] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,847] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,847] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [PESSIMISTIC_READ]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? lock in share mode
+[04-02 00:35:56,848] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@47a86fbb]
+[04-02 00:35:56,848] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,848] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,848] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,848] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@19553973]
+[04-02 00:35:56,848] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,849] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,849] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,849] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [PESSIMISTIC_WRITE]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,849] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7bb6ab3a]
+[04-02 00:35:56,850] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,850] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,850] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,850] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4c4748bf]
+[04-02 00:35:56,850] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,850] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,851] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,851] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [PESSIMISTIC_FORCE_INCREMENT]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=? for update
+[04-02 00:35:56,851] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7ce97ee5]
+[04-02 00:35:56,851] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,851] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,851] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,851] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@73dce0e6]
+[04-02 00:35:56,852] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,852] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,853] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,853] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [OPTIMISTIC]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=?
+[04-02 00:35:56,855] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5a85c92]
+[04-02 00:35:56,855] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : isActive
+[04-02 00:35:56,855] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : sessionId
+[04-02 00:35:56,855] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,855] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4795ded0]
+[04-02 00:35:56,855] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,856] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,856] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserStatusDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserStatusDataSet)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:1>, path=database.datasets.UserStatusDataSet.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserStatusDataSet)
+          - SQL table alias mapping - userstatus0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+[04-02 00:35:56,857] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserStatusDataSet [OPTIMISTIC_FORCE_INCREMENT]: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=?
+[04-02 00:35:56,891] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_MERGE on entity database.datasets.UserStatusDataSet: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=?
+[04-02 00:35:56,892] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_REFRESH on entity database.datasets.UserStatusDataSet: select userstatus0_.id as id1_1_0_, userstatus0_.isActive as isActive2_1_0_, userstatus0_.sessionId as sessionI3_1_0_, userstatus0_.user as user4_1_0_ from status userstatus0_ where userstatus0_.id=?
+[04-02 00:35:56,897] [DEBUG] org.hibernate.loader.Loader    [] : Static select for entity database.datasets.UserStatusDataSet [NONE]: select userstatus0_.id as id1_1_2_, userstatus0_.isActive as isActive2_1_2_, userstatus0_.sessionId as sessionI3_1_2_, userstatus0_.user as user4_1_2_, userdatase1_.id as id1_2_0_, userdatase1_.creationTime as creation2_2_0_, userdatase1_.email as email3_2_0_, userdatase1_.login as login4_2_0_, userdatase1_.modificationTime as modifica5_2_0_, userdatase1_.password as password6_2_0_, gameresult2_.userId as userId3_0_4_, gameresult2_.id as id1_0_4_, gameresult2_.id as id1_0_1_, gameresult2_.score as score2_0_1_, gameresult2_.userId as userId3_0_1_ from status userstatus0_ left outer join users userdatase1_ on userstatus0_.user=userdatase1_.id left outer join gameResults gameresult2_ on userdatase1_.id=gameresult2_.userId where userstatus0_.user=?
+[04-02 00:35:56,898] [DEBUG] entity.AbstractEntityPersister [] : Static SQL for entity: database.datasets.UserDataSet
+[04-02 00:35:56,898] [DEBUG] entity.AbstractEntityPersister [] :  Version select: select id from users where id =?
+[04-02 00:35:56,899] [DEBUG] entity.AbstractEntityPersister [] :  Snapshot select: select userdatase_.id, userdatase_.creationTime as creation2_2_, userdatase_.email as email3_2_, userdatase_.login as login4_2_, userdatase_.modificationTime as modifica5_2_, userdatase_.password as password6_2_ from users userdatase_ where userdatase_.id=?
+[04-02 00:35:56,900] [DEBUG] entity.AbstractEntityPersister [] :  Insert 0: insert into users (creationTime, email, login, modificationTime, password, id) values (?, ?, ?, ?, ?, ?)
+[04-02 00:35:56,900] [DEBUG] entity.AbstractEntityPersister [] :  Update 0: update users set creationTime=?, email=?, login=?, modificationTime=?, password=? where id=?
+[04-02 00:35:56,901] [DEBUG] entity.AbstractEntityPersister [] :  Delete 0: delete from users where id=?
+[04-02 00:35:56,901] [DEBUG] entity.AbstractEntityPersister [] :  Identity insert: insert into users (creationTime, email, login, modificationTime, password) values (?, ?, ?, ?, ?)
+[04-02 00:35:56,902] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@45905bff]
+[04-02 00:35:56,902] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,902] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,903] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,903] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@b6b1987]
+[04-02 00:35:56,903] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6b44435b]
+[04-02 00:35:56,904] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults.score
+[04-02 00:35:56,904] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults.user
+[04-02 00:35:56,905] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : gameResults.user
+[04-02 00:35:56,905] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,905] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,906] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,906] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,906] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3543df7d]
+[04-02 00:35:56,907] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.isActive
+[04-02 00:35:56,907] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.sessionId
+[04-02 00:35:56,908] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.user
+[04-02 00:35:56,908] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : currentSatus.user
+[04-02 00:35:56,908] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,909] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,911] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+          - JOIN (JoinDefinedByMetadata(gameResults)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=database.datasets.UserDataSet.gameResults)
+                - SQL table alias mapping - gameresult1_
+                - alias suffix - 1_
+                - suffixed key columns - {userId3_0_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_0_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=database.datasets.GameResultDataSet)
+                      - SQL table alias mapping - gameresult1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_0_2_}
+          - JOIN (JoinDefinedByMetadata(currentSatus)) : <gen:0> -> <gen:3>
+             - EntityQuerySpaceImpl(uid=<gen:3>, entity=database.datasets.UserStatusDataSet)
+                - SQL table alias mapping - userstatus2_
+                - alias suffix - 3_
+                - suffixed key columns - {id1_1_3_}
+
+[04-02 00:35:56,912] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [NONE]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_, gameresult1_.userId as userId3_0_1_, gameresult1_.id as id1_0_1_, gameresult1_.id as id1_0_2_, gameresult1_.score as score2_0_2_, gameresult1_.userId as userId3_0_2_, userstatus2_.id as id1_1_3_, userstatus2_.isActive as isActive2_1_3_, userstatus2_.sessionId as sessionI3_1_3_, userstatus2_.user as user4_1_3_ from users userdatase0_ left outer join gameResults gameresult1_ on userdatase0_.id=gameresult1_.userId left outer join status userstatus2_ on userdatase0_.id=userstatus2_.user where userdatase0_.id=?
+[04-02 00:35:56,912] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3542162a]
+[04-02 00:35:56,913] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,913] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,913] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,913] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4212a0c8]
+[04-02 00:35:56,914] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1e7aa82b]
+[04-02 00:35:56,914] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults.score
+[04-02 00:35:56,915] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults.user
+[04-02 00:35:56,915] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : gameResults.user
+[04-02 00:35:56,915] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,916] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,917] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,917] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,917] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@c1bd0be]
+[04-02 00:35:56,918] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.isActive
+[04-02 00:35:56,918] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.sessionId
+[04-02 00:35:56,918] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus.user
+[04-02 00:35:56,918] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : currentSatus.user
+[04-02 00:35:56,919] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,919] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,921] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+          - JOIN (JoinDefinedByMetadata(gameResults)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=database.datasets.UserDataSet.gameResults)
+                - SQL table alias mapping - gameresult1_
+                - alias suffix - 1_
+                - suffixed key columns - {userId3_0_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_0_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=database.datasets.GameResultDataSet)
+                      - SQL table alias mapping - gameresult1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_0_2_}
+          - JOIN (JoinDefinedByMetadata(currentSatus)) : <gen:0> -> <gen:3>
+             - EntityQuerySpaceImpl(uid=<gen:3>, entity=database.datasets.UserStatusDataSet)
+                - SQL table alias mapping - userstatus2_
+                - alias suffix - 3_
+                - suffixed key columns - {id1_1_3_}
+
+[04-02 00:35:56,922] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [READ]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_, gameresult1_.userId as userId3_0_1_, gameresult1_.id as id1_0_1_, gameresult1_.id as id1_0_2_, gameresult1_.score as score2_0_2_, gameresult1_.userId as userId3_0_2_, userstatus2_.id as id1_1_3_, userstatus2_.isActive as isActive2_1_3_, userstatus2_.sessionId as sessionI3_1_3_, userstatus2_.user as user4_1_3_ from users userdatase0_ left outer join gameResults gameresult1_ on userdatase0_.id=gameresult1_.userId left outer join status userstatus2_ on userdatase0_.id=userstatus2_.user where userdatase0_.id=?
+[04-02 00:35:56,922] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1c6804cd]
+[04-02 00:35:56,923] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,923] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,923] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,923] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@549949be]
+[04-02 00:35:56,924] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b3a45f1]
+[04-02 00:35:56,924] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,924] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,925] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,925] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,925] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@17a87e37]
+[04-02 00:35:56,926] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,926] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,927] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,928] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [UPGRADE]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,928] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3eeb318f]
+[04-02 00:35:56,929] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,929] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,929] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,929] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@39ad977d]
+[04-02 00:35:56,930] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6da00fb9]
+[04-02 00:35:56,930] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,930] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,931] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,931] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,931] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@a202ccb]
+[04-02 00:35:56,931] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,935] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,937] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,937] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [UPGRADE_NOWAIT]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,937] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20f12539]
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,938] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@18025ced]
+[04-02 00:35:56,938] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@13cf7d52]
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,938] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,938] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3a3e4aff]
+[04-02 00:35:56,939] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,939] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,940] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,940] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [UPGRADE_SKIPLOCKED]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,940] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d2a4eed]
+[04-02 00:35:56,940] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,941] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3f0846c6]
+[04-02 00:35:56,941] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@77a98a6a]
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,941] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,941] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@78fbff54]
+[04-02 00:35:56,941] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,942] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,943] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,943] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [FORCE]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,943] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3e10dc6]
+[04-02 00:35:56,943] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,943] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,943] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,953] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@45e37a7e]
+[04-02 00:35:56,953] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@62452cc9]
+[04-02 00:35:56,954] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,954] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,954] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,954] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,954] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6941827a]
+[04-02 00:35:56,954] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,955] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,955] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,955] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [PESSIMISTIC_READ]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? lock in share mode
+[04-02 00:35:56,955] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5a7005d]
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,956] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1021f6c9]
+[04-02 00:35:56,956] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7516e4e5]
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,956] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,956] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@488eb7f2]
+[04-02 00:35:56,956] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,957] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,958] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,958] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [PESSIMISTIC_WRITE]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,958] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5e81e5ac]
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,959] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3fa2213]
+[04-02 00:35:56,959] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3e7634b9]
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,959] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,959] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6f0b0a5e]
+[04-02 00:35:56,959] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,960] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,960] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,961] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [PESSIMISTIC_FORCE_INCREMENT]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=? for update
+[04-02 00:35:56,961] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6035b93b]
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,961] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3dd1dc90]
+[04-02 00:35:56,961] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@abf688e]
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,961] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,962] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@478ee483]
+[04-02 00:35:56,962] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,962] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,963] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,963] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [OPTIMISTIC]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=?
+[04-02 00:35:56,963] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1a7288a3]
+[04-02 00:35:56,963] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : creationTime
+[04-02 00:35:56,963] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : email
+[04-02 00:35:56,963] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : gameResults
+[04-02 00:35:56,963] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@58fe0499]
+[04-02 00:35:56,963] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@686449f9]
+[04-02 00:35:56,963] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : login
+[04-02 00:35:56,964] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : modificationTime
+[04-02 00:35:56,964] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : password
+[04-02 00:35:56,964] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : currentSatus
+[04-02 00:35:56,964] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@665df3c6]
+[04-02 00:35:56,964] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,964] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,965] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.UserDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.UserDataSet, querySpaceUid=<gen:0>, path=database.datasets.UserDataSet)
+          - CollectionAttributeFetchImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:1>, path=database.datasets.UserDataSet.gameResults)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:2>, path=database.datasets.UserDataSet.gameResults.<elements>)
+          - EntityAttributeFetchImpl(entity=database.datasets.UserStatusDataSet, querySpaceUid=<gen:3>, path=database.datasets.UserDataSet.currentSatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.UserDataSet)
+          - SQL table alias mapping - userdatase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+[04-02 00:35:56,965] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.UserDataSet [OPTIMISTIC_FORCE_INCREMENT]: select userdatase0_.id as id1_2_0_, userdatase0_.creationTime as creation2_2_0_, userdatase0_.email as email3_2_0_, userdatase0_.login as login4_2_0_, userdatase0_.modificationTime as modifica5_2_0_, userdatase0_.password as password6_2_0_ from users userdatase0_ where userdatase0_.id=?
+[04-02 00:35:56,966] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_MERGE on entity database.datasets.UserDataSet: select userdatase0_.id as id1_2_2_, userdatase0_.creationTime as creation2_2_2_, userdatase0_.email as email3_2_2_, userdatase0_.login as login4_2_2_, userdatase0_.modificationTime as modifica5_2_2_, userdatase0_.password as password6_2_2_, gameresult1_.userId as userId3_0_4_, gameresult1_.id as id1_0_4_, gameresult1_.id as id1_0_0_, gameresult1_.score as score2_0_0_, gameresult1_.userId as userId3_0_0_, userstatus2_.id as id1_1_1_, userstatus2_.isActive as isActive2_1_1_, userstatus2_.sessionId as sessionI3_1_1_, userstatus2_.user as user4_1_1_ from users userdatase0_ left outer join gameResults gameresult1_ on userdatase0_.id=gameresult1_.userId left outer join status userstatus2_ on userdatase0_.id=userstatus2_.user where userdatase0_.id=?
+[04-02 00:35:56,967] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_REFRESH on entity database.datasets.UserDataSet: select userdatase0_.id as id1_2_2_, userdatase0_.creationTime as creation2_2_2_, userdatase0_.email as email3_2_2_, userdatase0_.login as login4_2_2_, userdatase0_.modificationTime as modifica5_2_2_, userdatase0_.password as password6_2_2_, gameresult1_.userId as userId3_0_4_, gameresult1_.id as id1_0_4_, gameresult1_.id as id1_0_0_, gameresult1_.score as score2_0_0_, gameresult1_.userId as userId3_0_0_, userstatus2_.id as id1_1_1_, userstatus2_.isActive as isActive2_1_1_, userstatus2_.sessionId as sessionI3_1_1_, userstatus2_.user as user4_1_1_ from users userdatase0_ left outer join gameResults gameresult1_ on userdatase0_.id=gameresult1_.userId left outer join status userstatus2_ on userdatase0_.id=userstatus2_.user where userdatase0_.id=?
+[04-02 00:35:56,968] [DEBUG] entity.AbstractEntityPersister [] : Static SQL for entity: database.datasets.GameResultDataSet
+[04-02 00:35:56,968] [DEBUG] entity.AbstractEntityPersister [] :  Version select: select id from gameResults where id =?
+[04-02 00:35:56,972] [DEBUG] entity.AbstractEntityPersister [] :  Snapshot select: select gameresult_.id, gameresult_.score as score2_0_, gameresult_.userId as userId3_0_ from gameResults gameresult_ where gameresult_.id=?
+[04-02 00:35:56,972] [DEBUG] entity.AbstractEntityPersister [] :  Insert 0: insert into gameResults (score, userId, id) values (?, ?, ?)
+[04-02 00:35:56,972] [DEBUG] entity.AbstractEntityPersister [] :  Update 0: update gameResults set score=?, userId=? where id=?
+[04-02 00:35:56,972] [DEBUG] entity.AbstractEntityPersister [] :  Delete 0: delete from gameResults where id=?
+[04-02 00:35:56,972] [DEBUG] entity.AbstractEntityPersister [] :  Identity insert: insert into gameResults (score, userId) values (?, ?)
+[04-02 00:35:56,972] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@68b6f0d6]
+[04-02 00:35:56,972] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,972] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,973] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,973] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,973] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,973] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [NONE]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,973] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@aa549e5]
+[04-02 00:35:56,974] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,974] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,974] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,974] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,975] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,975] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [READ]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,975] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5c00384f]
+[04-02 00:35:56,975] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,975] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,975] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,975] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,976] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,976] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [UPGRADE]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,976] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1bb564e2]
+[04-02 00:35:56,976] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,976] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,977] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,977] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,978] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,978] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [UPGRADE_NOWAIT]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,978] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f792b9b]
+[04-02 00:35:56,979] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,979] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,979] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,979] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,980] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,980] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [UPGRADE_SKIPLOCKED]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,980] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b20ca2b]
+[04-02 00:35:56,980] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,980] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,980] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,980] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,981] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,981] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [FORCE]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,982] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6aecbb8d]
+[04-02 00:35:56,982] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,982] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,982] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,982] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,983] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,983] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [PESSIMISTIC_READ]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? lock in share mode
+[04-02 00:35:56,983] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4da602fc]
+[04-02 00:35:56,983] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,983] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,983] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,984] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,984] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,984] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [PESSIMISTIC_WRITE]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,984] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@25b2cfcb]
+[04-02 00:35:56,985] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,985] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,985] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,985] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,985] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,986] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [PESSIMISTIC_FORCE_INCREMENT]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=? for update
+[04-02 00:35:56,986] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@fb9c7aa]
+[04-02 00:35:56,986] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,986] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,986] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,986] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,987] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,987] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [OPTIMISTIC]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,987] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7fc6de5b]
+[04-02 00:35:56,987] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,987] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,987] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,988] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:56,988] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(entity=database.datasets.GameResultDataSet)
+    - Returns
+       - EntityReturnImpl(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:0>, path=database.datasets.GameResultDataSet)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=database.datasets.GameResultDataSet)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[04-02 00:35:56,988] [DEBUG] oader.entity.plan.EntityLoader [] : Static select for entity database.datasets.GameResultDataSet [OPTIMISTIC_FORCE_INCREMENT]: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,989] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_MERGE on entity database.datasets.GameResultDataSet: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,989] [DEBUG] org.hibernate.loader.Loader    [] : Static select for action ACTION_REFRESH on entity database.datasets.GameResultDataSet: select gameresult0_.id as id1_0_0_, gameresult0_.score as score2_0_0_, gameresult0_.userId as userId3_0_0_ from gameResults gameresult0_ where gameresult0_.id=?
+[04-02 00:35:56,996] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@20a8a64e]
+[04-02 00:35:56,996] [DEBUG] nternal.spaces.QuerySpacesImpl [] : Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@62f4ff3b]
+[04-02 00:35:56,997] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : score
+[04-02 00:35:56,997] [DEBUG] lking.spi.MetamodelGraphWalker [] : Visiting attribute path : user
+[04-02 00:35:56,997] [DEBUG] lking.spi.MetamodelGraphWalker [] : Property path deemed to be circular : user
+[04-02 00:35:56,997] [DEBUG] gAssociationVisitationStrategy [] : Building LoadPlan...
+[04-02 00:35:56,999] [DEBUG] LoadQueryJoinAndFetchProcessor [] : processing queryspace <gen:0>
+[04-02 00:35:57,000] [DEBUG] .build.spi.LoadPlanTreePrinter [] : LoadPlan(collection=database.datasets.UserDataSet.gameResults)
+    - Returns
+       - CollectionReturnImpl(collection=database.datasets.UserDataSet.gameResults, querySpaceUid=<gen:0>, path=[database.datasets.UserDataSet.gameResults])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=database.datasets.GameResultDataSet, querySpaceUid=<gen:1>, path=[database.datasets.UserDataSet.gameResults].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=database.datasets.UserDataSet.gameResults)
+          - SQL table alias mapping - gameresult0_
+          - alias suffix - 0_
+          - suffixed key columns - {userId3_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_0_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=database.datasets.GameResultDataSet)
+                - SQL table alias mapping - gameresult0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+[04-02 00:35:57,001] [DEBUG] llection.plan.CollectionLoader [] : Static select for collection database.datasets.UserDataSet.gameResults: select gameresult0_.userId as userId3_0_0_, gameresult0_.id as id1_0_0_, gameresult0_.id as id1_0_1_, gameresult0_.score as score2_0_1_, gameresult0_.userId as userId3_0_1_ from gameResults gameresult0_ where gameresult0_.userId=?
+[04-02 00:35:57,001] [DEBUG] te.internal.SessionFactoryImpl [] : Instantiated session factory
+[04-02 00:35:57,018] [INFO ] nate.tool.hbm2ddl.SchemaExport [] : HHH000227: Running hbm2ddl schema export
+[04-02 00:35:57,018] [DEBUG] nate.tool.hbm2ddl.SchemaExport [] : Import file not found: /import.sql
+[04-02 00:35:57,019] [DEBUG] org.hibernate.SQL              [] : alter table gameResults drop foreign key FK1xc70m3he64eqmp2y5fr1xxa8
+[04-02 00:35:57,081] [DEBUG] org.hibernate.SQL              [] : alter table status drop foreign key FKse4e57m5q1aikyq02pax4ls2w
+[04-02 00:35:57,138] [DEBUG] org.hibernate.SQL              [] : drop table if exists gameResults
+[04-02 00:35:57,214] [DEBUG] org.hibernate.SQL              [] : drop table if exists status
+[04-02 00:35:57,290] [DEBUG] org.hibernate.SQL              [] : drop table if exists users
+[04-02 00:35:57,365] [DEBUG] org.hibernate.SQL              [] : create table gameResults (id bigint not null auto_increment, score bigint, userId bigint, primary key (id))
+[04-02 00:35:57,575] [DEBUG] org.hibernate.SQL              [] : create table status (id bigint not null auto_increment, isActive bigint not null, sessionId varchar(255), user bigint, primary key (id))
+[04-02 00:35:57,752] [DEBUG] org.hibernate.SQL              [] : create table users (id bigint not null auto_increment, creationTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP, email varchar(50) not null, login varchar(50) not null, modificationTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, password varchar(50) not null, primary key (id))
+[04-02 00:35:57,936] [DEBUG] org.hibernate.SQL              [] : alter table gameResults add constraint FK1xc70m3he64eqmp2y5fr1xxa8 foreign key (userId) references users (id)
+[04-02 00:35:58,391] [DEBUG] org.hibernate.SQL              [] : alter table status add constraint FKse4e57m5q1aikyq02pax4ls2w foreign key (user) references users (id)
+[04-02 00:35:58,853] [INFO ] nate.tool.hbm2ddl.SchemaExport [] : HHH000230: Schema export complete
+[04-02 00:35:58,853] [DEBUG] .internal.JtaPlatformInitiator [] : No JtaPlatform was specified, checking resolver
+[04-02 00:35:58,854] [DEBUG] l.JtaPlatformResolverInitiator [] : No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+[04-02 00:35:58,857] [DEBUG] al.StandardJtaPlatformResolver [] : Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[04-02 00:35:58,859] [DEBUG] .internal.NamedQueryRepository [] : Checking 0 named HQL queries
+[04-02 00:35:58,859] [DEBUG] .internal.NamedQueryRepository [] : Checking 0 named SQL queries
+[04-02 00:35:58,860] [DEBUG] nternal.SessionFactoryRegistry [] : Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@4bef0fe3
+[04-02 00:35:58,861] [DEBUG] nternal.SessionFactoryRegistry [] : Registering SessionFactory: d4af4e7b-6ff5-4faf-957e-1558c13bef4f (<unnamed>)
+[04-02 00:35:58,861] [DEBUG] nternal.SessionFactoryRegistry [] : Not binding SessionFactory to JNDI, no JNDI name configured
+[04-02 00:35:59,104] [ERROR] main.Main                      [] : Unable to start server. Error message: Адрес уже используется
+[04-02 00:36:39,098] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:36:39,099] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:36:39,101] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:36:39,101] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:36:39,102] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:36:40,536] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:36:40,537] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:36:40,540] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:36:40,540] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:36:40,568] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:37:03,463] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:37:03,464] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:37:03,466] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:37:03,468] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:37:03,469] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:37:24,397] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:37:24,398] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:37:24,401] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:37:24,401] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:37:24,402] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:38:25,728] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:38:25,730] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:38:25,733] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:38:25,733] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:38:25,734] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:38:27,217] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:38:27,218] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:38:27,219] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:38:27,220] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:38:27,220] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:45:29,694] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:45:29,695] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:45:29,696] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:45:29,697] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:45:29,697] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:47:33,281] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:47:33,282] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:47:33,283] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:47:33,284] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:47:33,284] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:47:35,080] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:47:35,082] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:47:35,083] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:47:35,084] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:47:35,084] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:50:51,809] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:50:51,810] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:50:51,811] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:50:51,811] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:50:51,812] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:50:53,913] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:50:53,914] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:50:53,915] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:50:53,916] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:50:53,916] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:51:39,789] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:51:39,790] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:51:39,792] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:51:39,792] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:51:39,793] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:54:00,190] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:54:00,191] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:54:00,192] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:54:00,192] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:54:00,193] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:54:02,585] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:54:02,586] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:54:02,588] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:54:02,589] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:54:02,590] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}
+[04-02 00:59:11,041] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"17gi5zi7lbiee17v1adesuc6u5"
+[04-02 00:59:11,042] [DEBUG] org.hibernate.SQL              [] : select this_.id as id1_1_2_, this_.isActive as isActive2_1_2_, this_.sessionId as sessionI3_1_2_, this_.user as user4_1_2_, userdatase2_.id as id1_2_0_, userdatase2_.creationTime as creation2_2_0_, userdatase2_.email as email3_2_0_, userdatase2_.login as login4_2_0_, userdatase2_.modificationTime as modifica5_2_0_, userdatase2_.password as password6_2_0_, gameresult3_.userId as userId3_0_4_, gameresult3_.id as id1_0_4_, gameresult3_.id as id1_0_1_, gameresult3_.score as score2_0_1_, gameresult3_.userId as userId3_0_1_ from status this_ left outer join users userdatase2_ on this_.user=userdatase2_.id left outer join gameResults gameresult3_ on userdatase2_.id=gameresult3_.userId where this_.sessionId=?
+[04-02 00:59:11,043] [DEBUG] internal.CollectionLoadContext [] : No collections were found in result set for role: database.datasets.UserDataSet.gameResults
+[04-02 00:59:11,044] [DEBUG] rontend.IsAuthenticatedServlet [] : Denied. SessionId: 17gi5zi7lbiee17v1adesuc6u5. Reason: Not logged in.
+[04-02 00:59:11,044] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 401, response body: {}

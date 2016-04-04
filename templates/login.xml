@@ -1,3 +1,20 @@
 <fest:template xmlns:fest="http://fest.mail.ru">
-    <div id="login"></div>
+
+    <!--<div id="login">-->
+        <fest:include  src="./back_button.xml"/>
+        <div class="header">
+            <h1>SignIn</h1>
+        </div>
+        <form class="login__form" name="login" action="/api/v1/auth/signin" method="POST">
+            <input class="login__form__input-field" name="username" type="text" size="25"
+                                maxlength="30" value="" placeholder="Username" />
+            <input class="login__form__input-field"  name="password" type="password"
+                    size="25" maxlength="30" value="" placeholder="Password" />
+            <input class="login__form__submit form-submit" type="submit" name="enter" value="Signin" />
+
+            <div id="form__error-block">
+            </div>
+        </form>
+
+    <!--</div>-->
 </fest:template>
