@@ -15,14 +15,7 @@ define([
 
     var ScoreboardView = BaseView.extend({
 
-        best_players :new ScoreCollection([{'username':'Username','score':'Score'},
-            {username:'Dan', score:1000},
-            {username:'Ann', score:2900},
-            {username:'Andrew', score:1800},
-            {username:'Alex', score:7300},
-            {username:'George', score:600},
-            {username:'Qwerty', score:2600},
-            {username:'Master', score:Infinity},]),
+        best_players :new ScoreCollection(),
         el:'#scoreboard',
         name:'scoreboard',
         template: tmpl,
@@ -33,8 +26,13 @@ define([
             BaseView.prototype.initialize.call(this);
         },
         render: function () {
-            this.$el.html(this.template(this.best_players.toJSON()));
-            return this;
+            this.best_players.fetch({
+                success:function(){
+                    this.$el.html(this.template(this.best_players.toJSON()));
+                }.bind(this),
+            })
+            //this.$el.html(this.template(this.best_players.toJSON()));
+            //return this;
 
         },
         show: function () {

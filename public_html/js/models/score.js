@@ -4,13 +4,22 @@ define([
     Backbone
 ){
 
-    var Model = Backbone.Model.extend({
+    var SCORE_URL ='api/v1/score';
+    var ScoreModel = Backbone.Model.extend({
+        url:function(){
+            return (this.id)? (SCORE_URL+this.id) : SCORE_URL;
+        },
         defaults:
         {
-            'username':'',
+            'login':'',
             'score':0
+        },
+        initialize:function(login,score){
+            this.login = login;
+            this.score = score;
         }
+
     });
 
-    return Model;
+    return ScoreModel;
 });

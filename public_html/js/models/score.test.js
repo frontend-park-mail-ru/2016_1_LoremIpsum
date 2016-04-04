@@ -7,5 +7,6 @@ define(function (require) {
             score = new ScoreModel();
 
         QUnit.ok(score instanceof Backbone.Model);
+
     });
 });

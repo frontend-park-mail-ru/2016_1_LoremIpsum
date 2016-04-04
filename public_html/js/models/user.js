@@ -13,11 +13,11 @@ define([
          url:function(){
             return (this.id)? (USER_URL+this.id) : USER_URL;
          },
-         initialize:function(_id,_email, _username)
+         initialize:function(_id,_email, _login)
          {
              this.id=_id;
              this.email =_email;
-             this.username=_username;
+             this.login=_login;
          }
     });
 

@@ -3,9 +3,9 @@ define(function (require) {
 
     QUnit.test("При fetch вызывается метод sync", function () {
 
-        var SessionModel = require('./session'),
-            Backbone = require('backbone'),
-            session = new SessionModel();
+        var session = require('./session'),
+            Backbone = require('backbone');
+            //session = new SessionModel();
 
         sinon.spy(Backbone, 'sync');
 

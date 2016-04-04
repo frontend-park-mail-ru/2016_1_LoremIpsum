@@ -7,7 +7,7 @@ module.exports = function (grunt) {
                 stderr: true
             },
             server: {
-                command: 'java -jar server.jar 8080'
+                command: 'java -jar server.jar 8080 fake'
                 //command: 'node server.js'
             }
         },

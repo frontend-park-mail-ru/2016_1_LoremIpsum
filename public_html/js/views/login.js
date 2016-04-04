@@ -16,8 +16,8 @@ define([
     _
 ){
     var PASSWORD_VALIDATE_OPTIONS={'required':true};
-    var USERNAME_VALIDATE_OPTIONS={'required':true};
-    var VALIDATED_FIELDS ={'username':USERNAME_VALIDATE_OPTIONS,
+    var NICKNAME_VALIDATE_OPTIONS={'required':true};
+    var VALIDATED_FIELDS ={'nickname':NICKNAME_VALIDATE_OPTIONS,
                            'password':PASSWORD_VALIDATE_OPTIONS};
     var DELAY =10;
 
@@ -67,9 +67,9 @@ define([
         submit_handler: function(event)
         {
             event.preventDefault();
-            if(!error_message({'validation_result':validate(this.form,VALIDATED_FIELDS),
+            if(!error_message({'validation_result':validate(this.form.elements,VALIDATED_FIELDS),
                                'error_templates':this.error_templates})) {
-                session.login(this.form.elements['username'].value,
+                session.login(this.form.elements['nickname'].value,
                               this.form.elements['password'].value,
                               this.login_success,this.login_fail);
             }
