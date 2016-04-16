@@ -34,11 +34,14 @@ define([
                  success:function(model,response){
                      this.request_error = null;
                      this.user.id = response['id'];
-                     success_cb();
+                     console.log(success_cb);
+                     if(success_cb)
+                        success_cb();
                  }.bind(this),
                  error:function(){
                      this.request_error= new ValidationError('SERVER_ERROR',null);
-                     error_cb();
+                     if(error_cb)
+                        error_cb();
                  }.bind(this)
             });
 
@@ -66,11 +69,13 @@ define([
                 success:function(model,response){
                     this.request_error = null;
                     this.login(_login,_password);
-                    success_cb();
+                    if(success_cb)
+                        success_cb();
                 }.bind(this),
                 error:function(){
                     this.request_error= new ValidationError('SERVER_ERROR',null);
-                    error_cb();
+                    if(error_cb)
+                        error_cb();
                 }.bind(this)
             });
         },

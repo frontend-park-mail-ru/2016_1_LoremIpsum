@@ -22,8 +22,8 @@ define([
 ){
 
     var PLATFORM_OFFSET_FACTOR=2;
-    var BALL_DEFAULT_VY =-3;
-    var BALL_DEFAULT_VX = 5;
+    var BALL_DEFAULT_VY =-2;
+    var BALL_DEFAULT_VX = 4;
     var ARROW_LEFT=37;
     var ARROW_RIGHT=39;
     var BLOCK_SCORE =100;

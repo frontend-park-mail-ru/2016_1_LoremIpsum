@@ -62,8 +62,7 @@ define([
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            if(!this.form)
-                this.form = this.$('.registration__form')[0];
+            this.form = this.$('.registration__form')[0];
             console.log(this.form);
         },
         hide: function () {

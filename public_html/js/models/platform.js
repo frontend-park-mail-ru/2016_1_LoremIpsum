@@ -7,7 +7,7 @@ define([
     var PlatformModel = Backbone.Model.extend({
         initialize: function()
         {
-            this.color = "rgba(0,100,100,0.2)";
+            this.color = "rgba(150,100,150,0.7)";
             this.width =  50;
             this.height = 5;
             this.vx = 5;

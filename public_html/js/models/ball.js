@@ -10,8 +10,8 @@ define([
 
           this.x=0;
           this.y=0;
-          this.vx=5;
-          this.vy=-3;
+          this.vx=4;
+          this.vy=-2;
           this.ay=0.99;
           this.radius=4;
           this.color='rgba(255,255,255,0.7)';

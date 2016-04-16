@@ -19,7 +19,6 @@ define([
     var NICKNAME_VALIDATE_OPTIONS={'required':true};
     var VALIDATED_FIELDS ={'nickname':NICKNAME_VALIDATE_OPTIONS,
                            'password':PASSWORD_VALIDATE_OPTIONS};
-    var DELAY =10;
 
 
     var LoginView = BaseView.extend({

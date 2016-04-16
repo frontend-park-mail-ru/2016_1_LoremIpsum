@@ -16,6 +16,7 @@ define([
                     this.hide.bind(this));
             }
         },
+
         add_view:function(view,name){
             this.views[name]= view;
         },
@@ -25,9 +26,18 @@ define([
         contain_view:function(name){
             return this.views.hasOwnProperty(name);
         },
+        page_contain_view:function(name){
+            return on_page[name]
+
+        },
         show: function (view_name) {
             if(this.contain_view(view_name)){
-                this.views[view_name].show();
+                //if(on_page[view_name])
+                    this.views[view_name].show();
+               // else {
+                //    $('#page').append(this.views[view_name]);
+                //    on_page[view_name]=true;
+                //}
             }
             else{
 
