@@ -7,7 +7,10 @@ define([
     'models/session',
     'models/score',
     'views/base',
-    'underscore'
+    'underscore',
+    'game/collisions_handlers',
+    'game/painters',
+    'utils/canvas_wrapper'
 
 ], function(
     Backbone,
@@ -18,9 +21,14 @@ define([
     session,
     ScoreModel,
     BaseView,
-    _
+    _,
+    initialize_collision_handlers,
+    initialize_painters,
+    Wrapper
 ){
 
+    var BLOCK_ROWS =3;//6;
+    var BLOCK_COLUMNS =15;//20;
     var PLATFORM_OFFSET_FACTOR=2;
     var BALL_DEFAULT_VY =-2;
     var BALL_DEFAULT_VX = 4;
@@ -37,48 +45,100 @@ define([
         name:'game',
         initialize: function () {
             BaseView.prototype.initialize.call(this);
-            this.ball = new BallModel();
-            this.platform = new PlatformModel();
-            this.blocks = new BlocksModel(6,20);
-            this.score = 0;
+            //this.ball = new BallModel();
+            //this.platform = new PlatformModel();
+            ///his.blocks = new BlocksModel(6,20);
+            //this.score = 0;
             _.bindAll(this,'draw','keyup_handler','keydown_handler');
         },
         render: function () {
             this.$el.html(this.template());
 
             this.canvas = this.$('#game__canvas')[0];
-            this.contex = this.canvas.getContext('2d');
+            this.context = this.canvas.getContext('2d');
 
-            this.platform.x= this.canvas.width/2 - this.platform.width/2;
+            this.platform =  Wrapper.create_rectangle({
+                _id:'platform',
+                x:this.canvas.width/2 - 40/2,
+                y:this.canvas.height - PLATFORM_OFFSET_FACTOR*5,
+                vy:0,
+                vx:0,
+                width:40,
+                height:5
+            });
+            this.ball=  Wrapper.create_ball({
+                _group:'balls',
+                x:this.canvas.width-50,
+                y:this.canvas.height-30,
+                vy:2,
+                vx:3,
+                radius:4
+            });
+
+            var padding_x = 2;
+            var padding_y = 10;
+            var blocks_width = (this.canvas.width / 20) - padding_x;
+            var offset_x =(this.canvas.width - blocks_width*BLOCK_COLUMNS)/2;
+            var offset_y = 15;
+            var blocks_height = 5;
+            this.blocks = new Array(BLOCK_ROWS);
+            for(var i=0; i< BLOCK_ROWS; i++) {
+                this.blocks[i] = new Array(BLOCK_COLUMNS);
+                for (var j = 0; j < BLOCK_COLUMNS; j++) {
+                    this.blocks[i][j] = Wrapper.create_rectangle({
+                        _group: 'blocks',
+                        x: j * (blocks_width + padding_x) + offset_x,
+                        y: i * (blocks_height + padding_y) + offset_y,
+                        vy: 0,
+                        vx: 0,
+                        width: blocks_width,
+                        height: blocks_height
+                    });
+                }
+            }
+            Wrapper.create_left_bound({'coord':0});
+            Wrapper.create_right_bound({'coord':this.canvas.width});
+            Wrapper.create_top_bound({'coord':0});
+            Wrapper.create_bottom_bound({'coord':this.canvas.height});
+            Wrapper.context = this.context;
+            Wrapper.canvas = this.canvas;
+            initialize_collision_handlers();
+            initialize_painters();
+
+
+            /*this.platform.x= this.canvas.width/2 - this.platform.width/2;
             this.platform.y= this.canvas.height -
                   PLATFORM_OFFSET_FACTOR*this.platform.height;
             this.blocks.width = (this.canvas.width/20)-2;
-            this.blocks.height = 5;
+            this.blocks.height = 5;*/
         },
         show: function () {
             BaseView.prototype.show.call(this);
             $(document).on('keydown',this.keydown_handler);
             $(document).on('keyup',this.keyup_handler);
-            this.reset_ball();
+            //this.reset_ball();
             this.reset_blocks();
             this.score =0;
             this.game_is_running=true;
-            this.animationID=window.requestAnimationFrame(this.draw);
+            Wrapper.run();
+            //this.animationID=window.requestAnimationFrame(this.draw);
         },
         hide: function () {
             window.cancelAnimationFrame(this.animationID);
-            $(document).off('keyup',this.keydown_handler);
-            $(document).off('keydown',this.keyup_handler);
+            $(document).off('keyup');
+            $(document).off('keydown');
             this.game_is_running=false;
             BaseView.prototype.hide.call(this);
+            Wrapper.stop();
         },
         keydown_handler:function(event) {
             if(event.keyCode == ARROW_LEFT) {
-                this.platform.go_left();
+                this.platform.vx =-5;
             }
             else if(event.keyCode == ARROW_RIGHT) {
-                this.platform.go_right();
+                this.platform.vx =5;
             }
+
         },
         keyup_handler:function(event) {
             this.platform.stop();
