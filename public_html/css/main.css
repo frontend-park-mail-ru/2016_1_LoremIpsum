@@ -1,9 +1,9 @@
 /* TODO */
-html { overflow: hidden; }
-a {
+a
+{
     text-decoration:none;
 }
-#page
+.b-page
 {
     background: url("../background.png");
     position: fixed;
@@ -13,19 +13,6 @@ a {
     height: 100vh;
     background-size: 100%, 100%;
 }
-#main, #scoreboard, #login,#game, #registration
-{
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    /*left: 5%;
-    right: 5%;
-    top :5%;
-    bottom: 5%;*/
-}
-
 .header
 {
     width: 70%;
@@ -35,18 +22,24 @@ a {
     margin-left: 15%;
     margin-right: 15%;
     font-size:5.5vh ;
-    /*margin-top: 10%;
-    margin-bottom:10% ;*/
 }
-
-#main__container
+.b-scoreboard, .b-login,.b-game, .b-registration
+{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+.b-main
 {
     position: absolute;
-    width: 70%;
-    left:15%;
-    right: 15%;
+    width: 50%;
+    left:25%;
+    right: 25%;
 }
-.main__container__elem
+
+.b-main__text-block
 {
 
     background-color: rgba(60, 63, 65, 0.23);
@@ -60,29 +53,19 @@ a {
     font-size:5vw;
     border-radius:4vh;
     vertical-align: middle;
-
-    /* padding-top: 4%;
-     padding-bottom: 4%;*/
-    margin-top: 1%;
     overflow:hidden;
     line-height: 16vh;
     font-style: normal;
-    /*margin: auto;
-    /*margin-top: 10%;
-    margin-bottom:10% ;*/
 }
-.main__elem-text
+.b-main__text-block_position
 {
 
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 1%;
 }
-.scoreboard__elem
+
+.b-scoreboard__elem
 {
-    /* margin-left: 15%;
-     margin-right: 15%;*/
     background-color: rgba(60, 63, 65, 0.23);
-    /*width: 45%;*/
     color: rgba(230, 248, 255, 1);
     border-color: #f1ffe6;
     border: medium;
@@ -90,33 +73,27 @@ a {
     height : 20%;
     text-align: center;
     font-size:5vh;
-    /*border-radius:4vh;*/
     vertical-align: middle;
-    /* padding-top: 4%;
-     padding-bottom: 4%;*/
-    /*margin-top: 1%;*/
     overflow:hidden;
 }
-.scoreboard__table
+.b-scoreboard__table
 {
     width: 80%;
     left: 10%;
+}
+.b-scoreboard__table_position
+{
     right: 10%;
     position: absolute;
 }
-.js-back
-{
-    float: left;
-}
-.login__form
+.b-login__form
 {
     margin-left: 15%;
     margin-right: 15%;
-
     width: 70%;
     height:70%;
 }
-.login__form__input-field
+.b-login-input-field
 {
     background-color: rgba(60, 63, 65, 0.23);
     color: rgba(230, 248, 255, 1);
@@ -129,40 +106,65 @@ a {
     border-radius:20px;
     text-align: center;
 }
-.registration__form__input-field
+.b-submit
+{
+    height:15%;
+    font-size: 7vh;
+}
+.b-submit_margin
+{
+    margin-top:3%;
+}
+
+.b-submit:hover
+{
+    background-color:rgba(92,191,42, 0.4);
+}
+.b-submit:active
+{
+    position:relative;
+    outline: 0 !important;
+    -moz-outline-style: none;
+}
+.b-submit:focus
+{
+    outline:0;
+}
+
+.b-registration-form-input-field
 {
     background-color: rgba(60, 63, 65, 0.23);
     color: rgba(230, 248, 255, 1);
-    margin-left: 10%;
-    margin-right: 10%;;
     width: 80%;
     height:10%;
-    margin-top:1%;
     font-size: 7vh;
     border-radius:0.1vh;
 }
+.b-registration-form-input-field_position
+{
+    margin-left: 10%;
+    margin-right: 10%;;
+    margin-top:1%;
+}
 
-#game__canvas
+.game__canvas
 {
     border-color: #E9DC51;
     border-style: solid;
     border-width: 2px;
     padding-left: 0;
     padding-right: 0;
-    /*margin-left: auto;
-    margin-right: auto*/;
     width:90%;
     top:10%;
     left:5%;
     right:5%;
     position:absolute;
-    display: block; /*width: 95vw;*/
+    display: block;
 }
 
-#form__error-block
+.form__error-block
 {
     margin-top:2%;
-    /*min-width: 500px*/;
     min-height: 100px;
     width:30vw;
     height:16vh;
@@ -194,25 +196,8 @@ a {
     text-decoration:none;
     text-shadow:0px 1px 0px #2f6627;
 }
-.registration__form__submit
-{
-    height:8%;
-    margin-top:2%;
-    font-size: 7vh;
-}
-.login__form__submit
-{
-    height:15%;
-    margin-top:5%;
-    font-size: 7vh;
 
-}
-.login__form__submit:hover, .registration__form__submit:hover
+.js-back
 {
-    background-color:rgba(92,191,42, 0.4);
-}
-.login__form__submit:active, .registration__form__submit:active
-{
-    position:relative;
-    top:1px;
+    float: left;
 }

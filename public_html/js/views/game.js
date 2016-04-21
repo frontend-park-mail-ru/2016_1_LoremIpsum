@@ -29,7 +29,7 @@ define([
     var BLOCK_SCORE =100;
 
     var GameView = BaseView.extend({
-        el: '#game',
+        el: '.b-game',
         template: tmpl,
         events:{
             'click .js-back':'hide',
@@ -46,7 +46,7 @@ define([
         render: function () {
             this.$el.html(this.template());
 
-            this.canvas = this.$('#game__canvas')[0];
+            this.canvas = this.$('.game__canvas')[0];
             this.contex = this.canvas.getContext('2d');
 
             this.platform.x= this.canvas.width/2 - this.platform.width/2;

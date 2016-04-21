@@ -9,7 +9,7 @@ define([
 
     var DEFAULTS = {
         'timeout': 3000,
-        'error_block_selector':'#form__error-block',
+        'error_block_selector':'.form__error-block',
     };
 
     var  error_message = function(options)

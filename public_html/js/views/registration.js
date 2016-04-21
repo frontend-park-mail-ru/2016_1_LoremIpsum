@@ -27,7 +27,7 @@ define([
     var MUST_MATCH ={'password':'password2'};
 
     var RegistrationView = BaseView.extend({
-        el:'#registration',
+        el:'.b-registration',
         template: tmpl,
         events: {
             'submit':'submit_handler'
