@@ -6,11 +6,13 @@ define([
     'models/blocks',
     'models/session',
     'models/score',
+    'models/gamestate',
     'views/base',
     'underscore',
     'game/collisions_handlers',
     'game/painters',
-    'utils/canvas_wrapper'
+    'utils/canvas_wrapper',
+
 
 ], function(
     Backbone,
@@ -20,6 +22,7 @@ define([
     BlocksModel,
     session,
     ScoreModel,
+    GameState,
     BaseView,
     _,
     initialize_collision_handlers,
@@ -27,8 +30,8 @@ define([
     Wrapper
 ){
 
-    var BLOCK_ROWS =3;//6;
-    var BLOCK_COLUMNS =15;//20;
+    var BLOCK_ROWS =4;//6;
+    var BLOCK_COLUMNS =20;//20;
     var PLATFORM_OFFSET_FACTOR=2;
     var BALL_DEFAULT_VY =-2;
     var BALL_DEFAULT_VX = 4;
@@ -37,7 +40,7 @@ define([
     var BLOCK_SCORE =100;
 
     var GameView = BaseView.extend({
-        el: '#game',
+        id: 'game',
         template: tmpl,
         events:{
             'click .js-back':'hide',
@@ -45,66 +48,82 @@ define([
         name:'game',
         initialize: function () {
             BaseView.prototype.initialize.call(this);
-            //this.ball = new BallModel();
-            //this.platform = new PlatformModel();
-            ///his.blocks = new BlocksModel(6,20);
-            //this.score = 0;
             _.bindAll(this,'draw','keyup_handler','keydown_handler');
         },
         render: function () {
             this.$el.html(this.template());
+            BaseView.prototype.render.call(this);
+            //this.canvas = this.$('#game__canvas')[0];
+            //this.context = this.canvas.getContext('2d');
 
-            this.canvas = this.$('#game__canvas')[0];
-            this.context = this.canvas.getContext('2d');
+            //this.platform =  wrapper.create_rectangle({
+            //    _id:'platform',
+            //    x:this.canvas.width/2 - 40/2,
+            //    y:this.canvas.height - PLATFORM_OFFSET_FACTOR*5,
+            //    vy:0,
+            //    vx:0,
+            //    width:40,
+            //    height:10
+            //});
+            //this.ball=  wrapper.create_ball({
+            //    _group:'balls',
+            //    x:this.canvas.width-50,
+            //    y:this.canvas.height-30,
+            //    vy:2,
+            //    vx:3,
+            //    radius:5
+            //});
 
-            this.platform =  Wrapper.create_rectangle({
-                _id:'platform',
-                x:this.canvas.width/2 - 40/2,
-                y:this.canvas.height - PLATFORM_OFFSET_FACTOR*5,
-                vy:0,
-                vx:0,
-                width:40,
-                height:5
-            });
-            this.ball=  Wrapper.create_ball({
-                _group:'balls',
-                x:this.canvas.width-50,
-                y:this.canvas.height-30,
-                vy:2,
-                vx:3,
-                radius:4
-            });
-
-            var padding_x = 2;
-            var padding_y = 10;
-            var blocks_width = (this.canvas.width / 20) - padding_x;
-            var offset_x =(this.canvas.width - blocks_width*BLOCK_COLUMNS)/2;
-            var offset_y = 15;
-            var blocks_height = 5;
-            this.blocks = new Array(BLOCK_ROWS);
-            for(var i=0; i< BLOCK_ROWS; i++) {
-                this.blocks[i] = new Array(BLOCK_COLUMNS);
-                for (var j = 0; j < BLOCK_COLUMNS; j++) {
-                    this.blocks[i][j] = Wrapper.create_rectangle({
-                        _group: 'blocks',
-                        x: j * (blocks_width + padding_x) + offset_x,
-                        y: i * (blocks_height + padding_y) + offset_y,
-                        vy: 0,
-                        vx: 0,
-                        width: blocks_width,
-                        height: blocks_height
-                    });
-                }
-            }
-            Wrapper.create_left_bound({'coord':0});
-            Wrapper.create_right_bound({'coord':this.canvas.width});
-            Wrapper.create_top_bound({'coord':0});
-            Wrapper.create_bottom_bound({'coord':this.canvas.height});
-            Wrapper.context = this.context;
-            Wrapper.canvas = this.canvas;
-            initialize_collision_handlers();
-            initialize_painters();
-
+            //var padding_x = 2;
+            //var padding_y = 10;
+            //var blocks_width = 15;
+            //var offset_x =(this.canvas.width - blocks_width*BLOCK_COLUMNS)/3;
+            //var offset_y = 15;
+            //var blocks_height = 15;
+            //this.blocks = wrapper.create_rectangle({
+            //    _group:'blocks',
+            //    x:0,
+            //    y:0,
+            //    vy:0,
+            //    vx:0,
+            //    width:this.canvas.width,
+            //    height:(BLOCK_ROWS*(15 + 1))
+            //});
+            //this.blocks.padding_x = 2;
+            //this.blocks.padding_y = 1;
+            //this.blocks.block_width = 15;
+            //this.blocks.offset_x =(this.canvas.width - this.blocks.width*BLOCK_COLUMNS)/3;
+            //this.blocks.offset_y = 15;
+            //this.blocks.columns = BLOCK_COLUMNS;
+            //this.blocks.rows = BLOCK_ROWS;
+            //this.blocks.matrix = new Array(this.blocks.rows);
+            //this.blocks.block_height = 15;
+            //
+            //for (var i =0 ; i < this.blocks.rows; i++){
+            //    console.log(this.blocks.columns);
+            //    this.blocks.matrix[i] = new Array(this.blocks.columns);
+            //    for(var j=0; j<this.blocks.columns; j++){
+            //        this.blocks.matrix[i][j] = 1;
+            //    }
+            //}
+            //for(var i=0; i< BLOCK_ROWS; i++) {
+            //    this.blocks[i] = new Array(BLOCK_COLUMNS);
+            //    for (var j = 0; j < BLOCK_COLUMNS; j++) {
+            //        this.blocks[i][j] = wrapper.create_rectangle({
+            //            _group: 'blocks',
+            //            x: j * (blocks_width ),//+ padding_x) + offset_x,
+            //            y: i * (blocks_height) ,//+ padding_y) + offset_y,
+            //            vy: 0,
+            //            vx: 0,
+            //            width: blocks_width,
+            //            height: blocks_height
+            //        });
+            //    }
+            //}
+            this.wrapper = new Wrapper();
+            this.wrapper.canvas = this.$('#game__canvas')[0];
+            this.wrapper.context = this.wrapper.canvas.getContext('2d');
+            //this.wrapper.context.scale(0.5 , 0.5);
 
             /*this.platform.x= this.canvas.width/2 - this.platform.width/2;
             this.platform.y= this.canvas.height -
@@ -116,11 +135,22 @@ define([
             BaseView.prototype.show.call(this);
             $(document).on('keydown',this.keydown_handler);
             $(document).on('keyup',this.keyup_handler);
+
+            this.wrapper.create_left_bound({'coord':0});
+            this.wrapper.create_right_bound({'coord':this.wrapper.canvas.width });
+            this.wrapper.create_top_bound({'coord':0});
+            this.wrapper.create_bottom_bound({'coord':this.wrapper.canvas.height});
+
+            this.game_state = new GameState(this.wrapper);
+            initialize_collision_handlers(this.wrapper);
+            initialize_painters(this.wrapper);
+
+
             //this.reset_ball();
-            this.reset_blocks();
+            //this.reset_blocks();
             this.score =0;
             this.game_is_running=true;
-            Wrapper.run();
+            this.wrapper.run();
             //this.animationID=window.requestAnimationFrame(this.draw);
         },
         hide: function () {
@@ -129,19 +159,21 @@ define([
             $(document).off('keydown');
             this.game_is_running=false;
             BaseView.prototype.hide.call(this);
-            Wrapper.stop();
+            if(this.wrapper) {
+                this.wrapper.stop();
+                this.wrapper.clear();
+            }
         },
         keydown_handler:function(event) {
             if(event.keyCode == ARROW_LEFT) {
-                this.platform.vx =-5;
+                this.game_state.left();
             }
             else if(event.keyCode == ARROW_RIGHT) {
-                this.platform.vx =5;
+                this.game_state.right();
             }
-
         },
         keyup_handler:function(event) {
-            this.platform.stop();
+            this.game_state.stop_platform();
         },
         move_ball:function() {
             this.ball.x+=this.ball.vx;
@@ -180,8 +212,8 @@ define([
             var rowHeight = this.blocks.height + this.blocks.padding;
             var row = Math.floor(this.ball.y/(rowHeight));
             var col = Math.floor(this.ball.x/(this.blocks.width + this.blocks.padding));
-            if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col >= 0 && this.blocks.block_matrix[row][col] === 1){
-                this.blocks.block_matrix[row][col] = 0;
+            if (this.ball.y < this.blocks.rows * rowHeight && row >= 0 && col >= 0 && this.blocks.matrix[row][col] === 1){
+                this.blocks.matrix[row][col] = 0;
                 this.score += BLOCK_SCORE;
                 this.ball.vy = -this.ball.vy;
             }
@@ -206,7 +238,7 @@ define([
             this.contex.fillStyle = this.blocks.color;
             for (var i =0; i<this.blocks.rows; ++i){
                 for (var j =0; j<this.blocks.cols; ++j){
-                    if (this.blocks.block_matrix[i][j] === 1){
+                    if (this.blocks.matrix[i][j] === 1){
                         this.contex.beginPath();
                         this.contex.fillRect(j * (this.blocks.width + this.blocks.padding),
                                              i * (this.blocks.height+this.blocks.padding), this.blocks.width, this.blocks.height)
@@ -225,7 +257,7 @@ define([
             for(var i=0; i<20;i++){
                 var x0 = _.random(0,this.canvas.width);
                 var y0 = _.random(0,this.canvas.height);
-
+        
                 this.contex.strokeStyle = colors[_.random(0,colors.length)];
                 this.contex.beginPath();
                 this.contex.moveTo(x0,y0);
@@ -236,7 +268,6 @@ define([
             }
         },
         draw_score:function(){
-
             this.contex.fillStyle='white';
             this.contex.fillText('Your score', 3*this.canvas.width/4,3/4*this.canvas.height);
             this.contex.fillText(this.score, 3*this.canvas.width/4,3/4*this.canvas.height+15);
@@ -251,13 +282,13 @@ define([
             this.contex.textAlign='center';
             this.contex.fillText("Game over!", this.canvas.width/2,1/2*this.canvas.height);
             this.contex.fillText('Your score '+this.score, this.canvas.width/2,1/2*this.canvas.height+30);
-
+        
             new ScoreModel().save({},{attrs:{
                id:session.user.id,
                score:this.score
             }});
-
-
+        
+        
         },
         draw:function() {
             if(this.game_is_running) {
@@ -283,12 +314,12 @@ define([
             this.ball.vy =BALL_DEFAULT_VY;
         },
         reset_blocks:function() {
-            for (var i =0; i<this.blocks.rows; ++i) {
-                this.blocks.block_matrix[i] = [];
-                for (var j =0; j<this.blocks.cols; ++j) {
-                    this.blocks.block_matrix[i][j] = 1;
-                }
-            }
+            //for (var i =0; i<this.blocks.rows; ++i) {
+            //    this.blocks.matrix[i] = [];
+            //    for (var j =0; j<this.blocks.cols; ++j) {
+            //        this.blocks.matrix[i][j] = 1;
+            //    }
+            //}
         }
     });
     return new GameView();

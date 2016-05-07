@@ -1,4 +1,3 @@
-
 {
   "name": "epicgame",
   "version": "0.2.0",
@@ -23,5 +22,8 @@
   "scripts": {
     "start": "node server",
     "test": "grunt test"
+  },
+  "dependencies": {
+    "express-http-proxy": "^0.6.0"
   }
 }

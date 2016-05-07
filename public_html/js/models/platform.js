@@ -9,7 +9,7 @@ define([
         {
             this.color = "rgba(150,100,150,0.7)";
             this.width =  50;
-            this.height = 5;
+            this.height = 10;
             this.vx = 5;
             this.direction = 0;
             this.x=0;

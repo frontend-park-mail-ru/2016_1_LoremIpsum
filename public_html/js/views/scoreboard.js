@@ -16,7 +16,7 @@ define([
     var ScoreboardView = BaseView.extend({
 
         best_players :new ScoreCollection(),
-        el:'#scoreboard',
+        id:'scoreboard',
         name:'scoreboard',
         template: tmpl,
         events: {
@@ -29,7 +29,7 @@ define([
             this.best_players.fetch({
                 success:function(){
                     this.$el.html(this.template(this.best_players.toJSON()));
-                }.bind(this),
+                }.bind(this)
             })
 
         },

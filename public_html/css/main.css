@@ -5,13 +5,15 @@ a {
 }
 #page
 {
-    background: url("../index.jpeg");
+    background: url("../castle.png");
+    /*background-repeat:no-repeat ;*/
+    -moz-background-size: 100%;
     position: fixed;
     top:0;
     left:0;
     width: 100vw;
     height: 100vh;
-    background-size: 100%, 100%;
+    background-size: 100%;
 }
 #main, #scoreboard, #login,#game, #registration
 {

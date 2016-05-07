@@ -13,11 +13,14 @@ define([
         },
         render: function (data) {
             this.$el.html(this.template(data));
+            this.is_rendered = true;
             return this;
         },
         show: function () {
             this.trigger('show', {},{'view_name':this.name});
-            this.render();
+            if(!this.is_rendered) {
+                this.render();
+            }
             this.$el.css('visibility','visible');
             this.delegateEvents();
 

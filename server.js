@@ -26,6 +26,18 @@ app
 app.listen(PORT,HOSTNAME,function () {
 	console.log("Simple static server showing %s listening at http://%s:%s", PUBLIC_DIR, HOSTNAME, PORT);
 });
-
+app.use(
+	'/api',
+	proxy(
+		'http://localhost',
+		{
+			port: 8090,
+			forwardPath: function (req, res) {
+				console.log("proxy: [%s %s %s]", req.method, req.originalUrl);
+				return '/api' + require('url').parse(req.url).path;
+			}
+		}
+	)
+);
 
 

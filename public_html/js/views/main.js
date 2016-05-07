@@ -12,7 +12,7 @@ define([
     _
 ){
     var MainView = BaseView.extend({
-        el:'#main',
+        id:'main',
         events: {
             'click a':'hide'
         },
@@ -23,6 +23,7 @@ define([
         },
         render: function (is_auth) {
             this.$el.html(this.template({'isAuth':is_auth}) );
+            //console.log(this.$el.html());
             return this;
         },
         is_authinficated:function(){
@@ -32,7 +33,9 @@ define([
             this.render(false);
         },
         show: function () {
-            BaseView.prototype.show.call(this);
+            this.trigger('show', {},{'view_name':this.name});
+            this.delegateEvents();
+            this.$el.css('visibility','visible');
             session.is_authinficated(this.is_authinficated,
                                      this.not_authinficated);
         },

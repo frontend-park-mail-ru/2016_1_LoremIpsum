@@ -2,31 +2,49 @@
  * Created by danil on 16.04.16.
  */
 define([
-    '../utils/canvas_wrapper'
 ], function(
-    Wrapper
+
 ){
-    function painters_initialize(context){
-        Wrapper.id_draw('platform',function(context,platform){
-            context.fillStyle = 'rgba(150,100,150,0.7)';
-            context.beginPath();
-            context.fillRect(platform.x,platform.y,
-                    platform.width, platform.height);
-            context.closePath();
+
+    var ball_png = new Image();
+    ball_png.src = 'ball.png';
+    var platform_png = new Image();
+    platform_png.src = 'platform2.png';
+    var block_png = new Image();
+    block_png.src = 'block.png';
+    var another_ball = new Image;
+    another_ball.src ='another_ball.png';
+
+
+    function painters_initialize(Wrapper ){
+        Wrapper.id_draw('your_platform',function(context,platform){
+            context.drawImage(platform_png, platform.x, platform.y,platform.width,platform.height);
         });
-        Wrapper.group_draw('balls',function(context,ball){
-            context.fillStyle = 'white';
-            context.beginPath();
-            context.arc(ball.x, ball.y, ball.radius,0,2*Math.PI,true);
-            context.closePath();
-            context.fill();
+        Wrapper.id_draw('another_platform',function(context,platform){
+            context.globalAlpha = 0.2;
+            context.drawImage(platform_png, platform.x, platform.y,platform.width,platform.height);
+            context.globalAlpha = 1;
         });
-        Wrapper.group_draw('blocks',function(context,block){
-            context.fillStyle = 'rgba(0,180,180,0.3)';
-            context.beginPath();
-            context.fillRect(block.x,block.y, block.width,block.height);
-            context.strokeRect(block.x,block.y, block.width, block.height);
-            context.closePath();
+        Wrapper.group_draw('another_balls',function(context,ball){
+            context.globalAlpha = 0.4;
+            context.drawImage(another_ball, ball.left(), ball.top(),2*ball.radius,2*ball.radius);
+            context.globalAlpha = 1;
+        });
+        Wrapper.group_draw('your_balls',function(context,ball){
+            context.drawImage(ball_png, ball.left(), ball.top(),2*ball.radius,2*ball.radius);
+        });
+        Wrapper.group_draw('blocks',function(context,blocks){
+            for (var i =0; i<blocks.rows; ++i){
+                for (var j =0; j<blocks.columns; ++j){
+                    if (blocks.matrix[i][j] === 1){
+                        context.drawImage(block_png,
+                                          j*(blocks.block_width + blocks.padding_x),
+                                          i*(blocks.block_height +blocks.padding_y),
+                                          blocks.block_width,
+                                          blocks.block_height);
+                    }
+                }
+            }
         });
     }
     return painters_initialize;
