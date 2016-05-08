@@ -3,7 +3,6 @@ var express = require('express'),
     errorHandler = require('errorhandler'),
     app = express(),
 	proxy = require('express-http-proxy');
-
 var HOSTNAME = 'localhost',
     PORT = 8080,
     PUBLIC_DIR = __dirname + '/public_html';

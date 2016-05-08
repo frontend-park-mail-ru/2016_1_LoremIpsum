@@ -19,6 +19,15 @@ define([//// 'underscore'
         this.vx = 0;
         this.vy = 0;
     };
+    CanvasObject.prototype.copy = function(object){
+        for ( var key in this){
+            if(this.hasOwnProperty(key) &&
+               object.hasOwnProperty(key))
+            {
+                this[key] = object [key];
+            }
+        }
+    };
     CanvasObject.prototype.change_velocity = function(vx,vy){
         this.vx = vx;
         this.vy = vy;
@@ -137,7 +146,6 @@ define([//// 'underscore'
         this.create_bound(options);
     };
     Wrapper.prototype.default_bound_collision_handler =function(object, bound){
-
     };
     Wrapper.prototype.click_handler =function(event){
         var handler_name='';

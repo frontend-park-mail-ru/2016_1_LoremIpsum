@@ -24,6 +24,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "express-http-proxy": "^0.6.0"
+    "express-http-proxy": "^0.6.0",
+    "nodejs-websocket": "^1.5.0"
   }
 }
