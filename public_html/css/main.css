@@ -7,7 +7,6 @@ a
 .b-page
 {
     background: url("../img/castle.png");
-    /*background-repeat:no-repeat ;*/
     -moz-background-size: 100%;
     position: fixed;
     top:0;
@@ -28,16 +27,13 @@ a
 }
 .b-scoreboard, .b-login,.b-game, .b-registration, .b-main
 {
-    /*overflow: hidden;*/
     position: absolute;
     width: 100%;
     height: 100%;
-    /*visibility: hidden;*/
 }
 
 .b-main__menu-elem
 {
-
     background-color: rgba(60, 63, 65, 0.23);
     width: 50%;
     color: rgba(230, 248, 255, 1);
@@ -60,12 +56,10 @@ a
 }
 .b-main__menu-elem_position
 {
-    /*костыли*/
     margin-left:25%;
     margin-right: 25%;
     margin-top: 1%;
 }
-
 .b-scoreboard__elem
 {
     background-color: rgba(60, 63, 65, 0.23);
@@ -106,13 +100,11 @@ a
     border-radius:20px;
     text-align: center;
 }
-
 .b-login-form__input_position{
     margin-left: 10%;
     margin-right: 10%;;
     margin-top:2%;
 }
-
 .b-signup-form__input
 {
     background-color: rgba(60, 63, 65, 0.23);
@@ -122,14 +114,12 @@ a
     font-size: 7vh;
     border-radius:0.1vh;
 }
-
 .b-signup-form__input_position
 {
     margin-left: 10%;
     margin-right: 10%;;
     margin-top:1%;
 }
-
 .b-game__canvas
 {
     border-color: #E9DC51;
@@ -144,7 +134,6 @@ a
     position:absolute;
     display: block;
 }
-
 .b-error-block
 {
     margin-top:2%;
@@ -162,7 +151,6 @@ a
     text-align: center;
 
 }
-
 .b-login-form__submit, .b-signup-form__submit
 {
     outline:0;
@@ -178,29 +166,15 @@ a
     text-decoration:none;
     text-shadow:0px 1px 0px #2f6627;
 }
-
 .b-login-form__submit_margin, .b-signup-form__submit_margin{
     margin-left: 10%;
     margin-right: 10%;
     margin-top:3%;
-
 }
-
-
 .b-login-form__submit:hover, .b-signup-form__submit:hover
 {
     background-color:rgba(92,191,42, 0.4);
 }
-/*.b-submit:active*/
-/*{*/
-    /*position:relative;*/
-    /*outline: 0;*/
-    /*-moz-outline-style: none;*/
-/*}*/
-/*.b-submit:focus*/
-/*{*/
-    /*outline:0;*/
-/*}*/
 .b-back
 {
     float: left;
