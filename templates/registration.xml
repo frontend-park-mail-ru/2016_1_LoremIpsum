@@ -3,17 +3,17 @@
     <div class="header">
         <h2>SignUp</h2>
     </div>
-    <form class="registration__form" name="register" action="/api/v1/auth/signin" method="POST">
-        <input class="registration__form__input-field" name="email" type="text" size="25"
+    <form class="b-registration__form js-signup" name="register" action="/api/v1/auth/signin" method="POST">
+        <input class="b-signup-form__input b-signup-form__input_position" name="email" type="text" size="25"
                maxlength="30" value="" placeholder="Email" />
-        <input class="registration__form__input-field" name="nickname" type="text" size="25"
+        <input class="b-signup-form__input b-signup-form__input_position" name="nickname" type="text" size="25"
                maxlength="30" value="" placeholder="Nickname" />
-        <input class="registration__form__input-field"  name="password" type="password"
+        <input class="b-signup-form__input b-signup-form__input-position"  name="password" type="password"
                size="25" maxlength="30" value="" placeholder="Password" />
-        <input class="registration__form__input-field"  name="password2" type="password"
+        <input class="b-signup-form__input b-signup-form__input_position"  name="password2" type="password"
                size="25" maxlength="30" value="" placeholder="Repeat password" />
-        <input class="registration__form__submit form-submit" type="submit" name="enter" value="Sign up" />
-        <div id="form__error-block">
+        <input class="b-signup-form__submit b-signup-form__submit_margin" type="submit" name="enter" value="Sign up" />
+        <div class="b-error-block">
         </div>
     </form>
 </fest:template>

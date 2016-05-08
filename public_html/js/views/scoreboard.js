@@ -16,7 +16,7 @@ define([
     var ScoreboardView = BaseView.extend({
 
         best_players :new ScoreCollection(),
-        id:'scoreboard',
+        className:'b-scoreboard',
         name:'scoreboard',
         template: tmpl,
         events: {

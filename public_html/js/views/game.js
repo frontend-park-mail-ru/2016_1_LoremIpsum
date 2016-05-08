@@ -40,7 +40,8 @@ define([
     var BLOCK_SCORE =100;
 
     var GameView = BaseView.extend({
-        id: 'game',
+        className: 'b-game',
+
         template: tmpl,
         events:{
             'click .js-back':'hide',
@@ -121,9 +122,10 @@ define([
             //    }
             //}
             this.wrapper = new Wrapper();
-            this.wrapper.canvas = this.$('#game__canvas')[0];
+            this.wrapper.canvas = this.$('.game__canvas')[0];
             this.wrapper.context = this.wrapper.canvas.getContext('2d');
             //this.wrapper.context.scale(0.5 , 0.5);
+
 
             /*this.platform.x= this.canvas.width/2 - this.platform.width/2;
             this.platform.y= this.canvas.height -

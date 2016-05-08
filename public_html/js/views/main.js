@@ -12,7 +12,7 @@ define([
     _
 ){
     var MainView = BaseView.extend({
-        id:'main',
+        className:'b-main',
         events: {
             'click a':'hide'
         },

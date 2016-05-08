@@ -25,8 +25,7 @@ define([
 
         add_view:function(view,name){
             this.views[name]= view;
-
-            $('#page').append(view.el);
+            $('.b-page').append(view.el);
         },
         delete_view:function(name){
             delete this.views[name];

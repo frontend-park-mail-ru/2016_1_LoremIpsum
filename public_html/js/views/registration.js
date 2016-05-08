@@ -27,7 +27,7 @@ define([
     var MUST_MATCH ={'password':'password2'};
 
     var RegistrationView = BaseView.extend({
-        id:'registration',
+        className:'b-registration',
         template: tmpl,
         events: {
             'submit':'submit_handler'
@@ -62,8 +62,7 @@ define([
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            this.form = this.$('.registration__form')[0];
-            console.log(this.form);
+            this.form = this.$('.js-signup-form')[0];
         },
         hide: function () {
             BaseView.prototype.hide.call(this);
