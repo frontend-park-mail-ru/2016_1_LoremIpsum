@@ -55,6 +55,7 @@ a
 }
 .b-main__menu-elem:hover
 {
+    cursor: pointer;
     background-color: rgba(68, 85, 136, 0.31);
 }
 .b-main__menu-elem_position

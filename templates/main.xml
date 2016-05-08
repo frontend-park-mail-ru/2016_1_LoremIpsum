@@ -14,11 +14,11 @@
                     Start Game.
                 </div>
             </a>
-            <a href="#logout">
+            <!--<a href="#logout">-->
                 <div class="b-main__menu-elem b-main__menu-elem_position js-logout">
                     Logout
                 </div>
-            </a>
+            <!--</a>-->
         </fest:if>
         <fest:if test="!json.isAuth">
             <a href="#scoreboard">
