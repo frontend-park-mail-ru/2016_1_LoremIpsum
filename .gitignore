@@ -1,4 +1,8 @@
 node_modules
 output
+server_tml
+testData
+server.jar
 .DS_Store
 .idea
+public_html/js/tmpl
