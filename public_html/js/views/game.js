@@ -1,9 +1,6 @@
 define([
     'backbone',
     'tmpl/game',
-    'models/ball',
-    'models/platform',
-    'models/blocks',
     'models/session',
     'models/score',
     'models/gamestate',

@@ -6,7 +6,7 @@ a
 }
 .b-page
 {
-    background: url("../castle.png");
+    background: url("../img/castle.png");
     /*background-repeat:no-repeat ;*/
     -moz-background-size: 100%;
     position: fixed;

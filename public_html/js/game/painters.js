@@ -7,13 +7,13 @@ define([
 ){
 
     var ball_png = new Image();
-    ball_png.src = 'ball.png';
+    ball_png.src = 'img/ball.png';
     var platform_png = new Image();
-    platform_png.src = 'platform2.png';
+    platform_png.src = 'img/platform2.png';
     var block_png = new Image();
-    block_png.src = 'block.png';
+    block_png.src = 'img/block.png';
     var another_ball = new Image;
-    another_ball.src ='another_ball.png';
+    another_ball.src ='img/another_ball.png';
 
 
     function painters_initialize(Wrapper ){
