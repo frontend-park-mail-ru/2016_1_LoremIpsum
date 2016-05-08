@@ -7,8 +7,9 @@ define([
 ){
     var on_page ={};
     var ViewManager = Backbone.View.extend({
-        initialize: function (views) {
+        initialize: function (views,selector) {
             this.views = {};
+            this.selector = selector;
             _.bind(this.hide,this);
             _.each(views,function(view, name){
                 this.add_view(view, name);
@@ -20,7 +21,7 @@ define([
 
         add_view:function(view, name){
             this.views[name]= view;
-            $('.b-page').append(view.el);
+            $( this.selector ).append(view.el);
         },
         delete_view:function(name){
             delete this.views[name];

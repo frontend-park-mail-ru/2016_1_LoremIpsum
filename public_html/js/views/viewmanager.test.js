@@ -26,7 +26,7 @@ define(function (require) {
             views['view' + i]= new FakeView();
             views['view' +i].name='view' +i;
         }
-        var manager = new ViewManger(views);
+        var manager = new ViewManger(views, '.b-page');
         QUnit.ok(manager instanceof ViewManger,'Создание вью-менеджера');
         QUnit.ok(_.isEqual(manager.views,views),'Проверка правильности создания');
 
