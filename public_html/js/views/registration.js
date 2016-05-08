@@ -59,10 +59,10 @@ define([
         name:'registration',
         render: function () {
             BaseView.prototype.render.call(this);
+            this.form = this.$('.js-signup-form')[0];
         },
         show: function () {
             BaseView.prototype.show.call(this);
-            this.form = this.$('.js-signup-form')[0];
         },
         hide: function () {
             BaseView.prototype.hide.call(this);

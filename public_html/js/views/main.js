@@ -35,7 +35,7 @@ define([
         show: function () {
             this.trigger('show', {},{'view_name':this.name});
             this.delegateEvents();
-            this.$el.css('visibility','visible');
+            this.$el.css('display','block');
             session.is_authinficated(this.is_authinficated,
                                      this.not_authinficated);
         },

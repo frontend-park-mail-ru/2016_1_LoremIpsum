@@ -21,12 +21,12 @@ define([
             if(!this.is_rendered) {
                 this.render();
             }
-            this.$el.css('visibility','visible');
+            this.$el.css('display', 'block');
             this.delegateEvents();
 
         },
         hide: function () {
-            this.$el.css('visibility','hidden');
+            this.$el.css('display', 'none');
             this.undelegateEvents();
         }
     });

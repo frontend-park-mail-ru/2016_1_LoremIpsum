@@ -22,9 +22,7 @@ define([
 
 
     var LoginView = BaseView.extend({
-        id:'login',
-        el:'.b-login',
-
+        className:'.b-login',
         template: tmpl,
         events: {
             'submit':'submit_handler'
@@ -47,11 +45,10 @@ define([
         },
         render: function () {
             BaseView.prototype.render.call(this);
-            this.form = this.$el('js-login-form')[0];
+            this.form = this.$('.js-login-form')[0];
         },
         show: function () {
             BaseView.prototype.show.call(this);
-
         },
         hide: function () {
             BaseView.prototype.hide.call(this);

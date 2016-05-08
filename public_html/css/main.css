@@ -2,6 +2,7 @@
 a
 {
     text-decoration:none;
+    outline: none;
 }
 .b-page
 {
@@ -15,7 +16,7 @@ a
     height: 100vh;
     background-size: 100%;
 }
-.header
+.b-header
 {
     width: 70%;
     color:white;
@@ -25,21 +26,18 @@ a
     margin-right: 15%;
     font-size:5.5vh ;
 }
-.b-scoreboard, .b-login,.b-game, .b-registration
+.b-scoreboard, .b-login,.b-game, .b-registration, .b-main
 {
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: absolute;
     width: 100%;
     height: 100%;
-    visibility: hidden;
-}
-.b-main
-{
-    position: absolute;
+    /*visibility: hidden;*/
 }
 
 .b-main__menu-elem
 {
+
     background-color: rgba(60, 63, 65, 0.23);
     width: 50%;
     color: rgba(230, 248, 255, 1);
@@ -55,10 +53,15 @@ a
     line-height: 16vh;
     font-style: normal;
 }
+.b-main__menu-elem:hover
+{
+    background-color: rgba(68, 85, 136, 0.31);
+}
 .b-main__menu-elem_position
 {
-    left:25%;
-    right: 25%;
+    /*костыли*/
+    margin-left:25%;
+    margin-right: 25%;
     margin-top: 1%;
 }
 

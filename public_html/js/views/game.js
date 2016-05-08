@@ -43,9 +43,6 @@ define([
         className: 'b-game',
 
         template: tmpl,
-        events:{
-            'click .js-back':'hide',
-        },
         name:'game',
         initialize: function () {
             BaseView.prototype.initialize.call(this);
@@ -122,7 +119,7 @@ define([
             //    }
             //}
             this.wrapper = new Wrapper();
-            this.wrapper.canvas = this.$('.game__canvas')[0];
+            this.wrapper.canvas = this.$('.js-canvas')[0];
             this.wrapper.context = this.wrapper.canvas.getContext('2d');
             //this.wrapper.context.scale(0.5 , 0.5);
 

@@ -2,7 +2,7 @@
     <div class="b-header">
         <h1>EpicArkanoid</h1>
     </div>
-    <div class ="container">
+    <!--<div class ="container">-->
         <fest:if test="json.isAuth">
             <a class ="no-text-decoration" href="#scoreboard">
                 <div class="b-main__menu-elem b-main__menu-elem_position js-scoreboard">
@@ -37,5 +37,5 @@
                 </div>
             </a>
         </fest:if>
-    </div>
+    <!--</div>-->
 </fest:template>
