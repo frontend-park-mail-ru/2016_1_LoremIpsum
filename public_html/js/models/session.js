@@ -12,8 +12,6 @@ define([
     UserModel,
     _
 ){
-
-
     var SessionModel = Backbone.Model.extend({
         defaults:
         {
@@ -34,7 +32,7 @@ define([
                  success:function(model,response){
                      this.request_error = null;
                      this.user.id = response['id'];
-                     console.log(success_cb);
+                     this.user.fetch();
                      if(success_cb)
                         success_cb();
                  }.bind(this),
@@ -64,15 +62,15 @@ define([
         register: function(_login, _password, _email, success_cb,error_cb) {
             this.request_error=null;
             this.save({},{
-                attrs:{'login':_login,'password':_password, 'email':_email},
-                url:'api/v1/user',
-                success:function(model,response){
+                method: 'PUT',
+                attrs: {'login':_login,'password':_password, 'email':_email},
+                url: 'api/v1/user',
+                success: function(model,response){
                     this.request_error = null;
-                    this.login(_login,_password);
                     if(success_cb)
                         success_cb();
                 }.bind(this),
-                error:function(){
+                error: function(){
                     this.request_error= new ValidationError('SERVER_ERROR',null);
                     if(error_cb)
                         error_cb();
@@ -83,6 +81,7 @@ define([
             this.fetch({
                  success:function(model,response){
                      this.user['id']=response['id'];
+                     this.user.fetch();
                      success_cb();
                  }.bind(this),
                  error:function(){

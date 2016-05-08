@@ -7,7 +7,7 @@ define(function (require) {
     QUnit.test("Тесты валидации", function () {
 
         var validate = require('utils/data_validator');
-        var ValidationError = require('models/validation_error')
+        var ValidationError = require('models/validation_error');
         var PASSWORD_VALIDATE_OPTIONS={'required':true,
             'type':'password', 'min_length':5};
         var EMAIL_VALIDATE_OPTIONS={'required':true,
@@ -34,22 +34,22 @@ define(function (require) {
         QUnit.ok(check_equals('REQUIRED',{'field_name':'email'}),'Все поля пустые');
 
         form_data.email.value = '5718658793';//невалидный email
-        QUnit.ok(check_equals('INVALID',{'field_name':'email'}),'невалидный email');
+        QUnit.ok(check_equals('INVALID',{'field_name':'email'}),'Невалидный email');
 
         form_data.email.value = 'valid@email.ru';//Валидный email
         QUnit.ok(check_equals('REQUIRED',{'field_name':'nickname'}),'Требуется nickname');
 
         form_data.nickname.value  ='veryveryveryloooooooooooooooooooooongname';
-        QUnit.ok(check_equals('TOO LONG',{'field_name':'nickname', 'max_length':20}),'слишком длинный nickname');
+        QUnit.ok(check_equals('TOO LONG',{'field_name':'nickname', 'max_length':20}),'Слишком длинный nickname');
 
         form_data.nickname.value = 'validname';
         QUnit.ok(check_equals('REQUIRED',{'field_name':'password'}),'Требуется пароль');
 
         form_data.password.value = 'sh';
-        QUnit.ok(check_equals('TOO SHORT',{'field_name':'password', 'min_length':5}),'слишком короткий пароль');
+        QUnit.ok(check_equals('TOO SHORT',{'field_name':'password', 'min_length':5}),'Слишком короткий пароль');
 
         form_data.password.value = 'validpassword';
-        QUnit.ok(check_equals('MUST_MATCH',{'password':'password2'}),'пароли не совпадают');
+        QUnit.ok(check_equals('MUST_MATCH',{'password':'password2'}),'Пароли не совпадают');
 
         form_data.password2.value = 'validpassword';
         QUnit.equal(aux_validate(),null,'Валидные данные');

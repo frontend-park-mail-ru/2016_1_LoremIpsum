@@ -11,9 +11,6 @@ var HOSTNAME = 'localhost',
 var request_counter = 0;
 
 app.use(function (req, res, next) {
-	// Здесь нужно написать журналирование в фexормате
-	// (журналирование - вывод в консоль)
-	// [время] [номер запроса по счету]
 	var request_time = new Date();
 	console.log('Time: ', request_time.toString());
 	console.log("Requests count: ", ++request_counter);

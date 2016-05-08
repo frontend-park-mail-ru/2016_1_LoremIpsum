@@ -12,8 +12,6 @@ define([
     blocks_initialize,
     platforms_initialize
 ){
-
-    //var SCORE_URL ='api/v1/score';
     var GameState = Backbone.Model.extend({
         url: function () {
             return (this.id) ? (SCORE_URL + this.id) : SCORE_URL;
