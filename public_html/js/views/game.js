@@ -68,6 +68,9 @@ define([
                 this.wrapper.stop();
                 this.wrapper.clear();
             }
+            if(this.game_state){
+                this.game_state.end_game();
+            }
         },
         keydown_handler:function(event) {
             if(event.keyCode == ARROW_LEFT) {
