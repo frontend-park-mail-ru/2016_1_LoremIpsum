@@ -12,7 +12,7 @@ define([
     blocks_initialize,
     platforms_initialize
 ){
-    var URL = 'api/v1/game'
+    var URL = 'api/v1/game';
     var GameState = Backbone.Model.extend({
         defaults: {
             'login': '',
@@ -24,36 +24,31 @@ define([
             this.your_platform = platforms_initialize(wrapper,'your');
             this.another_ball = balls_initialize(wrapper,'another') ;
             this.another_platform = platforms_initialize(wrapper,'another');
-            //this.save({},{        правильно
-            //   success:function(){
-            //       this.fetch();
-            //   }.bind(this)
-            //});
-            this.id = 1;
-            this.socket = new WebSocket('ws://127.0.0.1:8100');
-            this.fetch();
-
-
+            this.save({},{
+                success:function(){
+                   this.fetch();
+                }.bind(this)
+            });
         },
         sync: function(method, model, options ){
+            handlers['create'] = function(){
+                $.ajax(URL,{
+                    method: 'GET',
+                    success:function(data){
+                        this.id = data.id;
+                        this.socket = new WebSocket('ws://127.0.0.1:8100');
+                        if(options.success){
+                            options.success(data);
+                        }
+                    }.bind(this),
+                    error:function(){
+                        if(options.error){
+                            options.error();
+                        }
+                    }
+                });
+            }.bind(this);
             var handlers ={};
-            //handlers['create'] = function(){
-            //    $.ajax(URL,{
-            //        method: 'GET',
-            //        success:function(data){
-            //            this.id = data.id;
-            //            this.socket = new WebSocket('ws://127.0.0.1:8100');
-            //            if(options.success){
-            //                options.success(data);
-            //            }
-            //        }.bind(this),
-            //        error:function(){
-            //            if(options.error){
-            //                options.error();
-            //            }
-            //        }
-            //    });
-            //}.bind(this);
             handlers['update'] = function(){
                 if(options.attrs){
                     this.socket.send(JSON.stringify(options.attrs));

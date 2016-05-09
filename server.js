@@ -9,20 +9,6 @@ var HOSTNAME = 'localhost',
 
 var request_counter = 0;
 
-var ws = require("nodejs-websocket");
-
-// Scream server example: "hi" -> "HI!!!"
-var ws_test = ws.createServer(function (conn) {
-	console.log("New connection");
-	conn.on("text", function (str) {
-		console.log("Received "+str);
-		conn.sendText(str.toUpperCase()+"!!!")
-	});
-	conn.on("close", function (code, reason) {
-		console.log("Connection closed")
-	});
-}).listen(8100);
-
 app.use(function (req, res, next) {
 	var request_time = new Date();
 	console.log('Time: ', request_time.toString());
@@ -39,8 +25,7 @@ app.listen(PORT,HOSTNAME,function () {
 app.use(
 	'/api',
 	proxy(
-		'http://localhost',
-		{
+		'http://localhost', {
 			port: 8090,
 			forwardPath: function (req, res) {
 				console.log("proxy: [%s %s %s]", req.method, req.originalUrl);
