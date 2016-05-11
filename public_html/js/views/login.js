@@ -22,7 +22,7 @@ define([
 
 
     var LoginView = BaseView.extend({
-        className:'.b-login',
+        id:'login',
         template: tmpl,
         events: {
             'submit':'submit_handler'

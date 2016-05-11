@@ -12,7 +12,7 @@ define([
     _
 ){
     var MainView = BaseView.extend({
-        className:'b-main',
+        id:'main',
         events: {
             'click .js-logout':'logout'
         },

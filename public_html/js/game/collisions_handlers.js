@@ -10,6 +10,7 @@ define([
         return (object._group === 'your_balls' )||
                (object._group === 'another_balls');
     };
+
     var platform_balls_handler = function(first,  second){
         var platform;
         var ball;
@@ -22,6 +23,7 @@ define([
             ball = second;
             platform = first;
         }
+
         ball.vy *= -1;
         var platform_center = platform.x+ platform.width/2;
         ball.vx = 3 * (ball.x - platform_center)/platform.width;

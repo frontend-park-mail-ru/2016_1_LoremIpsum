@@ -29,7 +29,7 @@ define([
     var ARROW_RIGHT=39;
 
     var GameView = BaseView.extend({
-        className: 'b-game',
+        id: 'game',
         template: tmpl,
         name:'game',
         initialize: function () {

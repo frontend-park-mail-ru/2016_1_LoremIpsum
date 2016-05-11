@@ -38,6 +38,10 @@ module.exports = function (grunt) {
                     atBegin: true
                 }
             },
+            sass: {
+                files: ['public_html/sass/*.scss'],
+                tasks: ['concat','sass']
+            },
             server: {
                 files: [
                     'public_html/js/**/*.js',
@@ -57,15 +61,32 @@ module.exports = function (grunt) {
         },
         qunit: {
             all: ['./public_html/tests/index.html']
+        },
+        concat: {
+            dist: {
+                src: [
+                    'public_html/sass/*.scss',
+                ],
+                dest: 'public_html/sass_build/build.scss',
+            }
+        },
+        sass: {
+            dist: {
+                files: {
+                    './public_html/css/main.css':'./public_html/sass_build/build.scss'
+                }
+            }
         }
     });
 
 	// подключть все необходимые модули
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-qunit');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-fest');
+    grunt.loadNpmTasks('grunt-sass');
 
     grunt.registerTask('test', ['qunit:all']);
     grunt.registerTask('default', ['concurrent']);

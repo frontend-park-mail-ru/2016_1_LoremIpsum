@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "express-http-proxy": "^0.6.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-sass": "^1.2.0",
     "nodejs-websocket": "^1.5.0"
   }
 }
