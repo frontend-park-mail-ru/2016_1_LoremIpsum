@@ -24,6 +24,7 @@ define([
             this.your_platform = platforms_initialize(wrapper,'your');
             this.another_ball = balls_initialize(wrapper,'another') ;
             this.another_platform = platforms_initialize(wrapper,'another');
+            console.log(JSON.stringify(this));
             this.save({},{
                 success:function(){
                    this.fetch();
@@ -31,9 +32,10 @@ define([
             });
         },
         sync: function(method, model, options ){
+            var handlers ={};
             handlers['create'] = function(){
                 $.ajax(URL,{
-                    method: 'GET',
+                    method: 'PUT',
                     success:function(data){
                         this.id = data.id;
                         this.socket = new WebSocket('ws://127.0.0.1:8100');
@@ -48,7 +50,6 @@ define([
                     }
                 });
             }.bind(this);
-            var handlers ={};
             handlers['update'] = function(){
                 if(options.attrs){
                     this.socket.send(JSON.stringify(options.attrs));
@@ -56,11 +57,12 @@ define([
             }.bind(this);
             handlers['read'] = function(){
                 this.socket.onmessage = function (event) {
-                    this.your_ball.copy(event.data.your_ball);
-                    this.your_platform.copy(event.data.your_platform);
-                    this.another_ball.copy( event.data.another_ball);
-                    this.another_platform.copy(event.data.another_platform);
-                    this.blocks.matrix = event.data.blocks;
+                    var data = JSON.parse(event.data);
+                    this.your_ball.copy(data.your_ball);
+                    this.your_platform.copy(data.your_platform);
+                    this.another_ball.copy(data.another_ball);
+                    this.another_platform.copy(data.another_platform);
+                    this.blocks.matrix = data.blocks;
                 }.bind(this);
             }.bind(this);
             handlers['delete'] = function(){
@@ -70,11 +72,11 @@ define([
         },
         toJSON: function () {
             return {
-                blocks: this.blocks.matrix,
-                your_ball: this.your_ball,
-                your_plaform: this.your_plaform,
-                another_ball: this.another_ball,
-                another_plaform: this.another_plaform
+                'blocks': this.blocks.matrix,
+                'your_ball': this.your_ball,
+                'your_plaform': this.your_platform,
+                'another_ball': this.another_ball,
+                'another_plaform': this.another_platform
             };
         },
         left: function () {
@@ -95,6 +97,7 @@ define([
             });
         },
         end_game: function(){
+            window.clearInterval(this.intervalID);
             this.destroy();
         }
     });

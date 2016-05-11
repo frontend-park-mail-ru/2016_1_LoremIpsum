@@ -30,8 +30,8 @@ define([
 
     var GameView = BaseView.extend({
         id: 'game',
-        template: tmpl,
         name:'game',
+        template: tmpl,
         initialize: function () {
             BaseView.prototype.initialize.call(this);
             _.bindAll(this, 'keyup_handler','keydown_handler');
@@ -39,15 +39,15 @@ define([
         render: function () {
             this.$el.html(this.template());
             BaseView.prototype.render.call(this);
-            this.wrapper = new Wrapper();
-            this.wrapper.canvas = this.$('.js-canvas')[0];
-            this.wrapper.context = this.wrapper.canvas.getContext('2d');
+            this.wrapper = new Wrapper( this.$('.js-canvas')[0] );
+            //this.wrapper.canvas = this.$('.js-canvas')[0];
+            //this.wrapper.context = this.wrapper.canvas.getContext('2d');
         },
         show: function () {
             BaseView.prototype.show.call(this);
 
-            $(document).on('keydown',this.keydown_handler);
-            $(document).on('keyup',this.keyup_handler);
+            $(document).on('keydown', this.keydown_handler);
+            $(document).on('keyup', this.keyup_handler);
 
             this.wrapper.create_left_bound({'coord':0});
             this.wrapper.create_right_bound({'coord':this.wrapper.canvas.width });
@@ -61,13 +61,15 @@ define([
             this.wrapper.run();
         },
         hide: function () {
-            $(document).off('keyup');
-            $(document).off('keydown');
+            $(document).off('keyup', this.keyup_handler);
+            $(document).off('keydown', this.keydown_handler);
             BaseView.prototype.hide.call(this);
+
             if(this.wrapper) {
                 this.wrapper.stop();
                 this.wrapper.clear();
             }
+
             if(this.game_state){
                 this.game_state.end_game();
             }

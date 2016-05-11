@@ -22,12 +22,13 @@ define([//// 'underscore'
         this.vy = 0;
     };
 
-    CanvasObject.prototype.copy = function(object){
-        for ( var key in this){
-            if(this.hasOwnProperty(key) &&
-               object.hasOwnProperty(key))
-            {
-                this[key] = object [key];
+    CanvasObject.prototype.copy = function(object) {
+        if(object){
+            for (var key in this) {
+                if (this.hasOwnProperty(key) &&
+                    object.hasOwnProperty(key)) {
+                    this[key] = object [key];
+                }
             }
         }
     };
@@ -107,7 +108,7 @@ define([//// 'underscore'
         this.id_painters = {};
         if(canvas){
             this.canvas = canvas;
-            this.context = canvas.getContext('2s');
+            this.context = canvas.getContext('2d');
         }
     };
 
@@ -179,7 +180,6 @@ define([//// 'underscore'
         var handler_name='';
         var x = event.pageX - this.canvas.offsetLeft;
         var y = event.pageY - this.canvas.offsetTop;
-        alert('('+x +', '+ y+ ')');
         for(var i=0; i<this.objects.length; i++){
             if(this.objects[i].contains_point(x,y)){
                 if( ((handler_name ='!click_id')+this.objects[i]._id) in this.event_handlers )
@@ -338,13 +338,16 @@ define([//// 'underscore'
         }
         this.check_collisions();
     };
-    Wrapper.prototype.group_draw =function(group_name,callback){
+
+    Wrapper.prototype.group_draw = function(group_name,callback){
         this.group_painters[group_name] = callback;
     };
+
     Wrapper.prototype.id_draw = function(id,callback){
         this.id_painters[id] = callback;
     };
-    Wrapper.prototype.draw =function(){
+
+    Wrapper.prototype.draw = function(){
 
         this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
         for(var i=0; i< this.objects.length; i++){
@@ -367,11 +370,11 @@ define([//// 'underscore'
         window.clearInterval(this.timer_id);
     };
     Wrapper.prototype.clear = function(){
-        this.action_handlers={};
-        this.actions= [];
+        this.action_handlers = {};
+        this.actions = [];
         this.bounds = [];
         this.objects = [];
-        this.event_handlers ={};
+        this.event_handlers = {};
     };
     return Wrapper;
 });
