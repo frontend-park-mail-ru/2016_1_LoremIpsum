@@ -24,6 +24,7 @@ define([
             this.your_platform = platforms_initialize(wrapper,'your');
             this.another_ball = balls_initialize(wrapper,'another') ;
             this.another_platform = platforms_initialize(wrapper,'another');
+            this.socket = new WebSocket('ws://127.0.0.1:8090/gamesocket');
             console.log(JSON.stringify(this));
             this.save({},{
                 success:function(){
@@ -38,7 +39,7 @@ define([
                     method: 'PUT',
                     success:function(data){
                         this.id = data.id;
-                        this.socket = new WebSocket('ws://127.0.0.1:8100');
+                        this.socket = new WebSocket('ws://127.0.0.1:8090/gamesocket');
                         if(options.success){
                             options.success(data);
                         }
@@ -58,8 +59,6 @@ define([
             handlers['read'] = function(){
                 this.socket.onmessage = function (event) {
                     var data = JSON.parse(event.data);
-                    this.your_ball.copy(data.your_ball);
-                    this.your_platform.copy(data.your_platform);
                     this.another_ball.copy(data.another_ball);
                     this.another_platform.copy(data.another_platform);
                     this.blocks.matrix = data.blocks;
@@ -95,6 +94,7 @@ define([
             this.save({},{
                 attrs:{'action':action }
             });
+            this.save({},{attrs:this});
         },
         end_game: function(){
             window.clearInterval(this.intervalID);
