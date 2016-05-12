@@ -12,32 +12,42 @@ define([
     _
 ){
     var MainView = BaseView.extend({
-        el:'#main',
+        id: 'main',
+        name: 'main',
         events: {
-            'click a':'hide'
+            'click .js-logout':'logout'
         },
         template: tmpl,
-        initialize: function () {
+        initialize: function(){
             BaseView.prototype.initialize.call(this);
-            _.bindAll(this,'is_authinficated','not_authinficated');
+            _.bindAll(this,
+                     'is_authinficated',
+                     'not_authinficated');
         },
-        render: function (is_auth) {
+        render: function(is_auth){
             this.$el.html(this.template({'isAuth':is_auth}) );
             return this;
         },
-        is_authinficated:function(){
+        is_authinficated: function(){
           this.render(true);
         },
-        not_authinficated:function(){
+        not_authinficated: function(){
             this.render(false);
         },
-        show: function () {
-            BaseView.prototype.show.call(this);
+        show: function(){
+            this.trigger('show', {}, {'view_name': this.name});
+            this.delegateEvents();
+            this.$el.css('display', 'block');
             session.is_authinficated(this.is_authinficated,
                                      this.not_authinficated);
         },
-        hide: function () {
+        hide: function(){
             BaseView.prototype.hide.call(this);
+        },
+        logout: function(){
+            session.logout(function(){
+                this.show();
+            }.bind(this));
         }
     });
     return new MainView();

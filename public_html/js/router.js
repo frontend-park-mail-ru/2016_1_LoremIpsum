@@ -24,14 +24,13 @@ define([
                 login:LoginView,
                 registration:RegistrationView
     };
-    var manager = new ViewManager(views);
+    var manager = new ViewManager(views, '#page');
     var Router = Backbone.Router.extend({
         routes: {
             'main':'mainAction',
             'scoreboard': 'scoreboardAction',
             'game': 'gameAction',
             'login': 'loginAction',
-            'logout': 'logoutAction',
             'registration': 'registrationAction',
             '*default': 'defaultActions'
         },
@@ -53,11 +52,6 @@ define([
         },
         registrationAction: function() {
             manager.show('registration');
-        },
-        logoutAction: function(){
-            session.logout(function(){
-                Backbone.history.navigate('main',true);
-            });
         },
         defaultActions: function () {
             this.mainAction();
