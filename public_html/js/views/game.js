@@ -36,7 +36,7 @@ define([
         template: tmpl,
         initialize: function () {
             BaseView.prototype.initialize.call(this);
-            _.bindAll(this, 'keyup_handler','keydown_handler');
+            _.bindAll(this, 'keyup_handler','keydown_handler','render','gamestart_handler');
         },
         render: function () {
             this.$el.html(this.template(this.game_state));
@@ -54,6 +54,7 @@ define([
             this.render();
             this.$el.css('display', 'block');
             this.listenTo(this.game_state,'gamestart',this.gamestart_handler);
+            this.listenTo(this.game_state,'gamestart',this.render);
 
         },
         hide: function () {
