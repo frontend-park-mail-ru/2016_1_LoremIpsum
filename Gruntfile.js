@@ -62,18 +62,10 @@ module.exports = function (grunt) {
         qunit: {
             all: ['./public_html/tests/index.html']
         },
-        concat: {
-            dist: {
-                src: [
-                    'public_html/sass/*.scss',
-                ],
-                dest: 'public_html/sass_build/build.scss',
-            }
-        },
         sass: {
             dist: {
                 files: {
-                    './public_html/css/main.css':'./public_html/sass_build/build.scss'
+                    './public_html/css/main.css':'./public_html/sass/main.scss'
                 }
             }
         }
