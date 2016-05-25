@@ -72,7 +72,6 @@ module.exports = function (grunt) {
         },
         requirejs: {
             build: {
-                /* Подзадача */
                 options: {
                     almond: true,
                     baseUrl: "public_html/js",
@@ -85,7 +84,6 @@ module.exports = function (grunt) {
         },
         concat: {
             build: {
-                /* Подзадача */
                 separator: ';\n',
                 src: [
                     'public_html/js/lib/almond.js',
@@ -96,7 +94,6 @@ module.exports = function (grunt) {
         },
         uglify: {
             build: {
-                /* Подзадача */
                 files: {
                     'public_html/js/build.min.js': ['public_html/js/build.js']
                 }
