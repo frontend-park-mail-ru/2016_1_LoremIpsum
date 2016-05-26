@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                 command: 'node server.js'
             }
         },
-		fest: {
+        fest: {
             templates: {
                 files: [{
                     expand: true,
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['public_html/sass/*.scss'],
-                tasks: ['concat','sass']
+                tasks: ['sass']
             },
             server: {
                 files: [
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
                 ],
                 options: {
                     livereload: true
-                }
+                },
             }
         },
         concurrent: {
@@ -62,33 +62,65 @@ module.exports = function (grunt) {
         qunit: {
             all: ['./public_html/tests/index.html']
         },
-        concat: {
-            dist: {
-                src: [
-                    'public_html/sass/*.scss',
-                ],
-                dest: 'public_html/sass_build/build.scss',
-            }
-        },
         sass: {
             dist: {
                 files: {
-                    './public_html/css/main.css':'./public_html/sass_build/build.scss'
+                    './public_html/css/main.css': './public_html/sass/main.scss'
+                }
+            },
+            style: 'compressed'
+        },
+        requirejs: {
+            build: {
+                options: {
+                    almond: true,
+                    baseUrl: "public_html/js",
+                    mainConfigFile: "public_html/js/main.js",
+                    name: "main",
+                    optimize: "none",
+                    out: "public_html/js/build/main.js"
+                }
+            }
+        },
+        concat: {
+            build: {
+                separator: ';\n',
+                src: [
+                    'public_html/js/lib/almond.js',
+                    'public_html/js/build/main.js'
+                ],
+                dest: 'public_html/js/build.js'
+            }
+        },
+        uglify: {
+            build: {
+                files: {
+                    'public_html/js/build.min.js': ['public_html/js/build.js']
                 }
             }
         }
+
     });
 
-	// подключть все необходимые модули
+    // подключть все необходимые модули
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-fest');
     grunt.loadNpmTasks('grunt-sass');
 
     grunt.registerTask('test', ['qunit:all']);
+    grunt.registerTask(
+        'build',
+        [
+            'fest', 'requirejs:build',
+            'concat:build', 'uglify:build'
+        ]
+    );
     grunt.registerTask('default', ['concurrent']);
 
 

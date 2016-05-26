@@ -1,15 +1,17 @@
 /**
  * Created by danil on 26.03.16.
  */
-define([//// 'underscore'
-], function(//_
+define([
+], function(
 ){
 
     var CanvasObject = function(options){
         this.x = options.x;
         this.y = options.y;
         this.vx = options.vx;
-        this.vy = options.vy;
+        this.vy = options.vy
+        this._id = '';
+        this._group = '';
     };
 
     CanvasObject.prototype.move = function(){
@@ -31,6 +33,16 @@ define([//// 'underscore'
                 }
             }
         }
+    };
+
+    CanvasObject.prototype.toJSON = function(){
+        var res = {};
+        for(key in this){
+            if(this.hasOwnProperty(key) && key[0] != '_') {
+                res[key] = this[key];
+            }
+        }
+        return res;
     };
 
     var BallObject = function(options){
@@ -321,23 +333,22 @@ define([//// 'underscore'
         }
     };
 
-    Wrapper.prototype.onaction =function(actionname,callback){
-        this.action_handlers[actionname]= callback;
-    };
-
     Wrapper.prototype.update = function(){
-        for(var i=0; i < this.actions.length; i++){
-            if(this.actions[i] in  this.actions_handlers) {
-                this.action_handlers[this.actions[i]]();
-                this.actions.splice(i,1);
-                //delete  this.actions_handlers[this.actions[i]];
-            }
-        }
         for(i=0; i < this.objects.length; i++){
             this.objects[i].move();
         }
         this.check_collisions();
     };
+    Wrapper.prototype.collect_garbage = function(){
+        for(var i=0; i < this.objects.length; i++){
+            if(this.objects[i]._group === '' &&
+               this.objects[i]._id === '' )
+            {
+                this.objects.splice(i,1);
+            }
+        }
+    };
+
 
     Wrapper.prototype.group_draw = function(group_name,callback){
         this.group_painters[group_name] = callback;

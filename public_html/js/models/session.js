@@ -15,7 +15,6 @@ define([
     
     var error_cb_wrapper = function (error_cb){
         return function(){
-            debugger;
             if(error_cb) {
                 var request_error = new ValidationError('SERVER_ERROR', null);
                 error_cb(request_error);

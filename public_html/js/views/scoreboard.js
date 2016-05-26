@@ -27,7 +27,8 @@ define([
         },
         render: function () {
             this.best_players.fetch({
-                success:function(){
+                success:function(result){
+                    console.log(result);
                     this.$el.html(this.template(this.best_players.toJSON()));
                 }.bind(this)
             })
